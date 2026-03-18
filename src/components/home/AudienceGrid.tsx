@@ -64,7 +64,7 @@ export const AudienceGrid = (): JSX.Element => {
                   {/* Decorative Light Bars */}
                   <div className="absolute top-[-180px] left-[180px] w-[6px] h-[360px] rounded-[3px/180px] -rotate-90 bg-white/90 blur-sm" />
                   <div className="absolute -top-1 left-[-6px] w-[6px] h-[360px] bg-white/80 rounded-[3px/180px] blur-sm" />
-                  
+
                   {/* Glow Effect */}
                   <div className="absolute top-[70px] left-[10px] w-[400px] h-[100px] bg-[#82b7dc] rounded-[200px/50px] blur-[100px] opacity-35" />
 
@@ -84,7 +84,7 @@ export const AudienceGrid = (): JSX.Element => {
 
                 <CardContent className="relative w-full h-full p-0">
                   <div className="absolute top-[-180px] left-[180px] w-[6px] h-[360px] rounded-[3px/180px] -rotate-90 blur-[2px]" />
-                  
+
                   <div className="relative z-10 pt-8 px-7">
                     <h3 className="text-[#bbbbbb] [font-family:'Montserrat',Helvetica] font-bold text-[24px] text-center mb-5 leading-[32px]">
                       {cardData[1].title}
@@ -118,20 +118,20 @@ export const AudienceGrid = (): JSX.Element => {
               {/* Pulsing Glow */}
               <motion.div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[120px] rounded-full bg-[#82b7dc]/25 blur-3xl"
-                animate={{ 
-                  scale: [1, 1.3, 1], 
-                  opacity: [0.5, 0.8, 0.5] 
+                animate={{
+                  scale: [1, 1.3, 1],
+                  opacity: [0.5, 0.8, 0.5]
                 }}
                 transition={{ duration: 3.5, ease: "easeInOut", repeat: Infinity }}
               />
 
               {/* Blue core disc */}
-             {/* Blue gradient core */}
-<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] rounded-full bg-[radial-gradient(circle_at_50%_30%,#9fd0ff_0%,#74add8_40%,#5a95c8_70%,#2b3a4a_100%)] shadow-[0_0_30px_rgba(130,183,220,0.6)]" />
+              {/* Blue gradient core */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] rounded-full bg-[radial-gradient(circle_at_50%_30%,#9fd0ff_0%,#74add8_40%,#5a95c8_70%,#2b3a4a_100%)] shadow-[0_0_30px_rgba(130,183,220,0.6)]" />
 
-{/* Glassy white ring */}
-<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[120px]  opacity-15 rounded-full border-[2px] border-white/70 shadow-[0_0_20px_rgba(255,255,255,0.35)]" />
-{/* Center Icon Container */}
+              {/* Glassy white ring */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[120px]  opacity-15 rounded-full border-[2px] border-white/70 shadow-[0_0_20px_rgba(255,255,255,0.35)]" />
+              {/* Center Icon Container */}
               <div className="relative w-[75px] h-[75px] rounded-full bg-gradient-to-br from-[#82b7dc] via-[#5a95c8] to-[#4a7bc8] shadow-[0_0_40px_rgba(130,183,220,0.8),inset_0_2px_10px_rgba(255,255,255,0.35)] flex items-center justify-center border-[3px] border-white/25">
                 {/* Rotating Icon/Image */}
                 <motion.div
@@ -155,7 +155,7 @@ export const AudienceGrid = (): JSX.Element => {
 
                 <CardContent className="relative w-full h-full p-0">
                   <div className="absolute top-[-180px] left-[180px] w-[6px] h-[360px] rounded-[3px/180px] -rotate-90  blur-[2px]" />
-                  
+
                   <div className="relative z-10 pt-8 px-7">
                     <h3 className="text-[#bbbbbb] [font-family:'Montserrat',Helvetica] font-bold text-[24px] text-center mb-5 leading-[32px]">
                       {cardData[2].title}
@@ -172,7 +172,7 @@ export const AudienceGrid = (): JSX.Element => {
                 <CardContent className="relative w-full h-full p-0">
                   <div className="absolute top-[-180px] left-[180px] w-[6px] h-[360px] rounded-[3px/180px] -rotate-90 bg-white/90 blur-sm" />
                   <div className="absolute -top-1 left-[-6px] w-[6px] h-[360px] bg-white/80 rounded-[3px/180px] blur-sm" />
-                  
+
                   <div className="absolute top-[70px] left-[10px] w-[400px] h-[100px] bg-[#82b7dc] rounded-[200px/50px] blur-[100px] opacity-35" />
 
                   <div className="relative z-10 pt-8 px-7">
@@ -200,10 +200,10 @@ export const AudienceGrid = (): JSX.Element => {
                 className="w-[35px] h-[35px]"
               >
                 <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <circle cx="20" cy="20" r="18" fill="white" opacity="0.9"/>
-                  <path d="M20 8 L26 14 L20 20 L14 14 Z" fill="#4a7bc8"/>
-                  <path d="M20 20 L26 26 L20 32 L14 26 Z" fill="#82b7dc"/>
-                  <circle cx="20" cy="20" r="3" fill="white"/>
+                  <circle cx="20" cy="20" r="18" fill="white" opacity="0.9" />
+                  <path d="M20 8 L26 14 L20 20 L14 14 Z" fill="#4a7bc8" />
+                  <path d="M20 20 L26 26 L20 32 L14 26 Z" fill="#82b7dc" />
+                  <circle cx="20" cy="20" r="3" fill="white" />
                 </svg>
               </motion.div>
             </div>
@@ -212,11 +212,10 @@ export const AudienceGrid = (): JSX.Element => {
           {cardData.map((card, index) => (
             <Card
               key={index}
-              className={`w-full h-auto min-h-[240px] rounded-[24px] overflow-hidden ${
-                card.hasGlass
+              className={`w-full h-auto min-h-[240px] rounded-[24px] overflow-hidden ${card.hasGlass
                   ? "backdrop-blur-[10px] backdrop-brightness-[115%] shadow-[inset_0_2px_6px_rgba(255,255,255,0.3),0_10px_40px_rgba(130,183,220,0.2)] bg-[linear-gradient(145deg,rgba(255,255,255,0.12)_0%,rgba(130,183,220,0.08)_100%)] border border-white/25"
                   : "backdrop-blur-[3px] shadow-[0_6px_25px_rgba(0,0,0,0.5)] bg-[linear-gradient(320deg,rgba(18,25,35,0.95)_0%,rgba(28,38,55,0.85)_100%)] border border-white/8"
-              }`}
+                }`}
             >
               <CardContent className="relative w-full h-full p-6">
                 {card.hasGlass && (
@@ -225,7 +224,7 @@ export const AudienceGrid = (): JSX.Element => {
                     <div className="absolute top-[50px] left-0 w-[300px] h-[80px] bg-[#82b7dc] rounded-full blur-[80px] opacity-25" />
                   </>
                 )}
-                
+
                 <h3 className="text-[#bbbbbb] [font-family:'Montserrat',Helvetica] font-bold text-[21px] md:text-[23px] text-center mb-4 leading-[30px]">
                   {card.title}
                 </h3>
