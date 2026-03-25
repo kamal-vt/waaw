@@ -37,7 +37,7 @@ const cardData = [
 
 export const AudienceGrid = (): JSX.Element => {
   return (
-    <section className="w-full min-h-[950px] lg:min-h-[600px] relative bg-gradient-to-b from-[#0a0f14] via-black to-[#0d1217] overflow-hidden py-12 lg:py-16">
+    <section className="min-h-screen relative bg-gradient-to-b from-[#0a0f14] via-black to-[#0d1217] overflow-hidden py-12 lg:py-16">
       {/* Background Gradient Orbs */}
       <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[#82b7dc]/10 rounded-full blur-[120px] hidden lg:block" />
       <div className="absolute bottom-[10%] right-[15%] w-[350px] h-[350px] bg-[#3466aa]/10 rounded-full blur-[100px] hidden lg:block" />
@@ -46,9 +46,8 @@ export const AudienceGrid = (): JSX.Element => {
       <div className="relative w-full max-w-7xl mx-auto px-4">
         <div className="relative mb-12 lg:mb-16 flex justify-center">
           <DecorativeLines>
-            <h1 className="text-center [font-family:'Montserrat',Helvetica] font-extrabold text-[26px] md:text-[32px] lg:text-[38px] leading-[36px] md:leading-[50px] lg:leading-[60px] tracking-[0] px-4">
-              <span className="text-[#bbbbbb] block mb-1">THE MINDS AND BUSINESSES</span>
-              <span className="text-[#82b7dc]">BEHIND THE WAAW</span>
+            <h1 className="text-center text-[#82B7DC] [font-family:'Montserrat',Helvetica] font-extrabold text-[26px] md:text-[32px] lg:text-[38px] leading-[36px] md:leading-[50px] lg:leading-[60px] tracking-[0] px-4">
+              Who We Built For?
             </h1>
           </DecorativeLines>
         </div>

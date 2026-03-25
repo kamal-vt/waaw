@@ -43,6 +43,10 @@ export default function Contact() {
         throw new Error(result.message ?? "Unable to submit right now. Please try again.");
       }
 
+      import("@/lib/tracking").then(({ trackEvent }) => {
+        trackEvent("form_submit", { form_name: "contact_form" });
+      });
+
       setStatus({ type: "success", message: "Thanks! We received your inquiry and will be in touch shortly." });
       setFormData(initialFormState);
     } catch (error) {

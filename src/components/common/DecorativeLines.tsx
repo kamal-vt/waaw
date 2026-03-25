@@ -17,14 +17,14 @@ export default function DecorativeLines({
   children,
   className,
   lineOffset = 20,
-  dotSize = 12,
+  dotSize = 8,
   animationDuration = 8,
 }: Props) {
   const topOffset = `-${lineOffset}px`;
   const bottomOffset = `-${lineOffset}px`;
 
   const dotStyle: React.CSSProperties = {
-    width: `${dotSize}px`,
+    width: `${dotSize+2}px`,
     height: `${dotSize}px`,
     animationDuration: `${animationDuration}s`,
   };

@@ -2,14 +2,14 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import InfinityHero from "./InfinityHero";
-import ParallaxCard from "../ui/ParallaxCard";
-import Galaxy from "../Galaxy";
+import Image from "next/image";
+// import Galaxy from "../Galaxy";
 
 // -------------------- ORBIT CARD (FIXED PATH) --------------------
 function OrbitCard({ number, label }: { number: string; label: string }) {
   return (
     <div className="relative w-[260px] h-[120px] overflow-visible">
-      
+
       {/* Card */}
       <div
         className="absolute inset-0 rounded-2xl z-10 overflow-visible
@@ -58,26 +58,11 @@ function OrbitCard({ number, label }: { number: string; label: string }) {
 // -------------------- MAIN HERO --------------------
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen bg-black text-[#bbbbbb] overflow-hidden">
-      <div className="absolute inset-0 hidden lg:block z-0">
-        <Galaxy
-          className="absolute inset-0"
-          mouseRepulsion={true}
-          mouseInteraction={true}
-          density={1.2}
-          glowIntensity={0.55}
-          saturation={0}
-          hueShift={0}
-          twinkleIntensity={0.5}
-          rotationSpeed={0.04}
-          monochrome
-          style={{ opacity: 0.85 }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-black pointer-events-none z-10" />
-      </div>
+    <section className="relative w-full min-h-screen bg-[#000000] text-[#bbbbbb] overflow-hidden">
+
       <div className="relative z-10">
         {/* MOBILE VERSION */}
-        <div className="lg:hidden pt-20">
+        <div className="lg:hidden">
           <div className="container mx-auto px-4 py-2 flex flex-col items-center gap-6">
 
             <div className="flex-1 max-w-2xl text-center space-y-4">
@@ -87,8 +72,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                TURNING YOUR IDEAS<br />
-                INTO HIGH IMPACT
+                ELEVATE YOUR STRATEGY
               </motion.h1>
 
               <motion.h2
@@ -97,7 +81,8 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                DIGITAL PRODUCTS
+                TRANSFORM <br />
+                YOUR BUSINESS
               </motion.h2>
 
               <motion.p
@@ -106,8 +91,7 @@ export default function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                From mobile apps to web platforms, we design and develop tailored solutions that elevate your business.
-              </motion.p>
+                From brand positioning to high-performing digital platforms, we create smart systems that help ambitious businesses scale with clarity and confidence.              </motion.p>
 
               <motion.div
                 className="mt-6 flex justify-center"
@@ -156,90 +140,101 @@ export default function Hero() {
         </div>
 
         {/* DESKTOP VERSION */}
-        <div className="relative hidden flex flex-col mt-40  h-full lg:block">
-          <div className="container mx-auto px-4  flex flex-row items-center justify-between gap-8 ">
+        <div className="relative  flex flex-col items-center justify-center mt-[96px]  min-h-screen">
+          <div className="container  mx-auto px-4  flex flex-row items-center justify-between">
+            {/* Left Section */}
+            <div className="flex flex-col gap-10 w-7/12 text-left space-y-4 mt-2 h-full">
+              <div className="flex flex-col gap-4">
+                <motion.h1
+                  className="text-5xl lg:text-[55px] font-bold text-white"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  ELEVATE YOUR STRATEGY
+                </motion.h1>
 
-            <div className="flex-1 max-w-2xl text-left space-y-4 mt-2 ">
-              <motion.h1
-                className="text-5xl lg:text-6xl font-bold leading-tight"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                TURNING YOUR IDEAS<br />
-                INTO HIGH IMPACT
-              </motion.h1>
+                <motion.h2
+                  className="text-7xl font-bold text-[#82b7dc]"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  TRANSFORM <br />
+                  YOUR BUSINESS
+                </motion.h2>
 
-              <motion.h2
-                className="text-5xl font-bold bg-gradient-to-r from-[#5D3ACD] to-[#82b7dc] bg-clip-text text-transparent"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                DIGITAL PRODUCTS
-              </motion.h2>
-
-              <motion.p
-                className="text-xl text-gray-300 max-w-lg"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
-                From mobile apps to web platforms, we design and develop tailored solutions that elevate your business.
-              </motion.p>
+                <motion.p
+                  className="text-xl text-gray-300 max-w-lg "
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  From brand positioning to high-performing digital platforms, we create smart systems that help ambitious businesses scale with clarity and confidence.
+                </motion.p>
+              </div>
 
               <motion.div
-                className="mt-6 flex justify-start"
+                className=" flex items-center gap-10 text-[#FFFFFF]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <motion.div
-                  animate={{ rotate: [-4, 4, -4] }}
-                  transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                  className="origin-center"
-                >
-                  <Link
-                    href="/contact"
-                    className="relative block w-[200px] h-[59px] hover:scale-105 hover:shadow-lg transition-all duration-300"
-                  >
-                    <img src="/subtract-4.svg" alt="" className="absolute inset-0 w-full h-full object-cover" />
-                    <div className="relative z-10 flex items-center justify-between px-5 h-full">
-                      <span className="font-semibold text-black text-xl">Get Started</span>
-                      <img src="/vector-20.svg" className="w-6 h-6" />
-                    </div>
-                  </Link>
-                </motion.div>
+                <button className="border font-md hover:bg-[#FFFFFF21]  rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">
+                  Book a Free Startegy Call
+                </button>
+                <button className="border font-md hover:bg-[#FFFFFF21]  rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">
+                  View Our Solutions
+                </button>
               </motion.div>
             </div>
-
-            <div className="relative flex-1 flex items-center justify-center animate-pulse hover:scale-105 transition-transform duration-300 ">
-              <motion.img
-                src="/land.png"
-                alt=""
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.8, duration: 1 }}
-                className="w-full max-w-[560px] object-cover rounded-lg"
+            {/* Right Section */}
+            <div className="relative w-6/12 min-h-screen flex flex-col items-center justify-between">
+              {/* Image */}
+              <Image
+                src="/land2.png"
+                alt="land"
+                width={420}
+                height={220}
+                className="w-full max-w-[460px] object-cover rounded-lg mt-0 mx-auto"
               />
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* DESKTOP STATS WITH ORBITING ANIMATION */}
-      <div className="hidden lg:block absolute bottom-16 left-0 right-0 z-20">
-        <div className="container mx-auto px-4 flex justify-center relative h-[180px]">
-          <div className="w-full h-full flex items-center justify-center gap-10 hover:gap-12 transition-all duration-300">
-            <ParallaxCard intensity={8}>
-              <OrbitCard number="150+" label="Relied on by Leaders" />
-            </ParallaxCard>
-            <ParallaxCard intensity={8}>
-              <OrbitCard number="300+" label="Real-Time User" />
-            </ParallaxCard>
-            <ParallaxCard intensity={8}>
-              <OrbitCard number="15+" label="Industry Expertise" />
-            </ParallaxCard>
+              
+              <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-full px-6">
+
+                
+                <div className="flex flex-col items-center mb-4">
+                  <p className="text-[#0A6DD8] text-[32px] md:text-[40px] font-extrabold">
+                    7+
+                  </p>
+                  <p className="text-white text-[28px] md:text-[24px] font-bold">
+                    Website
+                  </p>
+                </div>
+
+                
+                <div className="flex justify-between text-center">
+
+                  <div>
+                    <p className="text-[#0A6DD8] text-[28px] md:text-[36px] font-extrabold">
+                      15+
+                    </p>
+                    <p className="text-white text-[28px] md:text-[24px] font-bold">
+                      Industry Expertise
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-[#0A6DD8] text-[28px] md:text-[36px] font-extrabold">
+                      900%+
+                    </p>
+                    <p className="text-white text-[28px] md:text-[24px] font-bold">
+                      Social Media Growth
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
