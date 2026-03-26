@@ -9,6 +9,7 @@ import BlogsSection from "../src/components/sections/BlogsSection";
 import MainContentSection from "../src/components/sections/MainContentSection";
 import ContentWrapperSection from "../src/components/sections/ContentWrapperSection";
 import FooterSection from "../src/components/sections/FooterSection";
+import { CaseStudy } from "../src/components/sections/CaseStudy";
 
 export default function Page() {
   return (
@@ -24,6 +25,10 @@ export default function Page() {
       </section>
       <section id="pricing">
         <PricingSection />
+      </section>
+      {/* case study */}
+      <section id="case-study">
+        <CaseStudy />
       </section>
       <section className="mt-0" id="blogs">
         <BlogsSection />

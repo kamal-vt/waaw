@@ -38,6 +38,37 @@ const cardData = [
 export const AudienceGrid = (): JSX.Element => {
   return (
     <section className="min-h-screen relative bg-gradient-to-b from-[#0a0f14] via-black to-[#0d1217] overflow-hidden py-12 lg:py-16">
+
+
+        {/* Top-left background glow */}
+        <div className="absolute top-[-123px] left-[-118px] w-[290px] h-[290px] bg-[#54acd1] rounded-[145px] blur-[250px] pointer-events-none" />
+
+        {/* Bottom-right background glow */}
+        <div className="absolute top-[721px] left-[1262px] w-[290px] h-[290px] bg-[#54acd1] rounded-[145px] blur-[275px] pointer-events-none" />
+
+        {/* Top horizontal glow line */}
+        <div className="absolute top-[97px] left-[486px] w-[510px] h-1 bg-white rounded-[255px/2px] blur-[12.5px] pointer-events-none" />
+
+        {/* Bottom horizontal glow line */}
+        <div className="absolute top-[195px] left-[526px] w-[467px] h-1 bg-white rounded-[233.5px/2px] rotate-180 blur-[12.5px] pointer-events-none" />
+
+        {/* Top-left large glow orb */}
+        <div className="absolute top-[78px] left-[473px] w-[35px] h-[35px] bg-white rounded-[17.5px] rotate-90 blur-sm pointer-events-none" />
+
+        {/* Top-right large glow orb */}
+        <div className="absolute top-44 left-[971px] w-[35px] h-[35px] bg-white rounded-[17.5px] rotate-90 blur-sm pointer-events-none" />
+
+        {/* Vertical blur line left */}
+        <div className="absolute top-[152px] left-[470px] w-[33px] h-px rounded-[16.5px/0.5px] rotate-90 blur-[2px] bg-white pointer-events-none" />
+
+        {/* Vertical blur line right */}
+        <div className="absolute top-[145px] left-[976px] w-[33px] h-px rounded-[16.5px/0.5px] rotate-90 blur-[2px] bg-white pointer-events-none" />
+
+        {/* Small dot left */}
+        <div className="absolute top-[132px] left-[482px] w-2 h-2 rounded rotate-180 blur-sm bg-white pointer-events-none" />
+
+        {/* Small dot right */}
+        <div className="absolute top-[125px] left-[988px] w-2 h-2 rounded rotate-180 blur-sm bg-white pointer-events-none" />
       {/* Background Gradient Orbs */}
       <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[#82b7dc]/10 rounded-full blur-[120px] hidden lg:block" />
       <div className="absolute bottom-[10%] right-[15%] w-[350px] h-[350px] bg-[#3466aa]/10 rounded-full blur-[100px] hidden lg:block" />
@@ -212,8 +243,8 @@ export const AudienceGrid = (): JSX.Element => {
             <Card
               key={index}
               className={`w-full h-auto min-h-[240px] rounded-[24px] overflow-hidden ${card.hasGlass
-                  ? "backdrop-blur-[10px] backdrop-brightness-[115%] shadow-[inset_0_2px_6px_rgba(255,255,255,0.3),0_10px_40px_rgba(130,183,220,0.2)] bg-[linear-gradient(145deg,rgba(255,255,255,0.12)_0%,rgba(130,183,220,0.08)_100%)] border border-white/25"
-                  : "backdrop-blur-[3px] shadow-[0_6px_25px_rgba(0,0,0,0.5)] bg-[linear-gradient(320deg,rgba(18,25,35,0.95)_0%,rgba(28,38,55,0.85)_100%)] border border-white/8"
+                ? "backdrop-blur-[10px] backdrop-brightness-[115%] shadow-[inset_0_2px_6px_rgba(255,255,255,0.3),0_10px_40px_rgba(130,183,220,0.2)] bg-[linear-gradient(145deg,rgba(255,255,255,0.12)_0%,rgba(130,183,220,0.08)_100%)] border border-white/25"
+                : "backdrop-blur-[3px] shadow-[0_6px_25px_rgba(0,0,0,0.5)] bg-[linear-gradient(320deg,rgba(18,25,35,0.95)_0%,rgba(28,38,55,0.85)_100%)] border border-white/8"
                 }`}
             >
               <CardContent className="relative w-full h-full p-6">
