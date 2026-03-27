@@ -1,12 +1,10 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { ArrowRightIcon } from "lucide-react";
-import { Button } from "../ui/button";
 
 const socialIcons = [
-  { src: "/frame-14.svg", alt: "LinkedIn" },
-  { src: "/frame-15.svg", alt: "x" },
+  { src: "/frame-14.svg", alt: "LinkedIn", href: "#" },
+  { src: "/frame-15.svg", alt: "x", href: "#" },
   { src: "/frame-16.svg", alt: "Instagram", href: "https://www.instagram.com/waaw_tech/?hl=en" },
 ];
 
@@ -32,26 +30,17 @@ const resourceLinks = [
 const legalLinks = [
   { label: "Privacy Policy", href: "#" },
   { label: "Refund Policy", href: "#" },
-  { label: "Terms and Condition", href: "#" },
+  { label: "Terms and Conditions", href: "#" },
 ];
 
-const verticalBars = [
-  "left-0",
-  "left-[2.89%]",
-  "left-[5.70%]",
-  "left-[8.59%]",
-  "left-[11.39%]",
-  "left-[14.29%]",
-  "left-[17.18%]",
-  "left-[19.98%]",
-];
+
 
 export const FooterSection = (): JSX.Element => (
   <footer id="contact" className="w-full relative bg-black overflow-hidden py-[40px] sm:py-[60px] md:py-[84px] px-4 sm:px-8 md:px-[167px]">
 
             {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[10%] left-[10%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
+        <div className="absolute top-[5%] left-[8%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
           <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#011e4e] opacity-60 blur-3xl" />
           <div className="absolute top-[190px] left-[307px] w-[281px] h-[264px] rounded-full bg-[#65a7fc] opacity-40 blur-3xl" />
           <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#1f5cb5] rounded-full opacity-50 blur-3xl" />
@@ -82,18 +71,18 @@ export const FooterSection = (): JSX.Element => (
 
     {/* Hero card */}
     <div className="relative mx-auto max-w-[1106px] min-h-[400px] md:h-[358px] rounded-[30px] overflow-hidden border border-white/20 backdrop-blur-[2px] backdrop-brightness-[110%] bg-[linear-gradient(11deg,rgba(0,0,0,0.1)_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.13),inset_-1px_0_1px_rgba(0,0,0,0.11)] flex flex-col md:flex-row">
-      <div className="absolute z-30 left-0 bottom-0 flex h-screen  gap-[4px] items-start ">
+      <div className="absolute z-30 left-0 bottom-0 flex h-[150%] gap-[4px] items-start ">
         {[...Array(10)].map((_, i) => (
           <div
             key={i}
-            className="w-[18px] h-[100%] blur-[0.8px]"
+            className="w-[18px] h-full blur-[0.8px]"
             style={{
               // Gradient ko vibrant banaya hai (White/Silver glow)
               background: 'linear-gradient(to right, rgba(255,255,255,0.1), #ffffff, rgba(255,255,255,0.1))',
-              // Mask ko thoda adjust kiya taaki visibility bani rahe
-              WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 90%)',
-              maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 90%)',
-              // Glow effect ke liye box-shadow (Optional)
+              // Mask ko replace/adjust kiya taaki pura visible ho
+              WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 100%)',
+              maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 100%)',
+              // Glow effect ke liye box-shadow (Optional) 
               boxShadow: '0 0 15px rgba(255,255,255,0.3)',
             }}
           />
@@ -151,10 +140,10 @@ export const FooterSection = (): JSX.Element => (
     </div>
 
     {/* Divider */}
-    <div className="mt-10 md:mt-20 w-full max-w-[1258px] mx-auto h-px [background:radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,1)_40%,rgba(0,0,0,1)_100%)]" />
+    <div className="relative z-10 mt-10 md:mt-20 w-full max-w-[1258px] mx-auto h-px [background:radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,1)_40%,rgba(0,0,0,1)_100%)]" />
 
     {/* Footer grid */}
-    <div className="mt-8 sm:mt-12 md:mt-16 max-w-[1258px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+    <div className="relative z-10 mt-8 sm:mt-12 md:mt-16 max-w-[1258px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
       {/* Brand + Social */}
       <div className="flex flex-col items-center md:items-start">
         <img src="/logo.png" alt="Logo" className="h-28 w-28 mb-2" />
@@ -232,7 +221,7 @@ export const FooterSection = (): JSX.Element => (
         <div className="flex items-center gap-3">
           <img src={contactIcons[1].src} alt={contactIcons[1].alt} className="w-8 h-8 md:w-10 md:h-10" />
           <a
-            href="mailto:support@WAAW.com"
+            href="mailto:support@WAAW.world"
             className="[font-family:'Montserrat',Helvetica] text-[#bbbbbb] text-base hover:text-[#bbbbbb] transition-colors"
           >
             support@WAAW.world
@@ -242,7 +231,7 @@ export const FooterSection = (): JSX.Element => (
     </div>
 
     {/* Bottom legal */}
-    <div className="mt-8 sm:mt-10 md:mt-12 max-w-[1258px] mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12">
+    <div className="relative z-10 mt-8 sm:mt-10 md:mt-12 max-w-[1258px] mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12">
       <p className="[font-family:'Montserrat',Helvetica] font-normal text-[#bbbbbb] text-xs">
         Copyright © 2024 VisionTech. All rights reserved
       </p>
