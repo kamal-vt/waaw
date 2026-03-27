@@ -6,49 +6,46 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
-import { Button } from "../ui/button";
 
 const faqItems = [
   {
     id: "item-1",
-    question: "What makes Waaw different from other agencies?",
+    question: "What makes WaaW different from other agencies?",
     answer: "Waaw stands out by combining innovative design, cutting-edge technology, and personalized strategies. We focus on delivering measurable results for your business while maintaining a friendly and professional approach.",
   },
   {
     id: "item-2",
-    question: "How does the project process work?",
-    answer: "Our project process at Waaw begins with understanding your goals, followed by planning, design, development, and rigorous testing. We keep you updated at every stage to ensure your vision is brought to life efficiently.",
-  },
-  {
-    id: "item-3",
-    question: "What kind of businesses do you work with?",
+    question: "Who do you typically work with?",
     answer: "Waaw works with startups, small to medium-sized businesses, and established enterprises across industries. Whether you need a website, mobile app, or complete digital solution, we tailor our services to your business needs.",
   },
   {
+    id: "item-3",
+    question: "What kind of solutions does WaaW provide?",
+    answer: "Waaw provides full-service web and app development. From responsive websites to custom mobile applications, we deliver high-quality solutions that are both user-friendly and scalable.",
+  },
+  {
     id: "item-4",
-    question: "Can Waaw handle both web and app development?",
-    answer: "Yes, Waaw provides full-service web and app development. From responsive websites to custom mobile applications, we deliver high-quality solutions that are both user-friendly and scalable.",
+    question: "What is the typical process when starting a project?",
+    answer: "Our project process at Waaw begins with understanding your goals, followed by planning, design, development, and rigorous testing. We keep you updated at every stage to ensure your vision is brought to life efficiently.",
   },
   {
     id: "item-5",
-    question: "Do you provide ongoing support after launch?",
-    answer: "Absolutely. Waaw offers ongoing maintenance and support services to ensure your website or app runs smoothly. Our team is available for updates, troubleshooting, and performance optimization whenever you need it.",
+    question: "How lon does a project usually take?",
+    answer: "Project timelines vary depending on the scope and complexity. We will provide a detailed timeline during the planning phase. Typically, projects range from a few weeks to several months.",
   },
   {
     id: "item-6",
-    question: "How can I start a project with Waaw?",
+    question: "How can I start a project with WaaW?",
     answer: "Starting a project with Waaw is simple. Contact us via our website or email, share your project details, and our team will guide you through the planning and development process to bring your idea to life.",
   },
 ];
 
-
 export const MainContentSection = (): JSX.Element => {
   return (
-    <section className="w-full relative bg-black overflow-hidden py-[30px] md:py-[101px] ">
-
-        {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
+    <section className="w-full relative bg-[#0a0a0a] overflow-hidden py-[80px] md:py-[140px]">
+          {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[10%] left-[10%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
+        <div className="absolute top-[5%] left-[8%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
           <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#011e4e] opacity-60 blur-3xl" />
           <div className="absolute top-[190px] left-[307px] w-[281px] h-[264px] rounded-full bg-[#65a7fc] opacity-40 blur-3xl" />
           <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#1f5cb5] rounded-full opacity-50 blur-3xl" />
@@ -73,87 +70,57 @@ export const MainContentSection = (): JSX.Element => {
         `}</style>
       </div>
 
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-          <div className="flex flex-col items-center relative w-full md:w-auto">
-            <div className="relative mb-[40px] md:mb-[51px]">
-              <>
-                <div className="w-24 h-px bg-[#82b7dc] mx-auto mb-2"></div>
-                <div className="text-[#82b7dc] text-2xl font-extrabold tracking-wide text-center">
-                  FAQS
-                </div>
-                <div className="w-24 h-px bg-[#82b7dc] mx-auto mt-2"></div>
-              </>
-            </div>
-
-            <div className="w-full md:w-[462px] [font-family:'Montserrat',Helvetica] font-semibold text-[#bbbbbb] text-[24px] md:text-[32px] text-center tracking-[0] leading-[normal] mb-[40px] md:mb-[86px]">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-16 md:gap-10">
+          
+          {/* Left Column */}
+          <div className="flex flex-col items-center justify-center relative w-full md:w-[45%] text-center md:-mt-10">
+            <h2 className="text-white text-5xl md:text-[56px] font-bold mb-6 tracking-wide [font-family:'Montserrat',Helvetica]">
+              FAQ
+            </h2>
+            <h3 className="text-white text-2xl md:text-[28px] font-medium mb-10 [font-family:'Montserrat',Helvetica]">
               Get Clarity Before You Start
-            </div>
+            </h3>
 
-            <img
-              className="hidden md:block absolute w-[208px] h-[209px] top-[-100px] left-[-128px] object-cover animate-spin" style={{ animationDuration: "10s" }}
-              alt="Tk"
-              src="/tk3.png"
-            />
-
-            <div className="hidden md:block absolute top-[246px] left-[-15px] w-[89px] h-[89px] rounded-[44.5px] blur-[55px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(0,0,0,1)_0%,rgba(255,255,255,1)_100%)] " />
-
-            <Link href="/contact" className="block mt-6 hover:scale-105 transition-transform duration-300">
-              <div className="relative inline-flex items-center justify-center w-[200px] h-[59px]">
-                <img
-                  className="absolute top-0 left-0 w-[200px] h-[59px]"
-                  alt="Subtract"
-                  src="/subtract.svg"
-                />
-                <span
-                  className="absolute left-5 top-1/2 -translate-y-1/2 [font-family:'Montserrat',Helvetica] font-semibold text-black text-lg z-10 "
-                  style={{ width: '100px', textAlign: 'left' }}
-                >
+            <Link href="/contact" className="group relative">
+              <div className="relative inline-flex items-center justify-center px-10 py-[14px] rounded-[30px] bg-[#679bc2]/30 border border-white/20 hover:bg-[#679bc2]/40 transition-all duration-300 backdrop-blur-md shadow-lg z-10 min-w-[200px]">
+                <span className="[font-family:'Montserrat',Helvetica] font-medium text-white text-[16px]">
                   Plan with us
                 </span>
-                <img
-                  className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 z-10 transition-transform duration-300 group-hover:translate-x-1"
-                  alt="Vector"
-                  src="/vector-20.svg"
-                />
               </div>
             </Link>
           </div>
 
-          <div className="w-full md:w-[629px] max-w-[640px] flex flex-col cursor-auto">
+          {/* Right Column / Accordion */}
+          <div className="w-full md:w-[55%] flex flex-col">
             <Accordion type="single" collapsible className="w-full">
               {faqItems.map((item, index) => (
                 <AccordionItem
                   key={item.id}
                   value={item.id}
-                  className="border-b-0"
+                  className="border-b-0 border-transparent mb-1"
                 >
-                  <div className="flex flex-col relative w-full">
-                    <AccordionTrigger className="flex flex-1 items-center justify-between py-0 hover:no-underline [&>svg]:hidden group focus:outline-none">
-                      <span className="[font-family:'Montserrat',Helvetica] font-medium text-[#bbbbbb] text-[17px] md:text-xl text-left tracking-[0] leading-[normal] pr-6">
+                  <div className="flex flex-col relative w-full border-b border-white/[0.08]">
+                    <AccordionTrigger className="flex flex-1 items-center justify-between py-6 hover:no-underline [&>svg]:hidden group focus:outline-none">
+                      <span className="[font-family:'Montserrat',Helvetica] font-normal text-[#a6a6a6] text-[15px] md:text-[17px] text-left pr-6 group-hover:text-white transition-colors duration-300">
                         {item.question}
                       </span>
-                      <div className="relative w-[36px] md:w-[46px] h-9 md:h-11 flex-shrink-0">
-                        <div className="absolute inset-0 rounded-full bg-white/5 shadow-[inset_0px_2px_4px_rgba(255,255,255,0.1),inset_0_-2px_4px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-all duration-300 group-hover:bg-white/10 group-data-[state=open]:bg-[#82b7dc]/20" />
-                        <div className="absolute inset-0 flex items-center justify-center [font-family:'Montserrat',Helvetica] font-light text-white text-[24px] md:text-[32px] transition-transform duration-500 group-data-[state=open]:rotate-45">
-                          +
-                        </div>
+                      <div className="relative w-[34px] h-[34px] md:w-[38px] md:h-[38px] rounded-full border border-white/20 bg-black/40 flex flex-shrink-0 items-center justify-center transition-transform duration-300 group-data-[state=open]:rotate-45 group-hover:bg-white/10 group-hover:border-white/30">
+                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7 1V13M1 7H13" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
                       </div>
                     </AccordionTrigger>
                     
-                    <AccordionContent className="[font-family:'Montserrat',Helvetica] font-normal text-[#a3a3a3] text-[14px] md:text-[16px] text-left leading-relaxed mt-2 md:mt-4 max-w-[90%]">
+                    <AccordionContent className="[font-family:'Montserrat',Helvetica] font-normal text-[#8c8c8c] text-[14px] md:text-[15px] text-left leading-relaxed pb-6 max-w-[90%]">
                       {item.answer}
                     </AccordionContent>
-                    
-                    <div
-                      className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent my-6"
-                    />
                   </div>
                 </AccordionItem>
               ))}
             </Accordion>
           </div>
+
         </div>
       </div>
     </section>

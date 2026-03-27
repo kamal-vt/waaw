@@ -90,11 +90,11 @@ export const PricingSection = (): JSX.Element => {
             <DecorativeLines className="text-[#82B7DC] text-[34px]">PRICING</DecorativeLines>
           </div>
           
-          <h2 className="text-[28px] md:text-[34px] font-bold mb-6 tracking-wide underline decoration-dotted decoration-white/40 underline-offset-[10px] [font-family:'Montserrat',Helvetica]">
+          <h2 className="text-[24px] md:text-[28px] font-bold mb-6 tracking-wide underline decoration-dotted decoration-white/40 underline-offset-[10px] [font-family:'Montserrat',Helvetica]">
             Invest in Your Digital Future
           </h2>
           
-          <p className="text-[#a0a0a0] max-w-2xl mx-auto text-sm md:text-[15px] leading-relaxed font-medium mt-4">
+          <p className="text-[#a0a0a0] max-w-2xl mx-auto text-sm md:text-[px] leading-relaxed font-medium mt-4">
             Select the plan that aligns with your business objectives. Each package is designed
             to provide reliable, scalable, and high-quality digital solutions.
           </p>

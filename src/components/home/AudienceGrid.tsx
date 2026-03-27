@@ -38,37 +38,12 @@ const cardData = [
 export const AudienceGrid = (): JSX.Element => {
   return (
     <section className="min-h-screen relative bg-gradient-to-b from-[#0a0f14] via-black to-[#0d1217] overflow-hidden py-12 lg:py-16">
-
-
         {/* Top-left background glow */}
-        <div className="absolute top-[-123px] left-[-118px] w-[290px] h-[290px] bg-[#54acd1] rounded-[145px] blur-[250px] pointer-events-none" />
+        <div className="absolute top-[-123px] left-[-118px] w-[290px] h-[290px] bg-[#0eaff4] rounded-[145px] blur-[250px] pointer-events-none" />
 
         {/* Bottom-right background glow */}
-        <div className="absolute top-[721px] left-[1262px] w-[290px] h-[290px] bg-[#54acd1] rounded-[145px] blur-[275px] pointer-events-none" />
+        <div className="absolute top-[721px] left-[1262px] w-[290px] h-[290px] bg-[#0eaff4] rounded-[145px] blur-[275px] pointer-events-none" />
 
-        {/* Top horizontal glow line */}
-        <div className="absolute top-[97px] left-[486px] w-[510px] h-1 bg-white rounded-[255px/2px] blur-[12.5px] pointer-events-none" />
-
-        {/* Bottom horizontal glow line */}
-        <div className="absolute top-[195px] left-[526px] w-[467px] h-1 bg-white rounded-[233.5px/2px] rotate-180 blur-[12.5px] pointer-events-none" />
-
-        {/* Top-left large glow orb */}
-        <div className="absolute top-[78px] left-[473px] w-[35px] h-[35px] bg-white rounded-[17.5px] rotate-90 blur-sm pointer-events-none" />
-
-        {/* Top-right large glow orb */}
-        <div className="absolute top-44 left-[971px] w-[35px] h-[35px] bg-white rounded-[17.5px] rotate-90 blur-sm pointer-events-none" />
-
-        {/* Vertical blur line left */}
-        <div className="absolute top-[152px] left-[470px] w-[33px] h-px rounded-[16.5px/0.5px] rotate-90 blur-[2px] bg-white pointer-events-none" />
-
-        {/* Vertical blur line right */}
-        <div className="absolute top-[145px] left-[976px] w-[33px] h-px rounded-[16.5px/0.5px] rotate-90 blur-[2px] bg-white pointer-events-none" />
-
-        {/* Small dot left */}
-        <div className="absolute top-[132px] left-[482px] w-2 h-2 rounded rotate-180 blur-sm bg-white pointer-events-none" />
-
-        {/* Small dot right */}
-        <div className="absolute top-[125px] left-[988px] w-2 h-2 rounded rotate-180 blur-sm bg-white pointer-events-none" />
       {/* Background Gradient Orbs */}
       <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[#82b7dc]/10 rounded-full blur-[120px] hidden lg:block" />
       <div className="absolute bottom-[10%] right-[15%] w-[350px] h-[350px] bg-[#3466aa]/10 rounded-full blur-[100px] hidden lg:block" />
@@ -88,15 +63,16 @@ export const AudienceGrid = (): JSX.Element => {
           <div className="relative w-full max-w-[1100px] mx-auto h-[520px]">
             {/* Top Row */}
             <div className="absolute top-0 left-0 right-0 flex justify-center gap-10">
+
               {/* Card 1 - Top Left (Glass Effect) */}
               <Card className="w-[360px] h-[260px] rounded-[28px] overflow-hidden backdrop-blur-[10px] backdrop-brightness-[115%] shadow-[inset_0_2px_6px_rgba(255,255,255,0.3),inset_0_-2px_6px_rgba(0,0,0,0.2),0_10px_40px_rgba(130,183,220,0.2)] bg-[linear-gradient(145deg,rgba(255,255,255,0.12)_0%,rgba(130,183,220,0.08)_100%)] border border-white/25 hover:shadow-[inset_0_2px_8px_rgba(255,255,255,0.4),0_15px_50px_rgba(130,183,220,0.3)] transition-all duration-300">
                 <CardContent className="relative w-full h-full p-0">
                   {/* Decorative Light Bars */}
-                  <div className="absolute top-[-180px] left-[180px] w-[6px] h-[360px] rounded-[3px/180px] -rotate-90 bg-white/90 blur-sm" />
-                  <div className="absolute -top-1 left-[-6px] w-[6px] h-[360px] bg-white/80 rounded-[3px/180px] blur-sm" />
+                  {/* <div className="absolute top-[-180px] left-[180px] w-[6px] h-[360px] rounded-[3px/180px] -rotate-90 bg-white/90 blur-sm" />
+                  <div className="absolute -top-1 left-[-6px] w-[6px] h-[360px] bg-white/80 rounded-[3px/180px] blur-sm" /> */}
 
                   {/* Glow Effect */}
-                  <div className="absolute top-[70px] left-[10px] w-[400px] h-[100px] bg-[#82b7dc] rounded-[200px/50px] blur-[100px] opacity-35" />
+                  <div className="absolute top-[70px] left-[10px] w-[400px] h-[100px] bg-[#160ef0] rounded-[200px/50px] blur-[100px] opacity-35" />
 
                   <div className="relative z-10 pt-8 px-7">
                     <h3 className="text-[#bbbbbb] [font-family:'Montserrat',Helvetica] font-bold text-[24px] text-center mb-5 leading-[32px]">
@@ -137,11 +113,6 @@ export const AudienceGrid = (): JSX.Element => {
                 transition={{ duration: 12, ease: "linear", repeat: Infinity }}
               >
                 <svg width="260" height="260" viewBox="0 0 260 260" className="opacity-10">
-                  {/* outer soft ring */}
-                  {/* <circle cx="130" cy="130" r="118" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="20" /> */}
-                  {/* bright partial arcs */}
-                  {/* <path d="M130 12 A118 118 0 0 1 248 130" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="6" strokeLinecap="round" /> */}
-                  {/* <path d="M12 130 A118 118 0 0 1 130 12" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="6" strokeLinecap="round" /> */}
                 </svg>
               </motion.div>
 
@@ -198,12 +169,13 @@ export const AudienceGrid = (): JSX.Element => {
               </Card>
 
               {/* Card 4 - Bottom Right (Glass Effect) */}
-              <Card className="w-[360px] h-[260px] rounded-[28px] overflow-hidden backdrop-blur-[10px] backdrop-brightness-[115%] shadow-[inset_0_2px_6px_rgba(255,255,255,0.3),inset_0_-2px_6px_rgba(0,0,0,0.2),0_10px_40px_rgba(130,183,220,0.2)] bg-[linear-gradient(145deg,rgba(255,255,255,0.12)_0%,rgba(130,183,220,0.08)_100%)] border border-white/25 hover:shadow-[inset_0_2px_8px_rgba(255,255,255,0.4),0_15px_50px_rgba(130,183,220,0.3)] transition-all duration-300">
+              <Card className="w-[360px] h-[260px] rounded-[28px] overflow-hidden backdrop-blur-[10px] backdrop-brightness-[115%] shadow-[inset_0_2px_6px_rgba(255,255,255,0.3),inset_0_-2px_6px_rgba(0,0,0,0.2),0_10px_40px_rgba(130,183,220,0.2)] bg-[linear-gradient(145deg,rgba(255,255,255,0.12)_0%,rgba(130,183,220,0.08)_100%)]
+               border border-white/25 hover:shadow-[inset_0_2px_8px_rgba(255,255,255,0.4),0_15px_50px_rgba(130,183,220,0.3)] transition-all duration-300">
                 <CardContent className="relative w-full h-full p-0">
-                  <div className="absolute top-[-180px] left-[180px] w-[6px] h-[360px] rounded-[3px/180px] -rotate-90 bg-white/90 blur-sm" />
-                  <div className="absolute -top-1 left-[-6px] w-[6px] h-[360px] bg-white/80 rounded-[3px/180px] blur-sm" />
+                  {/* <div className="absolute top-[-180px] left-[180px] w-[6px] h-[360px] rounded-[3px/180px] -rotate-90 bg-white/90 blur-sm" /> */}
+                  {/* <div className="absolute -top-1 left-[-6px] w-[6px] h-[360px] bg-white/80 rounded-[3px/180px] blur-sm" /> */}
 
-                  <div className="absolute top-[70px] left-[10px] w-[400px] h-[100px] bg-[#82b7dc] rounded-[200px/50px] blur-[100px] opacity-35" />
+                  <div className="absolute top-[70px] left-[10px] w-[400px] h-[100px] bg-[#160ef0] rounded-[200px/50px] blur-[100px] opacity-35" />
 
                   <div className="relative z-10 pt-8 px-7">
                     <h3 className="text-[#bbbbbb] [font-family:'Montserrat',Helvetica] font-bold text-[24px] text-center mb-5 leading-[32px]">
@@ -250,7 +222,6 @@ export const AudienceGrid = (): JSX.Element => {
               <CardContent className="relative w-full h-full p-6">
                 {card.hasGlass && (
                   <>
-                    {/* <div className="absolute top-[-100px] left-[50%] w-[5px] h-[250px] -rotate-90 bg-white/70 blur-sm" /> */}
                     <div className="absolute top-[50px] left-0 w-[300px] h-[80px] bg-[#82b7dc] rounded-full blur-[80px] opacity-25" />
                   </>
                 )}

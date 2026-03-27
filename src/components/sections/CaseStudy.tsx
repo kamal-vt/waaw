@@ -1,21 +1,22 @@
 import React from "react";
 import DecorativeLines from "../common/DecorativeLines";
+import Image from "next/image";
 
 const caseStudies = [
   {
-    image: "/case-study-bg.jpg",
+    image: "/caseStudy/01.png",
     badges: ["Growth", "2024"],
     title: "From static website to Growth Engine",
     showViewText: true,
   },
   {
-    image: "/case-study-bg.jpg",
+    image: "/caseStudy/02.png",
     badges: [],
     title: "Building scalable Learning Platform",
     showViewText: false,
   },
   {
-    image: "/case-study-bg.jpg",
+    image: "/caseStudy/03.png",
     badges: [],
     title: "Streamlining Hiring & HR Operations",
     showViewText: false,
@@ -36,8 +37,8 @@ export const CaseStudy = (): JSX.Element => {
             <DecorativeLines className="text-[#82B7DC] text-[34px]">CASE STUDIES</DecorativeLines>
           </div>
           
-          <h2 className="text-[36px] md:text-[48px] font-bold mb-8 tracking-wide underline decoration-dotted decoration-white/40 underline-offset-[16px] leading-tight [font-family:'Montserrat',Helvetica]">
-            Building the Future of Digital<br />Experiences
+          <h2 className="text-[24px] md:text-[28px] font-bold mb-8 tracking-wide underline decoration-dotted decoration-white/40 underline-offset-[16px] leading-tight [font-family:'Montserrat',Helvetica]">
+            Building the Future of Digital Experiences
           </h2>
           
           <p className="text-[#a0a0a0] max-w-2xl mx-auto text-[15px] leading-relaxed font-medium mt-6 mb-12">
@@ -79,6 +80,7 @@ const CaseStudyCard = ({ study }: { study: any }) => {
           <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-br from-indigo-900/40 via-blue-900/30 to-cyan-900/20" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(60,180,255,0.2)_0%,transparent_70%)] opacity-80 mix-blend-screen" />
           {/* Glowing orbs */}
+          <Image src={study.image || '/default-case-study-image.jpg'} alt="Case Study Image" fill className="object-cover object-center" />
           <div className="absolute top-[30%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[120px] h-[120px] bg-blue-500/40 rounded-full blur-[40px]" />
           <div className="absolute top-[40%] left-[60%] -translate-x-1/2 -translate-y-1/2 w-[80px] h-[80px] bg-purple-500/30 rounded-full blur-[30px]" />
           <div className="absolute top-[25%] left-[30%] -translate-x-1/2 -translate-y-1/2 w-[60px] h-[60px] bg-cyan-400/30 rounded-full blur-[25px]" />

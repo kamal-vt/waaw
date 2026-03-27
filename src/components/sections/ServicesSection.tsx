@@ -99,9 +99,9 @@ export const ServicesSection = (): JSX.Element => {
           <h1 className="mt-10 font-extrabold text-[#82b7dc]  mb-4 tracking-widest leading-tight uppercase  [font-family:'Montserrat',Helvetica] drop-shadow-[0_2px_12px_rgba(130,183,220,0.4)]">
             <DecorativeLines className="text-[#82B7DC] text-[34px]">SERVICES</DecorativeLines>
           </h1>
-          <p className="font-extrabold text-[#bbbbbb] text-lg text-[28px] leading-snug max-w-[95%] sm:max-w-[90%] md:max-w-[600px] lg:max-w-none mt-6 [font-family:'Montserrat',Helvetica] tracking-wide  lg:whitespace-nowrap">
-            Pre-defined systems engineered to <br /> solve specific business challenges.
-          </p>
+          <h2 className="text-[24px] md:text-[28px] text-white font-bold mb-6 tracking-wide underline decoration-dotted decoration-white/40 underline-offset-[10px] [font-family:'Montserrat',Helvetica]">
+            Pre-defined Systems Engineered To <br /> Solve Specific Business Challenges.
+          </h2>
         </header>
 
         {/* Core Pillars */}

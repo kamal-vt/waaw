@@ -1,5 +1,6 @@
 import React from "react";
 import ParallaxCard from "../ui/ParallaxCard";
+import DecorativeLines from "../common/DecorativeLines";
 
 const testimonials = [
   {
@@ -32,23 +33,12 @@ export const ListenTowhat = () => {
         <div className="relative flex flex-col items-center mb-16 w-full text-center">
           
           <div className="relative inline-block text-center mb-6 mt-4">
-            {/* Glowing Orb & Line: Right-Top */}
-            <div className="absolute -top-[14px] right-[-40px] hidden md:flex items-center">
-              <div className="w-[150px] h-[1px] bg-gradient-to-r from-transparent via-[#ffffff80] to-[#ffffff] mr-1" />
-              <div className="w-[18px] h-[18px] bg-white rounded-full shadow-[0_0_25px_10px_rgba(255,255,255,0.7)]" />
-            </div>
 
-            {/* Glowing Orb & Line: Left-Bottom */}
-            <div className="absolute -bottom-[20px] left-[-40px] hidden md:flex items-center">
-              <div className="w-[18px] h-[18px] bg-white rounded-full shadow-[0_0_25px_10px_rgba(255,255,255,0.7)] z-10" />
-              <div className="w-[150px] h-[1px] bg-gradient-to-l from-transparent via-[#ffffff80] to-[#ffffff] ml-1" />
-              {/* Vertical small line connected to orb */}
-              <div className="absolute -top-[20px] left-[8px] w-[1px] h-[20px] bg-gradient-to-t from-[#ffffff] to-transparent" />
-            </div>
-
+            <DecorativeLines>
             <h2 className="font-['Montserrat'] font-bold text-[#82B7DC] text-2xl md:text-[34px] tracking-widest uppercase z-10 px-4 md:px-8 drop-shadow-md whitespace-nowrap">
               LISTEN TO WHAT ARE PARTNERS SAY
             </h2>
+            </DecorativeLines>
           </div>
 
           <p className="font-['Montserrat'] text-[#c4c4c4] text-center max-w-3xl text-sm md:text-[15px] leading-relaxed px-4">

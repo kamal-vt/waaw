@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const socialIcons = [
   { src: "/frame-14.svg", alt: "LinkedIn", href: "#" },
@@ -38,21 +39,21 @@ const legalLinks = [
 export const FooterSection = (): JSX.Element => (
   <footer id="contact" className="w-full relative bg-black overflow-hidden py-[40px] sm:py-[60px] md:py-[84px] px-4 sm:px-8 md:px-[167px]">
 
-            {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[5%] left-[8%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
-          <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#011e4e] opacity-60 blur-3xl" />
-          <div className="absolute top-[190px] left-[307px] w-[281px] h-[264px] rounded-full bg-[#65a7fc] opacity-40 blur-3xl" />
-          <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#1f5cb5] rounded-full opacity-50 blur-3xl" />
-          <div className="absolute top-[235px] left-2 w-[280px] h-[260px] rounded-full bg-[#288b91] opacity-40 blur-3xl" />
-          <div className="absolute top-[296px] left-[212px] w-[247px] h-[228px] rounded-full bg-[#133d86] opacity-60 blur-3xl" />
-          <div className="absolute top-[169px] left-[154px] w-[267px] h-[253px] rounded-full bg-[#3ca5d8] opacity-40 blur-3xl" />
-        </div>
+    {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute top-[5%] left-[8%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
+        <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#011e4e] opacity-60 blur-3xl" />
+        <div className="absolute top-[190px] left-[307px] w-[281px] h-[264px] rounded-full bg-[#65a7fc] opacity-40 blur-3xl" />
+        <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#1f5cb5] rounded-full opacity-50 blur-3xl" />
+        <div className="absolute top-[235px] left-2 w-[280px] h-[260px] rounded-full bg-[#288b91] opacity-40 blur-3xl" />
+        <div className="absolute top-[296px] left-[212px] w-[247px] h-[228px] rounded-full bg-[#133d86] opacity-60 blur-3xl" />
+        <div className="absolute top-[169px] left-[154px] w-[267px] h-[253px] rounded-full bg-[#3ca5d8] opacity-40 blur-3xl" />
+      </div>
 
-        {/* Blur Overlay */}
-        <div className="absolute inset-0 backdrop-blur-[100px] bg-black/10" />
+      {/* Blur Overlay */}
+      <div className="absolute inset-0 backdrop-blur-[100px] bg-black/10" />
 
-        <style jsx>{`
+      <style jsx>{`
           @keyframes blobMove {
             0% { transform: translate(0px, 0px) scale(1); }
             33% { transform: translate(40px, -60px) scale(1.1); }
@@ -63,7 +64,7 @@ export const FooterSection = (): JSX.Element => (
             animation: blobMove 5s infinite ease-in-out;
           }
         `}</style>
-      </div>
+    </div>
     {/* Top-left glow */}
     <div className="absolute top-[-145px] left-[-145px] w-[290px] h-[290px] rounded-full blur-[250px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(130,183,220,1)_0%)]" />
     {/* Bottom-right glow */}
@@ -119,26 +120,22 @@ export const FooterSection = (): JSX.Element => (
           WAAW, we shape digital experiences that move brands forward.
         </p>
 
-        {/* Button */}
-        <Link
-          href="/contact"
-          className="relative block w-[200px] h-[59px] z-40 hover:scale-105 hover:shadow-lg transition-all duration-300"
-        >
-          <img
-            src="/subtract-4.svg"
-            alt="Button background"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="relative z-10 flex items-center justify-between px-5 h-full">
-            <span className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-xl">
-              Get Started
-            </span>
-            <img src="/vector-20.svg" alt="Arrow" className="w-6 h-6" />
-          </div>
-        </Link>
-      </div>
-    </div>
+          {/* Button */}
+          <Link
+            href="/contact"
+            onClick={() => {
+              import("@/lib/tracking").then(({ trackEvent }) => {
+                trackEvent("cta_click", { label: "Let's Talk", location: "Navbar" });
+              });
+            }}
+            className="hidden mt-10 md:relative text-center md:inline-flex md:items-center md:justify-center
+                    text-white border bg-[#FFFFFF21] border-white rounded-[30px] px-5 py-2 font-bold gap-2 items-center"
+          >
+            Schedule a Strategy Call <ArrowUpRight className="w-5 h-5 text-2xl" />
 
+          </Link>
+        </div>
+      </div>
     {/* Divider */}
     <div className="relative z-10 mt-10 md:mt-20 w-full max-w-[1258px] mx-auto h-px [background:radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,1)_40%,rgba(0,0,0,1)_100%)]" />
 

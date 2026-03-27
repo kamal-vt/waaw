@@ -218,7 +218,7 @@ export const AboutUsSection = (): JSX.Element => {
               >
                 <CardContent className="relative w-full h-full p-0">
                   <div
-                    className={`absolute ${card.rotated ? "-top-12" : "top-8"} left-[67px] w-[152px] h-[152px] bg-[#82b7dc] rounded-[76px] blur-[80px]`}
+                    className={`absolute ${card.rotated ? "-top-12" : "top-8"} left-[67px] w-[152px] h-[152px] bg-[#0b1fd1] rounded-[76px] blur-[80px]`}
                   />
                   <div
                     className={`absolute ${card.rotated ? "top-[-61px]" : "top-[-84px]"} -left-1 w-1 h-[281px] rounded-[2px/140.5px] bg-white blur-sm`}
