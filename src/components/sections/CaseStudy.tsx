@@ -1,4 +1,5 @@
 import React from "react";
+import DecorativeLines from "../common/DecorativeLines";
 
 const caseStudies = [
   {
@@ -32,19 +33,7 @@ export const CaseStudy = (): JSX.Element => {
         <header className="flex flex-col items-center mb-24 text-center max-w-4xl">
           {/* Label */}
           <div className="flex items-center justify-center gap-6 mb-8 mt-10">
-            <div className="flex flex-col items-center">
-              <div className="w-[1px] h-6 bg-gradient-to-t from-[#82b7dc] to-transparent relative">
-                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white shadow-[0_0_12px_#fff]" />
-              </div>
-            </div>
-            <h1 className="text-2xl md:text-3xl font-extrabold text-[#95C8EC] tracking-[0.2em] uppercase [font-family:'Montserrat',Helvetica]">
-              CASE STUDY
-            </h1>
-            <div className="flex flex-col items-center">
-              <div className="w-[1px] h-6 bg-gradient-to-t from-[#82b7dc] to-transparent relative">
-                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white shadow-[0_0_12px_#fff]" />
-              </div>
-            </div>
+            <DecorativeLines className="text-[#82B7DC] text-[34px]">CASE STUDIES</DecorativeLines>
           </div>
           
           <h2 className="text-[36px] md:text-[48px] font-bold mb-8 tracking-wide underline decoration-dotted decoration-white/40 underline-offset-[16px] leading-tight [font-family:'Montserrat',Helvetica]">

@@ -10,6 +10,7 @@ import MainContentSection from "../src/components/sections/MainContentSection";
 import ContentWrapperSection from "../src/components/sections/ContentWrapperSection";
 import FooterSection from "../src/components/sections/FooterSection";
 import { CaseStudy } from "../src/components/sections/CaseStudy";
+import ListenTowhat from "../src/components/sections/ListenTowhat";
 
 export default function Page() {
   return (
@@ -33,8 +34,9 @@ export default function Page() {
       <section className="mt-0" id="blogs">
         <BlogsSection />
       </section>
-      <MainContentSection />
       <ContentWrapperSection />
+      <ListenTowhat/>
+      <MainContentSection />
       <FooterSection />
     </main>
   );

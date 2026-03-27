@@ -45,48 +45,61 @@ const faqItems = [
 export const MainContentSection = (): JSX.Element => {
   return (
     <section className="w-full relative bg-black overflow-hidden py-[30px] md:py-[101px] ">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-      <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-        <div className="flex flex-col items-center relative w-full md:w-auto">
-          <div className="relative mb-[40px] md:mb-[51px]">
-                <>
-  <div className="w-24 h-px bg-[#82b7dc] mx-auto mb-2"></div>
-  <div className="text-[#82b7dc] text-2xl font-extrabold tracking-wide text-center">
-    FAQS
-  </div>
-  <div className="w-24 h-px bg-[#82b7dc] mx-auto mt-2"></div>
-</>
-{/* 
-            <div className="absolute top-[25px] left-[-20px] w-[33px] h-px bg-white rounded-[16.5px/0.5px] rotate-90 blur-[2px]" />
 
-            <div className="absolute top-[25px] left-[115px] w-[33px] h-px bg-white rounded-[16.5px/0.5px] rotate-90 blur-[2px]" />
+        {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[10%] left-[10%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
+          <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#011e4e] opacity-60 blur-3xl" />
+          <div className="absolute top-[190px] left-[307px] w-[281px] h-[264px] rounded-full bg-[#65a7fc] opacity-40 blur-3xl" />
+          <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#1f5cb5] rounded-full opacity-50 blur-3xl" />
+          <div className="absolute top-[235px] left-2 w-[280px] h-[260px] rounded-full bg-[#288b91] opacity-40 blur-3xl" />
+          <div className="absolute top-[296px] left-[212px] w-[247px] h-[228px] rounded-full bg-[#133d86] opacity-60 blur-3xl" />
+          <div className="absolute top-[169px] left-[154px] w-[267px] h-[253px] rounded-full bg-[#3ca5d8] opacity-40 blur-3xl" />
+        </div>
 
-            <div className="absolute top-[5px] left-0 w-2 h-2 bg-white rounded rotate-180 blur-sm" />
+        {/* Blur Overlay */}
+        <div className="absolute inset-0 backdrop-blur-[100px] bg-black/10" />
 
-            <div className="absolute top-[5px] left-[127px] w-2 h-2 bg-white rounded rotate-180 blur-sm" />
+        <style jsx>{`
+          @keyframes blobMove {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(40px, -60px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+          }
+          .animate-blob {
+            animation: blobMove 5s infinite ease-in-out;
+          }
+        `}</style>
+      </div>
 
-            <div className="absolute top-[60px] left-[-19px] w-[157px] h-1 bg-white rounded-[78.5px/2px] blur-[5px]" />
 
-            <div className="absolute top-[-22px] left-0 w-[157px] h-1 bg-white rounded-[78.5px/2px] rotate-180 blur-[5px]" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+          <div className="flex flex-col items-center relative w-full md:w-auto">
+            <div className="relative mb-[40px] md:mb-[51px]">
+              <>
+                <div className="w-24 h-px bg-[#82b7dc] mx-auto mb-2"></div>
+                <div className="text-[#82b7dc] text-2xl font-extrabold tracking-wide text-center">
+                  FAQS
+                </div>
+                <div className="w-24 h-px bg-[#82b7dc] mx-auto mt-2"></div>
+              </>
+            </div>
 
-            <div className="absolute top-[42px] left-[-37px] w-[35px] h-[35px] bg-white rounded-[17.5px] rotate-90 blur-sm" />
+            <div className="w-full md:w-[462px] [font-family:'Montserrat',Helvetica] font-semibold text-[#bbbbbb] text-[24px] md:text-[32px] text-center tracking-[0] leading-[normal] mb-[40px] md:mb-[86px]">
+              Get Clarity Before You Start
+            </div>
 
-            <div className="absolute top-[-35px] left-[140px] w-[35px] h-[35px] bg-white rounded-[17.5px] -rotate-90 blur-sm" /> */}
-          </div>
+            <img
+              className="hidden md:block absolute w-[208px] h-[209px] top-[-100px] left-[-128px] object-cover animate-spin" style={{ animationDuration: "10s" }}
+              alt="Tk"
+              src="/tk3.png"
+            />
 
-          <div className="w-full md:w-[462px] [font-family:'Montserrat',Helvetica] font-semibold text-[#bbbbbb] text-[24px] md:text-[32px] text-center tracking-[0] leading-[normal] mb-[40px] md:mb-[86px]">
-            Get Clarity Before You Start
-          </div>
+            <div className="hidden md:block absolute top-[246px] left-[-15px] w-[89px] h-[89px] rounded-[44.5px] blur-[55px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(0,0,0,1)_0%,rgba(255,255,255,1)_100%)] " />
 
-          <img
-            className="hidden md:block absolute w-[208px] h-[209px] top-[-100px] left-[-128px] object-cover animate-spin" style={{ animationDuration: "10s" }}
-            alt="Tk"
-            src="/tk3.png"
-          />
-
-          <div className="hidden md:block absolute top-[246px] left-[-15px] w-[89px] h-[89px] rounded-[44.5px] blur-[55px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(0,0,0,1)_0%,rgba(255,255,255,1)_100%)] " />
-
-          <Link href="/contact" className="block mt-6 hover:scale-105 transition-transform duration-300">
+            <Link href="/contact" className="block mt-6 hover:scale-105 transition-transform duration-300">
               <div className="relative inline-flex items-center justify-center w-[200px] h-[59px]">
                 <img
                   className="absolute top-0 left-0 w-[200px] h-[59px]"
@@ -94,80 +107,54 @@ export const MainContentSection = (): JSX.Element => {
                   src="/subtract.svg"
                 />
                 <span
-                  className="absolute left-5 top-1/2 -translate-y-1/2 [font-family:'Montserrat',Helvetica] font-semibold text-black text-l z-10 "
+                  className="absolute left-5 top-1/2 -translate-y-1/2 [font-family:'Montserrat',Helvetica] font-semibold text-black text-lg z-10 "
                   style={{ width: '100px', textAlign: 'left' }}
                 >
                   Plan with us
                 </span>
                 <img
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 z-10"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 z-10 transition-transform duration-300 group-hover:translate-x-1"
                   alt="Vector"
                   src="/vector-20.svg"
                 />
               </div>
             </Link>
-        </div>
+          </div>
 
-        <div className="w-full md:w-[629px] max-w-[640px] flex flex-col cursor-auto">
-          <Accordion type="single" collapsible className="w-full">
-            {faqItems.map((item, index) => (
-              <AccordionItem
-                key={item.id}
-                value={item.id}
-                className="border-b-0"
-              >
-                <div className="flex flex-col">
-                  <AccordionTrigger className="flex items-center justify-between py-0 hover:no-underline h-10 md:h-12 [&[data-state=open]>div>.plus-icon]:hidden [&[data-state=closed]>svg]:block [&>svg]:hidden">
-                    <div className="flex items-center justify-between w-full">
-                      <span className="[font-family:'Montserrat',Helvetica] font-medium text-[#bbbbbb] text-lg md:text-xl text-left tracking-[0] leading-[normal]">
+          <div className="w-full md:w-[629px] max-w-[640px] flex flex-col cursor-auto">
+            <Accordion type="single" collapsible className="w-full">
+              {faqItems.map((item, index) => (
+                <AccordionItem
+                  key={item.id}
+                  value={item.id}
+                  className="border-b-0"
+                >
+                  <div className="flex flex-col relative w-full">
+                    <AccordionTrigger className="flex flex-1 items-center justify-between py-0 hover:no-underline [&>svg]:hidden group focus:outline-none">
+                      <span className="[font-family:'Montserrat',Helvetica] font-medium text-[#bbbbbb] text-[17px] md:text-xl text-left tracking-[0] leading-[normal] pr-6">
                         {item.question}
                       </span>
-                      <div className="relative w-[40px] md:w-[46px] h-9 md:h-11 flex-shrink-0 plus-icon">
-                        <div className="absolute top-0 left-[calc(50.00%_-_20px)] md:left-[calc(50.00%_-_23px)] w-9 md:w-11 h-9 md:h-11 bg-[#00000000] rounded-[30px] shadow-[inset_0px_4px_4px_#ffffff14,inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.13),inset_-1px_0_1px_rgba(0,0,0,0.11)] backdrop-blur-[2.0px] backdrop-brightness-[110%] [-webkit-backdrop-filter:blur(2.0px)_brightness(110%)]" />
-                        <div className="absolute top-[3px] md:top-[5px] left-[11px] md:left-[13px] [font-family:'Montserrat',Helvetica] font-semibold text-[#bbbbbb] text-[24px] md:text-[32px] tracking-[0] leading-[normal]">
+                      <div className="relative w-[36px] md:w-[46px] h-9 md:h-11 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full bg-white/5 shadow-[inset_0px_2px_4px_rgba(255,255,255,0.1),inset_0_-2px_4px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-all duration-300 group-hover:bg-white/10 group-data-[state=open]:bg-[#82b7dc]/20" />
+                        <div className="absolute inset-0 flex items-center justify-center [font-family:'Montserrat',Helvetica] font-light text-white text-[24px] md:text-[32px] transition-transform duration-500 group-data-[state=open]:rotate-45">
                           +
                         </div>
                       </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="[font-family:'Montserrat',Helvetica] font-normal text-[#bbbbbb] text-sm md:text-base text-left tracking-[0] leading-[normal] mt-4">
-                    {item.answer}
-                  </AccordionContent>
-                  <div
-                    className="h-px [background:radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,1)_40%,rgba(0,0,0,1)_100%)]"
-                    style={{
-                      marginTop:
-                        index === 0
-                          ? "10px"
-                          : index === 1
-                            ? "10px"
-                            : index === 2
-                              ? "10px"
-                              : index === 3
-                                ? "10px"
-                                : index === 4
-                                  ? "10px"
-                                  : "9px",
-                      marginBottom:
-                        index === 0
-                          ? "25px"
-                          : index === 1
-                            ? "30px"
-                            : index === 2
-                              ? "30px"
-                              : index === 3
-                                ? "30px"
-                                : index === 4
-                                  ? "30px"
-                                  : "0",
-                    }}
-                  />
-                </div>
-              </AccordionItem>
-            ))}
-          </Accordion>
+                    </AccordionTrigger>
+                    
+                    <AccordionContent className="[font-family:'Montserrat',Helvetica] font-normal text-[#a3a3a3] text-[14px] md:text-[16px] text-left leading-relaxed mt-2 md:mt-4 max-w-[90%]">
+                      {item.answer}
+                    </AccordionContent>
+                    
+                    <div
+                      className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent my-6"
+                    />
+                  </div>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
-      </div>
       </div>
     </section>
   );

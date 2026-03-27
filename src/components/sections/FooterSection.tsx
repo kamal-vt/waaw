@@ -48,6 +48,33 @@ const verticalBars = [
 
 export const FooterSection = (): JSX.Element => (
   <footer id="contact" className="w-full relative bg-black overflow-hidden py-[40px] sm:py-[60px] md:py-[84px] px-4 sm:px-8 md:px-[167px]">
+
+            {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[10%] left-[10%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
+          <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#011e4e] opacity-60 blur-3xl" />
+          <div className="absolute top-[190px] left-[307px] w-[281px] h-[264px] rounded-full bg-[#65a7fc] opacity-40 blur-3xl" />
+          <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#1f5cb5] rounded-full opacity-50 blur-3xl" />
+          <div className="absolute top-[235px] left-2 w-[280px] h-[260px] rounded-full bg-[#288b91] opacity-40 blur-3xl" />
+          <div className="absolute top-[296px] left-[212px] w-[247px] h-[228px] rounded-full bg-[#133d86] opacity-60 blur-3xl" />
+          <div className="absolute top-[169px] left-[154px] w-[267px] h-[253px] rounded-full bg-[#3ca5d8] opacity-40 blur-3xl" />
+        </div>
+
+        {/* Blur Overlay */}
+        <div className="absolute inset-0 backdrop-blur-[100px] bg-black/10" />
+
+        <style jsx>{`
+          @keyframes blobMove {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(40px, -60px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+          }
+          .animate-blob {
+            animation: blobMove 5s infinite ease-in-out;
+          }
+        `}</style>
+      </div>
     {/* Top-left glow */}
     <div className="absolute top-[-145px] left-[-145px] w-[290px] h-[290px] rounded-full blur-[250px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(130,183,220,1)_0%)]" />
     {/* Bottom-right glow */}
@@ -55,6 +82,23 @@ export const FooterSection = (): JSX.Element => (
 
     {/* Hero card */}
     <div className="relative mx-auto max-w-[1106px] min-h-[400px] md:h-[358px] rounded-[30px] overflow-hidden border border-white/20 backdrop-blur-[2px] backdrop-brightness-[110%] bg-[linear-gradient(11deg,rgba(0,0,0,0.1)_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.13),inset_-1px_0_1px_rgba(0,0,0,0.11)] flex flex-col md:flex-row">
+      <div className="absolute z-30 left-0 bottom-0 flex h-screen  gap-[4px] items-start ">
+        {[...Array(10)].map((_, i) => (
+          <div
+            key={i}
+            className="w-[18px] h-[100%] blur-[0.8px]"
+            style={{
+              // Gradient ko vibrant banaya hai (White/Silver glow)
+              background: 'linear-gradient(to right, rgba(255,255,255,0.1), #ffffff, rgba(255,255,255,0.1))',
+              // Mask ko thoda adjust kiya taaki visibility bani rahe
+              WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 90%)',
+              maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 90%)',
+              // Glow effect ke liye box-shadow (Optional)
+              boxShadow: '0 0 15px rgba(255,255,255,0.3)',
+            }}
+          />
+        ))}
+      </div>
       {/* Left image */}
       <img
         className="w-full md:w-[30.95%] h-[160px] sm:h-[200px] md:h-full object-contain"
@@ -64,6 +108,7 @@ export const FooterSection = (): JSX.Element => (
 
       {/* Text content */}
       <div className="flex-1 flex flex-col justify-center items-center md:items-start p-4 md:p-8 relative">
+
         {/* Decorative ellipse - hidden on mobile, shown on md+ */}
         <img
           className="hidden md:block absolute top-[180px] left-[-50px] w-[920px] h-[190px]"

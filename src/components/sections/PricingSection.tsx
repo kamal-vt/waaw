@@ -1,4 +1,5 @@
 import React from "react";
+import DecorativeLines from "../common/DecorativeLines";
 
 const pricingData = [
   {
@@ -86,19 +87,7 @@ export const PricingSection = (): JSX.Element => {
         {/* Header */}
         <header className="flex flex-col items-center mb-20 text-center">
           <div className="flex items-center justify-center gap-6 mb-8 mt-10">
-            <div className="flex flex-col items-center">
-              <div className="w-[1px] h-6 bg-gradient-to-t from-[#82b7dc] to-transparent relative">
-                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white shadow-[0_0_12px_#fff]" />
-              </div>
-            </div>
-            <h1 className="text-3xl md:text-5xl font-extrabold text-[#95C8EC] tracking-[0.2em] uppercase [font-family:'Montserrat',Helvetica]">
-              PRICING
-            </h1>
-            <div className="flex flex-col items-center">
-              <div className="w-[1px] h-6 bg-gradient-to-t from-[#82b7dc] to-transparent relative">
-                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white shadow-[0_0_12px_#fff]" />
-              </div>
-            </div>
+            <DecorativeLines className="text-[#82B7DC] text-[34px]">PRICING</DecorativeLines>
           </div>
           
           <h2 className="text-[28px] md:text-[34px] font-bold mb-6 tracking-wide underline decoration-dotted decoration-white/40 underline-offset-[10px] [font-family:'Montserrat',Helvetica]">

@@ -1,92 +1,81 @@
 import React from "react";
-import { Card, CardContent } from "../ui/card";
 import ParallaxCard from "../ui/ParallaxCard";
+import DecorativeLines from "../common/DecorativeLines";
 
 const blogCards = [
   {
     title: "Design That Drives Engagement",
-    description:
-      "Explore how thoughtful UI/UX design shapes user behavior and builds lasting digital experiences.",
+    description: "Explore how thoughtful UI/UX design shapes user behavior and builds lasting digital experiences.",
   },
   {
     title: "Smarter Apps for Modern Business",
-    description:
-      "Explore the strategies and tech behind scalable, high-performing apps.",
+    description: "Explore the strategies and tech behind scalable, high-performing apps.",
   },
   {
     title: "The Future of Digital Innovation",
-    description:
-      "Discover how AI, automation, and new tools are transforming brand growth online.",
+    description: "Discover how AI, automation, and new tools are transforming brand growth online.",
   },
 ];
 
-type BlogsProps = { topOffset?: boolean };
-
-export const BlogsSection = ({ topOffset = false }: BlogsProps): JSX.Element => {
+export const BlogsSection = ({ topOffset = false }) => {
   return (
-    <section className={`relative w-full min-h-[760px] bg-black overflow-hidden py-[20px] px-4 ${topOffset ? "pt-32" : ""} mt-0`}>
-      <div className="absolute top-[-145px] left-[-145px] w-[290px] h-[290px] rounded-[145px] blur-[250px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(130,183,220,1)_0%)]" />
+    <section className={`relative w-full bg-black py-20 px-4 overflow-hidden ${topOffset ? "pt-32" : ""}`}>
+      {/* Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full blur-[120px] bg-[#82B7DC]/10" />
+      </div>
 
-      <div className="absolute top-[777px] left-[1363px] w-[290px] h-[290px] rounded-[145px] blur-[250px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(130,183,220,1)_0%)]" />
-
-      <div className="relative max-w-[1440px] mx-auto">
+      <div className="relative max-w-7xl mx-auto z-10">
         <div className="flex flex-col items-center">
-          <div className="relative mb-[20px] md:mb-[20px]">
-              <>
-  <div className="w-24 h-px bg-[#82b7dc] mx-auto  "></div>
-  <div className="text-[#82b7dc] text-2xl font-extrabold tracking-wide text-center ">
-    BLOGS
-  </div>
-  <div className="w-24 h-px bg-[#82b7dc] mx-auto "></div>
-</>
-            {/* Decorative Elements Around BLOGS Title */}
-            {/* <div className="absolute top-[36px] left-[-26px] w-[33px] h-px bg-white rounded-[16.5px/0.5px] rotate-90" />
-            <div className="absolute top-[36px] right-[-26px] w-[33px] h-px bg-white rounded-[16.5px/0.5px] rotate-90" />
-            <div className="absolute top-[16px] left-[-14px] w-2 h-2 bg-white rounded rotate-180" />
-            <div className="absolute top-[16px] right-[-14px] w-2 h-2 bg-white rounded rotate-180" />
-            <div className="absolute top-[-6px] left-[14px] w-[157px] h-1 bg-white rounded-[78.5px/2px] rotate-180" />
-            <div className="absolute top-[71px] left-[-1px] w-[157px] h-1 bg-white rounded-[78.5px/2px]" />
-            <div className="absolute top-[-19px] right-[-4px] w-[35px] h-[35px] bg-white rounded-[17.5px] -rotate-90" />
-            <div className="absolute top-[53px] left-[-19px] w-[35px] h-[35px] bg-white rounded-[17.5px] rotate-90" /> */}
+          
+          {/* Header */}
+          <div className="flex flex-col items-center mb-16">
+            <DecorativeLines className="text-[#82B7DC] text-2xl font-bold tracking-[0.2em] mb-6">
+              BLOGS
+            </DecorativeLines>
+            <h3 className="font-['Montserrat'] font-bold text-white text-3xl md:text-4xl text-center mb-6">
+              Insights That Inspire Innovation
+            </h3>
+            <p className="font-['Montserrat'] text-[#bbbbbb] text-center max-w-3xl leading-relaxed text-sm md:text-base">
+              Explore the latest in design, development, and digital strategy. At
+              WAAW, we share ideas, trends, and expert perspectives that help
+              businesses stay ahead in the ever-evolving digital world.
+            </p>
           </div>
 
-          <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#bbbbbb] text-[24px] md:text-[32px] text-center tracking-[0] leading-[normal] mb-[2px] md:mb-[28px] max-w-[529px]">
-            Insights That Inspire Innovation
-          </h3>
-
-          <p className="[font-family:'Montserrat',Helvetica] font-medium text-[#bbbbbb] text-lg md:text-xl text-center tracking-[0] leading-[normal] mb-[80px] md:mb-[30px] max-w-[814px]">
-            Explore the latest in design, development, and digital strategy. At
-            WAAW, we share ideas, trends, and expert perspectives that help
-            businesses stay ahead in the ever-evolving digital world.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[40px] md:gap-[89px] w-full max-w-[1216px]">
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
             {blogCards.map((card, index) => (
-              <ParallaxCard intensity={8} key={index}>
-                <div
-                  className="relative w-full md:w-[350px] h-[350px] md:h-[400px] cursor-pointer hover:scale-105 transition-transform duration-300 mx-auto"
-                >
-                  {/* Use frame-17-1.svg as the card background */}
-                  <img
-                    src="/blog1.png"
-                    alt="Blog card"
-                    className="absolute inset-0 w-full h-full object-cover object-bottom"
-                  />
+              <div key={index} className="flex flex-col items-center w-full">
+                <ParallaxCard intensity={10} className="w-full">
+                  <div className="relative w-full group flex items-center justify-center">
+                    {/* The Background Image from your design */}
+                    <img 
+                      src="/blogcard.png" 
+                      alt="Card Background" 
+                      className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                    
+                    {/* Content Overlay */}
+                    <div className="absolute inset-0 z-10 flex flex-col items-center justify-start text-center pt-[26%] px-6 md:px-10 group-hover:scale-[1.03] transition-transform duration-700">
+                      {/* Title inside the card */}
+                      <h4 className="font-['Montserrat'] font-bold text-white text-[22px] md:text-[26px] leading-[1.3] mb-5 tracking-wide drop-shadow-md">
+                        {card.title}
+                      </h4>
 
-                  {/* Content overlay */}
-                  <div className="relative z-10 h-full p-6 md:p-6">
-                    {/* Title at top */}
-                    <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#bbbbbb] text-[20px] md:text-[24px] text-center tracking-[0] leading-tight mt-2">
-                      {card.title}
-                    </h4>
+                      {/* Description centered below title */}
+                      <p className="font-['Montserrat'] font-medium text-[#c4c4c4] text-sm md:text-[15px] leading-relaxed max-w-[90%] md:max-w-[85%]">
+                        {card.description}
+                      </p>
 
-                    {/* Description centered vertically */}
-                    <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [font-family:'Poppins',Helvetica] font-medium text-[#bbbbbb] text-xs md:text-sm text-center tracking-[0] leading-relaxed max-w-[85%]">
-                      {card.description}
-                    </p>
+                      {/* Bottom Icon Section (The simple sphere in the U-shape notch) */}
+                      <div className="absolute bottom-[5.2%] md:bottom-[5.3%]   animate-spin">
+                         <div className="w-[38px] h-[38px] md:w-[46px] md:h-[46px] rounded-full bg-gradient-to-br from-[#77B1E4] via-[#407BBE] to-[#122b40] shadow-[inset_-3px_-3px_8px_rgba(0,0,0,0.4),_0_4px_10px_rgba(64,123,190,0.4)]" />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </ParallaxCard>
+                </ParallaxCard>
+              </div>
             ))}
           </div>
         </div>
