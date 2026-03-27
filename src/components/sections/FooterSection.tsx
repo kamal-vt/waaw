@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -65,60 +65,218 @@ export const FooterSection = (): JSX.Element => (
           }
         `}</style>
     </div>
-    {/* Top-left glow */}
-    <div className="absolute top-[-145px] left-[-145px] w-[290px] h-[290px] rounded-full blur-[250px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(130,183,220,1)_0%)]" />
-    {/* Bottom-right glow */}
-    <div className="absolute bottom-[-145px] right-[-145px] w-[290px] h-[290px] rounded-full blur-[250px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(130,183,220,1)_0%)]" />
+    {/* glow */}
+    <Glow/>
 
-    {/* Hero card */}
-    <div className="relative mx-auto max-w-[1106px] min-h-[400px] md:h-[358px] rounded-[30px] overflow-hidden border border-white/20 backdrop-blur-[2px] backdrop-brightness-[110%] bg-[linear-gradient(11deg,rgba(0,0,0,0.1)_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.13),inset_-1px_0_1px_rgba(0,0,0,0.11)] flex flex-col md:flex-row">
-      <div className="absolute z-30 left-0 bottom-0 flex h-[150%] gap-[4px] items-start ">
-        {[...Array(10)].map((_, i) => (
-          <div
-            key={i}
-            className="w-[18px] h-full blur-[0.8px]"
-            style={{
-              // Gradient ko vibrant banaya hai (White/Silver glow)
-              background: 'linear-gradient(to right, rgba(255,255,255,0.1), #ffffff, rgba(255,255,255,0.1))',
-              // Mask ko replace/adjust kiya taaki pura visible ho
-              WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 100%)',
-              maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 100%)',
-              // Glow effect ke liye box-shadow (Optional) 
-              boxShadow: '0 0 15px rgba(255,255,255,0.3)',
-            }}
-          />
-        ))}
+    {/* Divider */}
+    <div className="relative z-10 mt-8 md:mt-20 w-full max-w-[1258px] mx-auto h-px [background:radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,1)_40%,rgba(0,0,0,1)_100%)]" />
+
+    {/* Footer Grid */}
+    <div className="px-2 sm:px-6 lg:px-8">
+      {/* Footer grid */}
+      <div className="relative z-10 sm:mt-12 md:mt-16 max-w-[1258px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        {/* Brand + Social */}
+        <div className="flex sm:flex-col  items-center sm:justify-center justify-between gap-2 px-10">
+          <img src="/logo.png" alt="Logo" className="h-20 w-20 sm:h-24 sm:w-24" />
+
+          <div className="flex gap-3 sm:gap-4 justify-center sm:justify-start">
+            {socialIcons.map((icon, i) => (
+              icon.href ? (
+                <a
+                  key={i}
+                  href={icon.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition"
+                >
+                  <img
+                    src={icon.src}
+                    alt={icon.alt}
+                    className="w-8 h-8 sm:w-10 sm:h-10"
+                  />
+                </a>
+              ) : (
+                <img
+                  key={i}
+                  src={icon.src}
+                  alt={icon.alt}
+                  className="w-8 h-8 sm:w-10 sm:h-10 hover:opacity-80 transition"
+                />
+              )
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2">
+          {/* Company Links */}
+          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+            <h4 className="font-medium text-[#bbbbbb] text-lg sm:text-xl mb-3 sm:mb-4">
+              Company
+            </h4>
+
+            {companyLinks.map((link, i) => (
+              <Link
+                key={i}
+                href={link.href}
+                className="text-[#bbbbbb] text-sm sm:text-base mb-2 sm:mb-3 hover:text-white transition"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Resources */}
+          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+            <h4 className="font-medium text-[#bbbbbb] text-lg sm:text-xl mb-3 sm:mb-4">
+              Resources
+            </h4>
+
+            {resourceLinks.map((link, i) => (
+              <Link
+                key={i}
+                href={link.href}
+                className="text-[#bbbbbb] text-sm sm:text-base mb-2 sm:mb-3 hover:text-white transition"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact */}
+        <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+          <h4 className="font-medium text-[#bbbbbb] text-lg sm:text-xl mb-3 sm:mb-4">
+            Let&apos;s Talk
+          </h4>
+
+          <div className="flex items-center gap-3 mb-3 justify-center sm:justify-start">
+            <img
+              src={contactIcons[0].src}
+              alt={contactIcons[0].alt}
+              className="w-6 h-6 sm:w-8 sm:h-8"
+            />
+            <span className="text-[#bbbbbb] text-sm sm:text-base">
+              7702118555
+            </span>
+          </div>
+
+          <div className="flex items-center gap-3 justify-center sm:justify-start">
+            <img
+              src={contactIcons[1].src}
+              alt={contactIcons[1].alt}
+              className="w-6 h-6 sm:w-8 sm:h-8"
+            />
+            <a
+              href="mailto:support@WAAW.world"
+              className="text-[#bbbbbb] text-sm sm:text-base hover:text-white transition"
+            >
+              support@WAAW.world
+            </a>
+          </div>
+        </div>
       </div>
-      {/* Left image */}
-      <img
-        className="w-full md:w-[30.95%] h-[160px] sm:h-[200px] md:h-full object-contain"
-        src="/audiencegridm.png"
-        alt="Decor"
-      />
 
-      {/* Text content */}
-      <div className="flex-1 flex flex-col justify-center items-center md:items-start p-4 md:p-8 relative">
+      {/* Bottom legal */}
+      <div className="relative z-10 mt-4 sm:mt-12 max-w-[1258px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 border-t border-gray-700 pt-6">
 
-        {/* Decorative ellipse - hidden on mobile, shown on md+ */}
+        <p className="text-[#bbbbbb] text-xs text-center md:text-left">
+          Copyright © 2025 VisionTech. All rights reserved
+        </p>
+
+        <div className="flex flex-wrap justify-center md:justify-end gap-4 sm:gap-6">
+          {legalLinks.map((link, i) => (
+            <a
+              key={i}
+              href={link.href}
+              className="text-[#bbbbbb] text-xs hover:text-[#82b7dc] transition"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </footer> 
+);
+
+export default FooterSection;
+
+
+
+function Glow(){
+  const [count, setCount] = useState(10);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setCount(4); // mobile
+      } else {
+        setCount(10); // desktop
+      }
+    };
+
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return (
+        <div>
+      {/* Top-left glow */}
+      <div className="absolute top-[-145px] left-[-145px] w-[290px] h-[290px] rounded-full blur-[250px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(130,183,220,1)_0%)]" />
+      {/* Bottom-right glow */}
+      <div className="absolute bottom-[-145px] right-[-145px] w-[290px] h-[290px] rounded-full blur-[250px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(130,183,220,1)_0%)]" />
+
+      {/* Hero card */}
+      <div className="relative mx-auto max-w-[1106px] min-h-[400px] md:h-[358px] rounded-[30px] overflow-hidden border border-white/20 backdrop-blur-[2px] backdrop-brightness-[110%] bg-[linear-gradient(11deg,rgba(0,0,0,0.1)_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.13),inset_-1px_0_1px_rgba(0,0,0,0.11)] flex flex-col md:flex-row">
+        <div className="absolute z-30 left-0 bottom-0 flex h-[150%] gap-[4px] items-start ">
+          {[...Array(count)].map((_, i) => (
+            <div
+              key={i}
+              className="w-[10px] h-full blur-[0.8px]"
+              style={{
+                // Gradient ko vibrant banaya hai (White/Silver glow)
+                background: 'linear-gradient(to right, rgba(255,255,255,0.1), #ffffff, rgba(255,255,255,0.1))',
+                // Mask ko replace/adjust kiya taaki pura visible ho
+                WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 100%)',
+                maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 100%)',
+                // Glow effect ke liye box-shadow (Optional) 
+                boxShadow: '0 0 15px rgba(255,255,255,0.3)',
+              }}
+            />
+          ))}
+        </div>
+        {/* Left image */}
         <img
-          className="hidden md:block absolute top-[180px] left-[-50px] w-[920px] h-[190px]"
-          src="/ellipse-3-1.svg"
-          alt="Ellipse"
+          className="w-full md:w-[30.95%] h-[200px] sm:h-[200px] md:h-full object-contain"
+          src="/audiencegridm.png"
+          alt="Decor"
         />
 
-        {/* Small glow circle - adjusted for mobile */}
-        <div className="absolute top-[-15px] right-[50px] md:left-[200px] w-[30px] md:w-[53px] h-[30px] md:h-[53px] rounded-full blur-[6px] md:blur-[8.5px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(0,0,0,1)_0%,rgba(255,255,255,1)_100%)] animate-orb-5" />
+        {/* Text content */}
+        <div className="flex-1 flex flex-col justify-center items-center md:items-start p-4 md:p-8 relative">
 
-        {/* Title */}
-        <h2 className="w-full md:w-[507px] [font-family:'Montserrat',Helvetica] font-extrabold text-2xl md:text-4xl text-[#82b7dc] text-center md:text-left mb-4">
-          WHERE IDEAS FLOW AND BRANDS GROW.
-        </h2>
+          {/* Decorative ellipse - hidden on mobile, shown on md+ */}
+          <img
+            className="hidden md:block absolute top-[180px] left-[-50px] w-[920px] h-[190px]"
+            src="/ellipse-3-1.svg"
+            alt="Ellipse"
+          />
 
-        {/* Subtitle */}
-        <p className="w-full md:w-[472px] [font-family:'Montserrat',Helvetica] font-medium text-[#bbbbbb] text-xs md:text-sm text-center md:text-left mb-6">
-          Ideas begin as ripples and rise into powerful waves of creation. At
-          WAAW, we shape digital experiences that move brands forward.
-        </p>
+          {/* Small glow circle - adjusted for mobile */}
+          <div className="absolute top-[-15px] right-[50px] md:left-[200px] w-[30px] md:w-[53px] h-[30px] md:h-[53px] rounded-full blur-[6px] md:blur-[8.5px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(0,0,0,1)_0%,rgba(255,255,255,1)_100%)] animate-orb-5" />
+
+          {/* Title */}
+          <h2 className="w-full md:w-[507px] [font-family:'Montserrat',Helvetica] font-extrabold text-2xl md:text-4xl text-[#82b7dc] text-center md:text-left mb-4">
+            WHERE IDEAS FLOW AND BRANDS GROW.
+          </h2>
+
+          {/* Subtitle */}
+          <p className="w-full md:w-[472px] [font-family:'Montserrat',Helvetica] font-medium text-[#bbbbbb] text-xs md:text-sm text-center md:text-left mb-6">
+            Ideas begin as ripples and rise into powerful waves of creation. At
+            WAAW, we shape digital experiences that move brands forward.
+          </p>
 
           {/* Button */}
           <Link
@@ -136,115 +294,6 @@ export const FooterSection = (): JSX.Element => (
           </Link>
         </div>
       </div>
-    {/* Divider */}
-    <div className="relative z-10 mt-10 md:mt-20 w-full max-w-[1258px] mx-auto h-px [background:radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,1)_40%,rgba(0,0,0,1)_100%)]" />
-
-    {/* Footer grid */}
-    <div className="relative z-10 mt-8 sm:mt-12 md:mt-16 max-w-[1258px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-      {/* Brand + Social */}
-      <div className="flex flex-col items-center md:items-start">
-        <img src="/logo.png" alt="Logo" className="h-28 w-28 mb-2" />
-        <div className="flex gap-4">
-          {socialIcons.map((icon, i) => (
-            icon.href ? (
-              <a
-                key={i}
-                href={icon.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <img
-                  src={icon.src}
-                  alt={icon.alt}
-                  className="w-10 h-10 md:w-12 md:h-12"
-                />
-              </a>
-            ) : (
-              <img
-                key={i}
-                src={icon.src}
-                alt={icon.alt}
-                className="w-10 h-10 md:w-12 md:h-12 hover:opacity-80 transition-opacity"
-              />
-            )
-          ))}
-        </div>
-      </div>
-
-      {/* Company Links */}
-      <div className="flex flex-col items-center md:items-start">
-        <h4 className="[font-family:'Montserrat',Helvetica] font-medium text-[#bbbbbb] text-xl mb-4">
-          Company
-        </h4>
-        {companyLinks.map((link, i) => (
-          <Link
-            key={i}
-            href={link.href}
-            className="[font-family:'Montserrat',Helvetica] font-normal text-[#bbbbbb] text-base mb-3 hover:text-[#bbbbbb] transition-colors"
-          >
-            {link.label}
-          </Link>
-        ))}
-      </div>
-
-      {/* Resources */}
-      <div className="flex flex-col items-center md:items-start">
-        <h4 className="[font-family:'Montserrat',Helvetica] font-medium text-[#bbbbbb] text-xl mb-4">
-          Resources
-        </h4>
-        {resourceLinks.map((link, i) => (
-          <Link
-            key={i}
-            href={link.href}
-            className="[font-family:'Montserrat',Helvetica] font-normal text-[#bbbbbb] text-base mb-3 hover:text-[#bbbbbb] transition-colors"
-          >
-            {link.label}
-          </Link>
-        ))}
-      </div>
-
-      {/* Contact */}
-      <div className="flex flex-col items-center md:items-start">
-        <h4 className="[font-family:'Montserrat',Helvetica] font-medium text-[#bbbbbb] text-xl mb-4">
-          Let&apos;s Talk
-        </h4>
-        <div className="flex items-center gap-3 mb-3">
-          <img src={contactIcons[0].src} alt={contactIcons[0].alt} className="w-8 h-8 md:w-10 md:h-10" />
-          <span className="[font-family:'Montserrat',Helvetica] text-[#bbbbbb] text-base">
-            7702118555
-          </span>
-        </div>
-        <div className="flex items-center gap-3">
-          <img src={contactIcons[1].src} alt={contactIcons[1].alt} className="w-8 h-8 md:w-10 md:h-10" />
-          <a
-            href="mailto:support@WAAW.world"
-            className="[font-family:'Montserrat',Helvetica] text-[#bbbbbb] text-base hover:text-[#bbbbbb] transition-colors"
-          >
-            support@WAAW.world
-          </a>
-        </div>
-      </div>
     </div>
-
-    {/* Bottom legal */}
-    <div className="relative z-10 mt-8 sm:mt-10 md:mt-12 max-w-[1258px] mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12">
-      <p className="[font-family:'Montserrat',Helvetica] font-normal text-[#bbbbbb] text-xs">
-        Copyright © 2024 VisionTech. All rights reserved
-      </p>
-      <div className="flex gap-6">
-        {legalLinks.map((link, i) => (
-          <a
-            key={i}
-            href={link.href}
-            className="[font-family:'Montserrat',Helvetica] font-normal text-[#bbbbbb] text-xs hover:text-[#82b7dc] transition-colors"
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
-    </div>
-  </footer>
-);
-
-export default FooterSection;
+  )
+}
