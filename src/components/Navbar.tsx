@@ -2,9 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import { CgArrowTopRight } from "react-icons/cg";
-import { RxArrowTopRight } from "react-icons/rx";
-
+import { ArrowUpRight } from "lucide-react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,16 +21,16 @@ export function Navbar() {
           <Link href="/" className={`${pathname === "/" ? "text-[#82b7dc]" : "text-[#bbbbbb] hover:text-[#82b7dc]"} font-semibold text-[18px] transition`}>
             Home
           </Link>
-          <Link href="/about" className={`${pathname === "/about" ? "text-[#82b7dc]" : "text-[#bbbbbb] hover:text-[#82b7dc]"} font-semibold text-[18px] transition`}>
+          <Link href="#about" className="text-[#bbbbbb] hover:text-[#82b7dc] font-semibold text-[18px] transition">
             About Us
           </Link>
-          <Link href="/services" className={`${pathname === "/services" ? "text-[#82b7dc]" : "text-[#bbbbbb] hover:text-[#82b7dc]"} font-semibold text-[18px] transition`}>
+          <Link href="#services" className="text-[#bbbbbb] hover:text-[#82b7dc] font-semibold text-[18px] transition">
             Solutions
           </Link>
-          <Link href="/pricing" className={`${pathname === "/pricing" ? "text-[#82b7dc]" : "text-[#bbbbbb] hover:text-[#82b7dc]"} font-semibold text-[18px] transition`}>
+          <Link href="#pricing" className="text-[#bbbbbb] hover:text-[#82b7dc] font-semibold text-[18px] transition">
             Pricing
           </Link>
-          <Link href="/case-studies" className={`${pathname === "/case-studies" ? "text-[#82b7dc]" : "text-[#bbbbbb] hover:text-[#82b7dc]"} font-semibold text-[18px] transition`}>
+          <Link href="#case-study" className="text-[#bbbbbb] hover:text-[#82b7dc] font-semibold text-[18px] transition">
             Case Studies
           </Link>
         </nav>
@@ -46,9 +44,9 @@ export function Navbar() {
             });
           }}
           className="hidden md:relative md:inline-flex md:items-center md:justify-center
-            text-white border bg-[#FFFFFF21] border-white rounded-[30px] px-5 py-2 font-bold flex gap-2 items-center"
+            text-white border bg-[#FFFFFF21] border-white rounded-[30px] px-5 py-2 font-bold gap-2 items-center"
         >
-            Let's Talk <RxArrowTopRight className="w-5 h-5 text-2xl" />
+            Let's Talk <ArrowUpRight className="w-5 h-5 text-2xl" />
 
         </Link>
 
@@ -74,13 +72,13 @@ export function Navbar() {
             <Link href="/" className={`block ${pathname === "/" ? "text-[#82b7dc]" : "text-[#bbbbbb] hover:text-[#82b7dc]"} font-semibold text-xl transition`} onClick={() => setIsOpen(false)}>
               Home
             </Link>
-            <Link href="/about" className={`block ${pathname === "/about" ? "text-[#82b7dc]" : "text-[#bbbbbb] hover:text-[#82b7dc]"} font-semibold text-xl transition`} onClick={() => setIsOpen(false)}>
+            <Link href="#about" className="block text-[#bbbbbb] hover:text-[#82b7dc] font-semibold text-xl transition" onClick={() => setIsOpen(false)}>
               About Us
             </Link>
-            <Link href="/services" className={`block ${pathname === "/services" ? "text-[#82b7dc]" : "text-[#bbbbbb] hover:text-[#82b7dc]"} font-semibold text-xl transition`} onClick={() => setIsOpen(false)}>
+            <Link href="#services" className="block text-[#bbbbbb] hover:text-[#82b7dc] font-semibold text-xl transition" onClick={() => setIsOpen(false)}>
               Services
             </Link>
-            <Link href="/blogs" className={`block ${pathname === "/blogs" ? "text-[#82b7dc]" : "text-[#bbbbbb] hover:text-[#82b7dc]"} font-semibold text-xl transition`} onClick={() => setIsOpen(false)}>
+            <Link href="#blogs" className="block text-[#bbbbbb] hover:text-[#82b7dc] font-semibold text-xl transition" onClick={() => setIsOpen(false)}>
               Blogs
             </Link>
             <Link 

@@ -4,7 +4,7 @@ import { Card, CardContent } from "../ui/card";
 import DecorativeLines from "../common/DecorativeLines";
 
 import MatchstickHeading from "./MatchstickHeading";
-import { RxArrowTopRight } from "react-icons/rx";
+import { ArrowUpRight } from "lucide-react";
 
 const statsMobile = [
   { value: "1.5x", description: "Launch Smarter Faster" },
@@ -207,7 +207,7 @@ export const AboutUsSection = (): JSX.Element => {
               className="absolute top-[486px] left-[138px] w-[194px] h-[52px] md:top-[395px] md:left-[5%] lg:top-[530px] lg:left-[100px]  h-auto
                text-white border-2 border-white rounded-[30px] hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2"
             >
-              See How it Works <RxArrowTopRight className="w-5 h-5 text-2xl" />
+              See How it Works <ArrowUpRight className="w-5 h-5 text-2xl" />
             </Button>
 
             {/* Stats Cards */}
