@@ -26,18 +26,42 @@ const caseStudies = [
 export const CaseStudy = (): JSX.Element => {
   return (
     <section className="relative w-full bg-[#050B14] overflow-hidden py-24 min-h-screen text-white font-sans flex flex-col items-center">
-      {/* Intense Background Glow behind Header */}
-      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] blur-[150px] bg-[radial-gradient(ellipse_at_center,rgba(40,160,220,0.4)_0%,rgba(20,80,160,0.15)_50%,transparent_100%)] pointer-events-none" />
+                {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[4%] left-[30%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
+          <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#1059cf] opacity-60 blur-3xl" />
+          <div className="absolute top-[190px] left-[307px] w-[281px] h-[264px] rounded-full bg-[#65a7fc] opacity-40 blur-3xl" />
+          <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#1f5cb5] rounded-full opacity-50 blur-3xl" />
+          <div className="absolute top-[235px] left-2 w-[280px] h-[260px] rounded-full bg-[#2fc9d1] opacity-40 blur-3xl" />
+          <div className="absolute top-[296px] left-[212px] w-[247px] h-[228px] rounded-full bg-[#1858c7] opacity-60 blur-3xl" />
+          <div className="absolute top-[169px] left-[154px] w-[267px] h-[253px] rounded-full bg-[#26a2df] opacity-40 blur-3xl" />
+        </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 md:px-8 lg:px-12 z-10 w-full flex flex-col items-center">
+        {/* Blur Overlay */}
+        <div className="absolute inset-0 backdrop-blur-[100px] bg-black/10" />
+
+        <style jsx>{`
+          @keyframes blobMove {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(40px, -60px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+          }
+          .animate-blob {
+            animation: blobMove 5s infinite ease-in-out;
+          }
+        `}</style>
+      </div>
+
+      <div className="relative  mx-auto px-4 md:px-8 lg:px-12 z-10 w-full flex flex-col items-center">
         {/* Header */}
-        <header className="flex flex-col items-center mb-24 text-center max-w-4xl">
+        <header className="flex flex-col items-center sm:mb-24 text-center max-w-4xl">
           {/* Label */}
-          <div className="flex items-center justify-center gap-6 mb-8 mt-10">
-            <DecorativeLines className="text-[#82B7DC] text-[34px]">CASE STUDIES</DecorativeLines>
+          <div className="flex items-center justify-center gap-6 mb-2 sm:mb-8 mt-10">
+            <DecorativeLines className="text-[#82B7DC] text-[34px] font-bold">CASE STUDIES</DecorativeLines>
           </div>
           
-          <h2 className="text-[24px] md:text-[28px] font-bold mb-8 tracking-wide underline decoration-dotted decoration-white/40 underline-offset-[16px] leading-tight [font-family:'Montserrat',Helvetica]">
+          <h2 className="text-[20px] md:text-[28px] font-bold sm:mb-8 tracking-wide underline decoration-dotted decoration-white/40 underline-offset-[4px] leading-tight [font-family:'Montserrat',Helvetica]">
             Building the Future of Digital Experiences
           </h2>
           
@@ -53,8 +77,8 @@ export const CaseStudy = (): JSX.Element => {
 
         {/* Selected Artifacts section */}
         <div className="mt-16 w-full flex flex-col items-center">
-          <div className="flex justify-center mb-16">
-            <h3 className="text-[28px] md:text-[34px] font-bold tracking-wide underline decoration-dotted decoration-white/40 underline-offset-[10px] [font-family:'Montserrat',Helvetica]">
+          <div className="flex justify-center mb-4 sm:mb-16">
+            <h3 className="text-[20px] md:text-[34px] font-bold tracking-wide underline decoration-dotted decoration-white/40 underline-offset-[10px] [font-family:'Montserrat',Helvetica]">
               Selected Artifacts
             </h3>
           </div>

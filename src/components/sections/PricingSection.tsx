@@ -32,7 +32,7 @@ const pricingData = [
   },
   {
     title: "Education Platform Solution",
-    price: "Starting at ₹ 6 L",
+    price: "Starting at ₹ 6.0 L",
     features: [
       "Custom LMS architecture & system design",
       "Admin & instructor dashboards",
@@ -46,7 +46,7 @@ const pricingData = [
   },
   {
     title: "HR Automation Solution",
-    price: "Starting at ₹ 4 L",
+    price: "Starting at ₹ 4.0 L",
     features: [
       "HRMS system development",
       "Interview scheduling workflows",

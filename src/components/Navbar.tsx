@@ -23,7 +23,7 @@ export function Navbar() {
 
         {/* LOGO */}
         <Link href="/">
-          <img src="/logo.png" alt="Logo" className="h-16 w-16 sm:h-20 sm:w-20" />
+          <img src="/logo.png" alt="Logo" className="h-auto w-16  sm:w-28" />
         </Link>
 
         {/* DESKTOP NAV */}

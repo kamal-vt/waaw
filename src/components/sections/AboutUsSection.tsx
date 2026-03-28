@@ -2,8 +2,6 @@ import React from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import DecorativeLines from "../common/DecorativeLines";
-
-import MatchstickHeading from "./MatchstickHeading";
 import { ArrowUpRight } from "lucide-react";
 
 const statsMobile = [
@@ -17,53 +15,6 @@ const pillMobile = [
   "Experience Design",
   "Strategic Development",
 ];
-
-const AboutUsSectionMobile = () => (
-  <section className="bg-black px-3 py-8 md:px-6 lg:px-8 xl:px-12 flex flex-col items-center gap-7 min-h-screen w-full">
-    {/* Title */}
-    <DecorativeLines>ABOUT</DecorativeLines>
-    {/* Mesh */}
-    {/* <img src="/mesh1.png" alt="Mesh" className="mx-auto w-[220px] md:w-[300px] lg:w-[400px] mb-3" /> */}
-    {/* Main Heading */}
-    <h2 className="text-white text-xl md:text-3xl lg:text-4xl font-semibold underline text-center max-w-[95vw] mx-auto mb-2">
-      We build more than apps and websites
-    </h2>
-    {/* Description */}
-    <p className="text-[#bbbbbb] text-[16px] md:text-lg lg:text-xl text-center mb-3">
-      We create digital experiences that inspire, engage, and grow businesses.
-    </p>
-    {/* CTA */}
-    <Button variant="ghost" className="relative mb-2 px-0">
-      <img alt="bg" src="/subtract-4.svg" className="w-[160px] md:w-[200px] lg:w-[280px] h-[39px] absolute left-0 top-0" />
-      <span className="relative font-bold text-[#3466aa] text-sm md:text-base lg:text-lg px-6">Explore Now</span>
-      {/* <img alt="Vector" src="/vector-15.svg" className="absolute w-4 md:w-5 lg:w-6 right-2 top-[18px] z-10" /> */}
-    </Button>
-    {/* Mesh 2 Optional: */}
-    <img src="/MESH.png" alt="Mesh2" className="mx-auto w-[130px] md:w-[180px] lg:w-[220px] my-24 animate-spin" style={{ animationDuration: "10s" }} />
-    <div className="flex flex-col items-center gap-4 w-full">
-      {statsMobile.map((card, idx) => (
-        <Card key={idx} className="w-full max-w-[320px] md:max-w-[400px] lg:max-w-[480px] mx-auto rounded-xl p-0 bg-[rgba(52,102,170,.12)] border-0 backdrop-blur-sm shadow-md">
-          <CardContent className="flex flex-col items-center justify-center py-3 px-2">
-            <div className="text-white font-bold text-[1.7rem] md:text-2xl lg:text-3xl">{card.value}</div>
-            <div className="text-[#bbbbbb] text-base md:text-lg lg:text-xl font-medium text-center">{card.description}</div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-    {/* Slogan */}
-    <div className="text-white text-base md:text-lg lg:text-xl font-bold text-center my-2">
-      Strategize Design Launch
-    </div>
-    {/* Pills */}
-    <div className="flex flex-wrap justify-center w-full gap-3">
-      {pillMobile.map((label, idx) => (
-        <Button key={idx} variant="ghost" className="bg-[rgba(130,183,220,0.05)] rounded-xl px-5 md:px-7 lg:px-9 text-[#bbbbbb] font-semibold shadow-sm py-2 md:py-3 lg:py-4 text-sm md:text-base lg:text-lg">
-          {label}
-        </Button>
-      ))}
-    </div>
-  </section>
-);
 
 const glowOrbs = [
   {
@@ -119,26 +70,24 @@ const services = [
   'LMS & HRMS',
 ];
 
-export const AboutUsSection = (): JSX.Element => {
-  return (
-    <>
-      <div className="hidden xl:block">
-        <section className="w-full relative bg-black overflow-hidden">
-          {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[15%] left-[30%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
-          <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#011e4e] opacity-60 blur-3xl" />
-          <div className="absolute top-[190px] left-[307px] w-[281px] h-[264px] rounded-full bg-[#65a7fc] opacity-40 blur-3xl" />
-          <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#1f5cb5] rounded-full opacity-50 blur-3xl" />
-          <div className="absolute top-[235px] left-2 w-[280px] h-[260px] rounded-full bg-[#288b91] opacity-40 blur-3xl" />
-          <div className="absolute top-[296px] left-[212px] w-[247px] h-[228px] rounded-full bg-[#133d86] opacity-60 blur-3xl" />
-          <div className="absolute top-[169px] left-[154px] w-[267px] h-[253px] rounded-full bg-[#3ca5d8] opacity-40 blur-3xl" />
-        </div>
+const AboutUsSectionMobile = () => (
+  <section className="bg-black relative px-3 py-8 md:px-6 lg:px-8 xl:px-12 flex flex-col items-center gap-7 min-h-screen  w-full max-w-screen">
 
-        {/* Blur Overlay */}
-        <div className="absolute inset-0 backdrop-blur-[100px] bg-black/10" />
+    {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute top-[8%] left-[10%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
+        <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#1059cf] opacity-60 blur-3xl" />
+        <div className="absolute top-[190px] left-[307px] w-[281px] h-[264px] rounded-full bg-[#65a7fc] opacity-40 blur-3xl" />
+        <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#1f5cb5] rounded-full opacity-50 blur-3xl" />
+        <div className="absolute top-[235px] left-2 w-[280px] h-[260px] rounded-full bg-[#2fc9d1] opacity-40 blur-3xl" />
+        <div className="absolute top-[296px] left-[212px] w-[247px] h-[228px] rounded-full bg-[#1858c7] opacity-60 blur-3xl" />
+        <div className="absolute top-[169px] left-[154px] w-[267px] h-[253px] rounded-full bg-[#26a2df] opacity-40 blur-3xl" />
+      </div>
 
-        <style jsx>{`
+      {/* Blur Overlay */}
+      <div className="absolute inset-0 backdrop-blur-[100px] bg-black/10" />
+
+      <style jsx>{`
           @keyframes blobMove {
             0% { transform: translate(0px, 0px) scale(1); }
             33% { transform: translate(40px, -60px) scale(1.1); }
@@ -146,10 +95,99 @@ export const AboutUsSection = (): JSX.Element => {
             100% { transform: translate(0px, 0px) scale(1); }
           }
           .animate-blob {
-            animation: blobMove 3s infinite ease-in-out;
+            animation: blobMove 5s infinite ease-in-out;
           }
         `}</style>
+    </div>
+    <div className="relative w-full max-w-screen flex flex-col justify-center items-center ">
+      {/* Title */}
+      <h1 className="text-center">
+        <DecorativeLines className="text-[40px] text-[#82B7DC] font-bold">ABOUT US</DecorativeLines>
+      </h1>
+      {/* Main Heading */}
+      <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-white text-[20px] text-center tracking-[0] leading-[normal] underline px-4">
+        We build more than apps and websites
+        <br />
+        We build Solution Engines
+      </h2>
+      {/* Description */}
+      <p className="text-[#bbbbbb] text-[16px] md:text-lg lg:text-xl text-center mb-3">
+        We create digital experiences that inspire, engage, and grow businesses.
+      </p>
+
+      {/* Mesh 2 Optional: */}
+
+      <div className="">
+        <img src="/MESH.png" alt="Mesh2" className="mx-auto w-[220px] animate-spin" style={{ animationDuration: "12s" }} />
       </div>
+
+      <Button
+        variant="ghost"
+        className="absolute text-white border-2 border-white rounded-[30px] hover:bg-white"
+      >
+        See How it Works <ArrowUpRight className="w-5 h-5 text-2xl" />
+      </Button>
+
+      <div className="flex flex-col items-center mt-20  gap-4 w-full">
+        {/* Explore Now Button */}
+
+        {statsMobile.map((card, idx) => (
+          <Card key={idx} className="w-full max-w-[320px]  mx-auto rounded-xl p-0 bg-[rgba(52,102,170,.12)] border-0 backdrop-blur-sm shadow-md">
+            <CardContent className="flex flex-col items-center justify-center py-3 px-2">
+              <div className="text-white font-bold text-[1.7rem] md:text-2xl lg:text-3xl">{card.value}</div>
+              <div className="text-[#bbbbbb] text-base md:text-lg lg:text-xl font-medium text-center">{card.description}</div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+      {/* Slogan */}
+      <div className="text-white text-base md:text-lg lg:text-xl font-bold text-center my-3">
+        Strategize Design Launch
+      </div>
+      {/* Pills */}
+      <div className="flex flex-wrap justify-center w-full gap-3">
+        {pillMobile.map((label, idx) => (
+          <Button key={idx} variant="ghost" className="bg-[rgba(130,183,220,0.05)] rounded-xl px-5 md:px-7 lg:px-9 text-[#bbbbbb] font-semibold shadow-sm py-2 md:py-3 lg:py-4 text-sm md:text-base lg:text-lg">
+            {label}
+          </Button>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+
+export const AboutUsSection = (): JSX.Element => {
+  return (
+    <>
+      <div className="hidden xl:block">
+        <section className="w-full relative bg-black overflow-hidden">
+          {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-[15%] left-[30%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
+              <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#1059cf] opacity-60 blur-3xl" />
+              <div className="absolute top-[190px] left-[307px] w-[281px] h-[264px] rounded-full bg-[#65a7fc] opacity-40 blur-3xl" />
+              <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#1f5cb5] rounded-full opacity-50 blur-3xl" />
+              <div className="absolute top-[235px] left-2 w-[280px] h-[260px] rounded-full bg-[#2fc9d1] opacity-40 blur-3xl" />
+              <div className="absolute top-[296px] left-[212px] w-[247px] h-[228px] rounded-full bg-[#1858c7] opacity-60 blur-3xl" />
+              <div className="absolute top-[169px] left-[154px] w-[267px] h-[253px] rounded-full bg-[#26a2df] opacity-40 blur-3xl" />
+            </div>
+
+            {/* Blur Overlay */}
+            <div className="absolute inset-0 backdrop-blur-[100px] bg-black/10" />
+
+            <style jsx>{`
+          @keyframes blobMove {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(40px, -60px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+          }
+          .animate-blob {
+            animation: blobMove 5s infinite ease-in-out;
+          }
+        `}</style>
+          </div>
           <div className="relative w-full md:max-w-screen-md md:mx-auto lg:max-w-screen-lg lg:mx-auto xl:max-w-screen-xl xl:mx-auto h-[1024px] md:h-[900px] lg:h-[1024px]">
 
 

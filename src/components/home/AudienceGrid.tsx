@@ -50,7 +50,7 @@ export const AudienceGrid = (): JSX.Element => {
 
       {/* Title Section */}
       <div className="relative w-full max-w-7xl mx-auto px-4">
-        <div className="relative mb-12 lg:mb-16 flex justify-center">
+        <div className="relative mb-4 lg:mb-16 flex justify-center">
           <DecorativeLines>
             <h1 className="text-center text-[#82B7DC] [font-family:'Montserrat',Helvetica] font-extrabold text-[26px] md:text-[32px] lg:text-[38px] leading-[36px] md:leading-[50px] lg:leading-[60px] tracking-[0] px-4">
               Who We Built For?
@@ -104,6 +104,7 @@ export const AudienceGrid = (): JSX.Element => {
             </div>
 
             {/* Center Rotating Icon */}
+            
             <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-20">
               {/* Outer Rotating Ring */}
               {/* Rotating white threads around center */}
@@ -194,12 +195,12 @@ export const AudienceGrid = (): JSX.Element => {
         {/* Mobile/Tablet Layout - Stacked Cards */}
         <div className="lg:hidden flex flex-col gap-6 px-4 max-w-[500px] mx-auto">
           {/* Center Icon for Mobile */}
-          <div className="flex justify-center mb-4">
-            <div className="relative w-[70px] h-[70px] rounded-full bg-gradient-to-br from-[#82b7dc] via-[#5a95c8] to-[#4a7bc8] shadow-[0_0_40px_rgba(130,183,220,0.8)] flex items-center justify-center border-[3px] border-white/25">
+          <div className="flex justify-center mb-2">
+            <div className="relative w-[140px] h-[140px] rounded-full bg-gradient-to-br from-[#82b7dc] via-[#5a95c8] to-[#4a7bc8] shadow-[0_0_40px_rgba(130,183,220,0.8)] flex items-center justify-center border-[3px] border-white/25">
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 10, ease: "linear", repeat: Infinity }}
-                className="w-[35px] h-[35px]"
+                className="w-[120px] h-[120px]"
               >
                 <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                   <circle cx="20" cy="20" r="18" fill="white" opacity="0.9" />

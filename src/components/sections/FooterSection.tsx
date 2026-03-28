@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, LocateIcon, Mail, MapPin, Phone } from "lucide-react";
 
 const socialIcons = [
   { src: "/frame-14.svg", alt: "LinkedIn", href: "#" },
@@ -72,131 +72,8 @@ export const FooterSection = (): JSX.Element => (
     <div className="relative z-10 mt-8 md:mt-20 w-full max-w-[1258px] mx-auto h-px [background:radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,1)_40%,rgba(0,0,0,1)_100%)]" />
 
     {/* Footer Grid */}
-    <div className="px-2 sm:px-6 lg:px-8">
-      {/* Footer grid */}
-      <div className="relative z-10 sm:mt-12 md:mt-16 max-w-[1258px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-
-        {/* Brand + Social */}
-        <div className="flex sm:flex-col  items-center sm:justify-center justify-between gap-2 px-10">
-          <img src="/logo.png" alt="Logo" className="h-20 w-20 sm:h-24 sm:w-24" />
-
-          <div className="flex gap-3 sm:gap-4 justify-center sm:justify-start">
-            {socialIcons.map((icon, i) => (
-              icon.href ? (
-                <a
-                  key={i}
-                  href={icon.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-80 transition"
-                >
-                  <img
-                    src={icon.src}
-                    alt={icon.alt}
-                    className="w-8 h-8 sm:w-10 sm:h-10"
-                  />
-                </a>
-              ) : (
-                <img
-                  key={i}
-                  src={icon.src}
-                  alt={icon.alt}
-                  className="w-8 h-8 sm:w-10 sm:h-10 hover:opacity-80 transition"
-                />
-              )
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2">
-          {/* Company Links */}
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-            <h4 className="font-medium text-[#bbbbbb] text-lg sm:text-xl mb-3 sm:mb-4">
-              Company
-            </h4>
-
-            {companyLinks.map((link, i) => (
-              <Link
-                key={i}
-                href={link.href}
-                className="text-[#bbbbbb] text-sm sm:text-base mb-2 sm:mb-3 hover:text-white transition"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Resources */}
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-            <h4 className="font-medium text-[#bbbbbb] text-lg sm:text-xl mb-3 sm:mb-4">
-              Resources
-            </h4>
-
-            {resourceLinks.map((link, i) => (
-              <Link
-                key={i}
-                href={link.href}
-                className="text-[#bbbbbb] text-sm sm:text-base mb-2 sm:mb-3 hover:text-white transition"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* Contact */}
-        <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-          <h4 className="font-medium text-[#bbbbbb] text-lg sm:text-xl mb-3 sm:mb-4">
-            Let&apos;s Talk
-          </h4>
-
-          <div className="flex items-center gap-3 mb-3 justify-center sm:justify-start">
-            <img
-              src={contactIcons[0].src}
-              alt={contactIcons[0].alt}
-              className="w-6 h-6 sm:w-8 sm:h-8"
-            />
-            <span className="text-[#bbbbbb] text-sm sm:text-base">
-              7702118555
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3 justify-center sm:justify-start">
-            <img
-              src={contactIcons[1].src}
-              alt={contactIcons[1].alt}
-              className="w-6 h-6 sm:w-8 sm:h-8"
-            />
-            <a
-              href="mailto:support@WAAW.world"
-              className="text-[#bbbbbb] text-sm sm:text-base hover:text-white transition"
-            >
-              support@WAAW.world
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom legal */}
-      <div className="relative z-10 mt-4 sm:mt-12 max-w-[1258px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 border-t border-gray-700 pt-6">
-
-        <p className="text-[#bbbbbb] text-xs text-center md:text-left">
-          Copyright © 2025 VisionTech. All rights reserved
-        </p>
-
-        <div className="flex flex-wrap justify-center md:justify-end gap-4 sm:gap-6">
-          {legalLinks.map((link, i) => (
-            <a
-              key={i}
-              href={link.href}
-              className="text-[#bbbbbb] text-xs hover:text-[#82b7dc] transition"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
+    <FooterGrid />
+    
   </footer> 
 );
 
@@ -297,3 +174,102 @@ function Glow(){
     </div>
   )
 }
+
+
+
+function FooterGrid() {
+  return (
+    <footer className="relative  text-white overflow-hidden mt-4 ">
+      
+      {/* Background Gradient Glow (Matches the bottom-right teal/blue glow in image) */}
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] pointer-events-none" />
+
+      <div className=" relative z-10 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+          
+          {/* Section 1: Brand & Social */}
+          <div className="md:col-span-4 flex flex-col justify-center items-center space-y-4">
+            <div className="flex items-center justify-center">
+              <img src="/logo.png" alt="WaaW Logo" className="w-20 sm:w-32 h-auto" />
+            </div>
+            
+            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
+              We design and implement structured digital systems that help businesses 
+              scale with clarity, automation and measurable growth.
+            </p>
+            
+            <p className="text-gray-300 italic text-sm">
+              "We handle How, you handle WaaW!"
+            </p>
+
+            {/* Social Icons - Circular bordered style */}
+            <div className="flex gap-4 pt-4">
+              {socialIcons.map((icon, i) => (
+                <a key={i} href={icon.href} className="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:bg-white/10 transition group">
+                  <img src={icon.src} alt={icon.alt} className="w-5 h-5 opacity-80 group-hover:opacity-100" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Vertical Divider (Visible on Desktop) */}
+          <div className="hidden md:block md:col-span-1 border-l border-gray-800 h-full ml-auto" />
+
+          {/* Section 2: Links Columns */}
+          <div className="md:col-span-4 grid grid-cols-2 gap-8">
+            <div className="flex flex-col space-y-4">
+              <h4 className="text-lg font-semibold text-gray-200">Company</h4>
+              <nav className="flex flex-col space-y-2">
+                {['Home', 'About Us', 'Solutions', 'Case Studies', 'Blogs', 'Let\'s Talk'].map((item) => (
+                  <Link key={item} href="#" className="text-gray-400 hover:text-white text-sm transition">{item}</Link>
+                ))}
+              </nav>
+            </div>
+            
+            <div className="flex flex-col space-y-4">
+              <h4 className="text-lg font-semibold text-gray-200">Resources</h4>
+              <nav className="flex flex-col space-y-2">
+                {['Features', 'Pricing', 'Industry', 'Roadmap', 'FAQ'].map((item) => (
+                  <Link key={item} href="#" className="text-gray-400 hover:text-white text-sm transition">{item}</Link>
+                ))}
+              </nav>
+            </div>
+          </div>
+
+          {/* Section 3: Contact */}
+          <div className="md:col-span-3 flex flex-col  space-y-6 ">
+            <h4 className="text-lg font-semibold text-gray-200">Let's Talk</h4>
+            
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <MapPin />
+                <span className="text-gray-400 text-sm">Hyderabad, Telangana</span>
+              </div>
+              
+              <div className="flex items-center gap-2">
+                <Phone />
+                <span className="text-gray-400 text-sm">+91 7702118555</span>
+              </div>
+              
+              <div className="flex items-center gap-2">
+                <Mail />
+                <span className="text-gray-400 text-sm">support@waave.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Legal Section */}
+        <div className="mt-16 pt-8 border-t border-gray-900 flex flex-col md:row items-center justify-between text-[11px] text-gray-500 tracking-wide uppercase">
+          <p>Copyright © 2025 WaaW. All rights reserved</p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <Link href="#" className="hover:text-white transition">Privacy Policy</Link>
+            <Link href="#" className="hover:text-white transition">Refund Policy</Link>
+            <Link href="#" className="hover:text-white transition">Terms and Condition</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+

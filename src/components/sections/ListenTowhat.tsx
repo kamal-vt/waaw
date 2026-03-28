@@ -27,7 +27,7 @@ export const ListenTowhat = () => {
   return (
     <section className="relative w-full bg-black py-20 px-4 overflow-hidden">
       {/* Container */}
-      <div className="relative max-w-7xl mx-auto z-10 flex flex-col items-center">
+      <div className="relative mx-auto z-10 flex flex-col items-center">
         
         {/* Decorative Top Title Area */}
         <div className="relative flex flex-col items-center mb-16 w-full text-center">
@@ -35,7 +35,7 @@ export const ListenTowhat = () => {
           <div className="relative inline-block text-center mb-6 mt-4">
 
             <DecorativeLines>
-            <h2 className="font-['Montserrat'] font-bold text-[#82B7DC] text-2xl md:text-[34px] tracking-widest uppercase z-10 px-4 md:px-8 drop-shadow-md whitespace-nowrap">
+            <h2 className="font-['Montserrat'] font-bold text-[#82B7DC] text-[20px] sm:text-[28px] md:text-[34px] tracking-widest uppercase z-10  drop-shadow-md">
               LISTEN TO WHAT ARE PARTNERS SAY
             </h2>
             </DecorativeLines>

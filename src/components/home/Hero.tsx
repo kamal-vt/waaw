@@ -1,116 +1,141 @@
 "use client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import CountUp from "../ui/CountUp";
+import { Zap, Layout, Settings, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react"; 
 
 
-// -------------------- MAIN HERO --------------------
+const auditFeatures = [
+  {
+    title: "Performance",
+    desc: "Speed, load time, and mobile responsiveness issues.",
+    icon: <Zap className="text-[#07f3ac] w-6 h-6" />,
+    },
+    {
+      title: "Design & UX",
+      desc: "Conversion blockers and user experience gaps.",
+      icon: <Layout className="text-[#166bf3] w-6 h-6" />,
+    },
+    {
+      title: "Tech Stack",
+      desc: "Scalability, integration, and infrastructure observations.",
+      icon: <Settings className="text-[#25b8c0] w-6 h-6" />,
+    },
+    {
+      title: "Growth Gaps",
+      desc: "Missing features — LMS, CRM, EMS, or automation.",
+      icon: <TrendingUp className="text-[#82b7dc] w-6 h-6" />,
+    },
+  ];
+
+
+    // -------------------- MAIN HERO --------------------
+
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 2;
+
+  // Auto-play effect (optional)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    }, 8000); // Switches every 8 seconds
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+
   return (
     <section className="relative w-full min-h-screen bg-[#000000] text-[#bbbbbb] overflow-hidden">
-
-      {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
+      
+      {/* --- BACKGROUND BLOBS (Global to both slides) --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[10%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
-          <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#0660f3] opacity-60 blur-3xl" />
-          <div className="absolute top-[190px] left-[307px] w-[281px] h-[264px] rounded-full bg-[#468deb] opacity-40 blur-3xl" />
-          <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#0765f3] rounded-full opacity-50 blur-3xl" />
-          <div className="absolute top-[235px] left-2 w-[280px] h-[260px] rounded-full bg-[#288b91] opacity-40 blur-3xl" />
+        <div className="absolute top-[12%] left-[55%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
+          <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#166bf3] opacity-60 blur-3xl" />
+          <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#07f3ac] rounded-full opacity-50 blur-3xl" />
           <div className="absolute top-[296px] left-[212px] w-[247px] h-[228px] rounded-full bg-[#0454de] opacity-60 blur-3xl" />
-          <div className="absolute top-[169px] left-[154px] w-[267px] h-[253px] rounded-full bg-[#079feb] opacity-40 blur-3xl" />
         </div>
-
-        {/* Blur Overlay */}
         <div className="absolute inset-0 backdrop-blur-[100px] bg-black/10" />
-
-        <style jsx>{`
-          @keyframes blobMove {
-            0% { transform: translate(0px, 0px) scale(1); }
-            33% { transform: translate(40px, -60px) scale(1.1); }
-            66% { transform: translate(-30px, 30px) scale(0.9); }
-            100% { transform: translate(0px, 0px) scale(1); }
-          }
-          .animate-blob {
-            animation: blobMove 5s infinite ease-in-out;
-          }
-        `}</style>
       </div>
 
       <div className="relative z-10">
-        {/* Mobile View */}
-        <MobileView />
+        {/* Mobile View - Kept separate or you can wrap in slider too */}
+        <div className="lg:hidden">
+            <MobileView />
+        </div>
 
-        {/* DESKTOP VERSION */}
-        <div className="relative hidden lg:flex flex-col items-center justify-center mt-[96px] min-h-screen">
-          <div className="container mx-auto px-4 flex flex-row items-center justify-between">
-            <div className="flex flex-col gap-10 w-7/12 text-left space-y-4 mt-2 h-full">
-              <div className="flex flex-col gap-4">
-                <motion.h1 className="text-5xl lg:text-[55px] font-bold text-white" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                  ELEVATE YOUR STRATEGY
-                </motion.h1>
-                <motion.h2 className="text-7xl font-bold text-[#82b7dc]" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-                  TRANSFORM <br /> YOUR BUSINESS
-                </motion.h2>
-                <motion.p className="text-xl text-gray-300 max-w-lg" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
-                  From brand positioning to high-performing digital platforms, we create smart systems that help ambitious businesses scale with clarity and confidence.
-                </motion.p>
-              </div>
-              <motion.div className="flex items-center gap-10 text-[#FFFFFF]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
-                <button className="border font-md hover:bg-[#FFFFFF21] rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">Book a Free Strategy Call</button>
-                <button className="border font-md hover:bg-[#FFFFFF21] rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">View Our Solutions</button>
+        {/* DESKTOP SLIDER */}
+        <div className="hidden lg:block relative h-screen">
+          <AnimatePresence mode="wait">
+            {currentSlide === 0 ? (
+              <motion.div
+                key="hero1"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Hero1 />
               </motion.div>
+            ) : (
+              <motion.div
+                key="hero2"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Hero2 />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Navigation Controls */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-6 z-20">
+            <button onClick={prevSlide} className="p-2 rounded-full border border-white/20 hover:bg-white/10 transition">
+              <ChevronLeft className="text-white" />
+            </button>
+            
+            {/* Dots */}
+            <div className="flex gap-2">
+              {[...Array(totalSlides)].map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentSlide(i)}
+                  className={`h-2 transition-all duration-300 rounded-full ${
+                    currentSlide === i ? "w-8 bg-[#07f3ac]" : "w-2 bg-white/30"
+                  }`}
+                />
+              ))}
             </div>
 
-            <motion.div className="relative w-6/12 min-h-screen flex flex-col items-center justify-between">
-              <Image src="/land2.png" alt="land" width={420} height={220} className="w-full max-w-[460px] object-cover rounded-lg mt-0 mx-auto" />
-              <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-full px-6">
-                <div className="flex flex-col items-center mb-4">
-                  <p className="text-[#0A6DD8] text-[40px] font-extrabold">
-                    <CountUp
-                      from={0}
-                      to={7}
-                      separator=","
-                      direction="up"
-                      duration={1}
-                      className="count-up-text"
-                    />+
-                  </p>
-                  <p className="text-white text-[24px] font-bold">Website</p>
-                </div>
-                <div className="flex justify-between text-center">
-                  <div>
-                    <p className="text-[#0A6DD8] text-[36px] font-extrabold"><CountUp
-                      from={0}
-                      to={15}
-                      separator=","
-                      direction="up"
-                      duration={1}
-                      className="count-up-text"
-                    />+</p>
-                    <p className="text-white text-[24px] font-bold">Industry Expertise</p>
-                  </div>
-                  <div>
-                    <p className="text-[#0A6DD8] text-[36px] font-extrabold">
-                      <CountUp
-                        from={0}
-                        to={900}
-                        separator=","
-                        direction="up"
-                        duration={1}
-                        className="count-up-text"
-                      />%+</p>
-                    <p className="text-white text-[24px] font-bold">Social Media Growth</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+            <button onClick={nextSlide} className="p-2 rounded-full border border-white/20 hover:bg-white/10 transition">
+              <ChevronRight className="text-white" />
+            </button>
           </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes blobMove {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(40px, -60px) scale(1.1); }
+          66% { transform: translate(-30px, 30px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+          animation: blobMove 5s infinite ease-in-out;
+        }
+      `}</style>
     </section>
   );
 }
+
+
 
 // -------------------- MOBILE STAT CARD --------------------
 function Stat({ number, label, className }: { number: string; label: string; className?: string }) {
@@ -148,13 +173,13 @@ function MobileView() {
             {/* TOP */}
             <div className="text-center">
               <p className="text-[#0A6DD8] text-3xl font-extrabold"> <CountUp
-                        from={0}
-                        to={7}
-                        separator=","
-                        direction="up"
-                        duration={1}
-                        className="count-up-text"
-                      />+</p>
+                from={0}
+                to={7}
+                separator=","
+                direction="up"
+                duration={1}
+                className="count-up-text"
+              />+</p>
               <p className="text-white text-base font-semibold">Website</p>
             </div>
 
@@ -162,31 +187,31 @@ function MobileView() {
             <div className="flex justify-between text-center">
               <div>
                 <p className="text-[#0A6DD8] text-2xl font-bold"> <CountUp
-                        from={0}
-                        to={15}
-                        separator=","
-                        direction="up"
-                        duration={1}
-                        className="count-up-text"
-                      />+</p>
+                  from={0}
+                  to={15}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />+</p>
                 <p className="text-white text-sm">Industry</p>
               </div>
               <div>
                 <p className="text-[#0A6DD8] text-2xl font-bold"> <CountUp
-                        from={0}
-                        to={900}
-                        separator=","
-                        direction="up"
-                        duration={1}
-                        className="count-up-text"
-                      />%+</p>
+                  from={0}
+                  to={900}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />%+</p>
                 <p className="text-white text-sm">Growth</p>
               </div>
             </div>
           </div>
         </div>
-          {/* Part 2 */}
-         <div className="mt-5">
+        {/* Part 2 */}
+        <div className="mt-5">
           {/* TEXT */}
           <div className="text-center space-y-3">
 
@@ -229,5 +254,163 @@ function MobileView() {
         </div>
       </div>
     </div>
+  );
+}
+
+
+
+function Hero1() {
+  return (
+    <div className="relative hidden lg:flex flex-col items-center justify-center mt-8 min-h-screen">
+      <div className="container mx-auto px-4 flex flex-row items-center justify-between">
+        <div className="flex flex-col gap-10 w-7/12 text-left space-y-4 mt-2 h-full">
+          <div className="flex flex-col gap-4">
+            <motion.h1 className="text-5xl lg:text-[55px] font-bold text-white" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+              ELEVATE YOUR STRATEGY
+            </motion.h1>
+            <motion.h2 className="text-7xl font-bold text-[#82b7dc]" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+              TRANSFORM <br /> YOUR BUSINESS
+            </motion.h2>
+            <motion.p className="text-xl text-gray-300 max-w-lg" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
+              From brand positioning to high-performing digital platforms, we create smart systems that help ambitious businesses scale with clarity and confidence.
+            </motion.p>
+          </div>
+          <motion.div className="flex items-center gap-10 text-[#FFFFFF]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
+            <button className="border font-md hover:bg-[#FFFFFF21] rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">Book a Free Strategy Call</button>
+            <button className="border font-md hover:bg-[#FFFFFF21] rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">View Our Solutions</button>
+          </motion.div>
+        </div>
+
+        <motion.div className="relative w-6/12 min-h-screen flex flex-col items-center justify-between">
+          <Image src="/land2.png" alt="land" width={420} height={220} className="w-full max-w-[460px] object-cover rounded-lg mt-0 mx-auto" />
+          <div className="absolute bottom-24 left-1/2 -translate-x-1/2 w-full px-6">
+            <div className="flex flex-col items-center mb-4">
+              <p className="text-[#0A6DD8] text-[40px] font-extrabold">
+                <CountUp
+                  from={0}
+                  to={7}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />+
+              </p>
+              <p className="text-white text-[24px] font-bold">Website</p>
+            </div>
+            <div className="flex justify-between text-center">
+              <div>
+                <p className="text-[#0A6DD8] text-[36px] font-extrabold"><CountUp
+                  from={0}
+                  to={15}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />+</p>
+                <p className="text-white text-[24px] font-bold">Industry Expertise</p>
+              </div>
+              <div>
+                <p className="text-[#0A6DD8] text-[36px] font-extrabold">
+                  <CountUp
+                    from={0}
+                    to={900}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                  />%+</p>
+                <p className="text-white text-[24px] font-bold">Social Media Growth</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+function Hero2() {
+  return (
+    <section className="relative w-full py-24 mt-5 bg-black text-white overflow-hidden">
+      {/* --- BACKGROUND BLOBS (Matching Hero) --- */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[15%] left-[5%] w-[500px] h-[500px] animate-blob opacity-30">
+          <div className="absolute inset-0 rounded-full bg-[#166bf3] blur-3xl" />
+        </div>
+      </div>
+
+      <div className="container relative z-10 mx-auto px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          
+          {/* LEFT COLUMN: Value Proposition */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <div className="space-y-4">
+              <span className="text-[#07f3ac] font-bold tracking-widest text-sm uppercase border border-[#07f3ac]/30 px-4 py-1 rounded-full">
+                FREE AUDIT · NO CALL NEEDED
+              </span>
+              <h2 className="text-5xl lg:text-6xl font-extrabold leading-tight">
+                Find Out What's Holding <br /> 
+                <span className="text-[#82b7dc]">Your Digital Presence Back</span>
+              </h2>
+              <p className="text-gray-400 text-lg max-w-lg leading-relaxed">
+                Share your website or describe your tech setup. We'll review it and send you a 
+                personalised audit — specific issues, clear recommendations, zero sales pressure.
+              </p>
+            </div>
+
+            {/* CTA & Trust Badges */}
+            <div className="space-y-6">
+              <button className="group flex items-center gap-3 bg-white text-black font-bold py-4 px-8 rounded-full hover:bg-[#82b7dc] transition-all duration-300">
+                Get my free audit <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              
+              <div className="grid grid-cols-2 gap-4">
+                {["Delivered within 48 hours", "No commitment required", "Specific to your business"].map((text, i) => (
+                  <div key={i} className="flex items-center gap-2 text-sm text-gray-400">
+                    <CheckCircle2 size={16} className="text-[#07f3ac]" />
+                    {text}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* RIGHT COLUMN: Feature Grid */}
+          <motion.div 
+             initial={{ opacity: 0, scale: 0.95 }}
+             whileInView={{ opacity: 1, scale: 1 }}
+             viewport={{ once: true }}
+             className="grid sm:grid-cols-2 gap-4"
+          >
+             <div className="col-span-full mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">What your audit covers</h3>
+                <div className="h-1 w-20 bg-[#0A6DD8]" />
+             </div>
+
+            {auditFeatures.map((feature, index) => (
+              <div 
+                key={index}
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-[#82b7dc]/50 transition-colors"
+              >
+                <div className="mb-4 bg-white/5 w-12 h-12 flex items-center justify-center rounded-lg">
+                  {feature.icon}
+                </div>
+                <h4 className="text-lg font-bold text-white mb-2">{feature.title}</h4>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  {feature.desc}
+                </p>
+              </div>
+            ))}
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
   );
 }

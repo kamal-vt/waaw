@@ -75,10 +75,10 @@ export const MainContentSection = (): JSX.Element => {
           
           {/* Left Column */}
           <div className="flex flex-col items-center justify-center relative w-full md:w-[45%] text-center md:-mt-10">
-            <h2 className="text-white text-5xl md:text-[56px] font-bold mb-6 tracking-wide [font-family:'Montserrat',Helvetica]">
+            <h2 className="text-[#82B7DC] text-[24px] sm:text-[28px] md:text-[34px] font-bold sm:mb-6 tracking-wide [font-family:'Montserrat',Helvetica]">
               FAQ
             </h2>
-            <h3 className="text-white text-2xl md:text-[28px] font-medium mb-10 [font-family:'Montserrat',Helvetica]">
+            <h3 className="text-white text-[20px] sm:text-[24px] md:text-[28px] font-medium mb-5 sm:mb-10 [font-family:'Montserrat',Helvetica]">
               Get Clarity Before You Start
             </h3>
 

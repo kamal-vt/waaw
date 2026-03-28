@@ -21,7 +21,7 @@ export const ContentWrapperSection = () => {
         {/* ===== Main visual + desktop positioned process cards ===== */}
         <div className="relative w-full max-w-[1000px] mx-auto mb-12 md:mb-16">
           {/* Visual container: gives a fixed-ish area on md+ so cards can be positioned around it */}
-          <div className="relative w-full aspect-square max-w-[700px] mx-auto ">
+          <div className="relative w-[85%] md:w-full aspect-square max-w-[320px] md:max-w-[700px] mx-auto ">
             {/* Frame-50 background image */}
             <img
               src="/Frame 50.png"
@@ -102,120 +102,8 @@ export const ContentWrapperSection = () => {
           </div>
         </div>
 
-        {/* ===== Mobile / small screens: keep the responsive grid (visible on < md) ===== */}
-        <div className="block md:hidden grid grid-cols-1 gap-8 max-w-[1200px] mx-auto">
-          {/* Envision */}
-          <div className="text-center md:text-left space-y-3">
-            <div className="w-12 h-12 md:w-14 md:h-14 bg-[#1a2332] rounded-full flex items-center justify-center mx-auto md:mx-0 mb-3">
-              <img className="w-6 h-6 md:w-7 md:h-7" alt="Envision" src="/frame-1.svg" />
-            </div>
-            <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#bbbbbb] text-lg md:text-xl">
-              Envision
-            </h3>
-            <ul className="space-y-2 text-[#bbbbbb] text-sm md:text-base">
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Define goals</span>
-              </li>
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Research audience</span>
-              </li>
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Plan features</span>
-              </li>
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Set the vision</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Design */}
-          <div className="text-center md:text-left space-y-3">
-            <div className="w-12 h-12 md:w-14 md:h-14 bg-[#1a2332] rounded-full flex items-center justify-center mx-auto md:mx-0 mb-3">
-              <img className="w-6 h-6 md:w-7 md:h-7" alt="Design" src="/frame-47.svg" />
-            </div>
-            <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#bbbbbb] text-lg md:text-xl">
-              Design
-            </h3>
-            <ul className="space-y-2 text-[#bbbbbb] text-sm md:text-base">
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Wireframes & flows</span>
-              </li>
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>UI/UX layouts</span>
-              </li>
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Visual interfaces</span>
-              </li>
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Interactive prototypes</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Elevate */}
-          <div className="text-center md:text-left space-y-3">
-            <div className="w-12 h-12 md:w-14 md:h-14 bg-[#1a2332] rounded-full flex items-center justify-center mx-auto md:mx-0 mb-3">
-              <img className="w-6 h-6 md:w-7 md:h-7" alt="Elevate" src="/frame-39.svg" />
-            </div>
-            <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#bbbbbb] text-lg md:text-xl">
-              Elevate
-            </h3>
-            <ul className="space-y-2 text-[#bbbbbb] text-sm md:text-base">
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Refine design</span>
-              </li>
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Optimize usability</span>
-              </li>
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Ensure responsiveness</span>
-              </li>
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Enhance features</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Unleash */}
-          <div className="text-center md:text-left space-y-3">
-            <div className="w-12 h-12 md:w-14 md:h-14 bg-[#1a2332] rounded-full flex items-center justify-center mx-auto md:mx-0 mb-3">
-              <img className="w-6 h-6 md:w-7 md:h-7" alt="Unleash" src="/frame-40.svg" />
-            </div>
-            <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#bbbbbb] text-lg md:text-xl">
-              Unleash
-            </h3>
-            <ul className="space-y-2 text-[#bbbbbb] text-sm md:text-base">
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Finalize product</span>
-              </li>
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Test & QA</span>
-              </li>
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Launch smoothly</span>
-              </li>
-              <li className="flex items-start justify-center md:justify-start">
-                <span className="w-1.5 h-1.5 bg-[#82b7dc] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                <span>Provide support</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        {/* ===== Mobile / small screens ===== */}
+        <MobileView/>
       </div>
 
       {/* small CSS for slow-spin (kept) */}
@@ -251,7 +139,7 @@ interface ProcessCardProps {
 const ProcessCard: React.FC<ProcessCardProps> = ({ title, items = [], align = "left" }) => {
   const isRight = align === "right";
   return (
-    <div className={`text-${isRight ? "right" : "left"} space-y-3 w-72 `}>
+    <div className={`text-${isRight ? "right" : "left"} space-y-3 w-64 md:w-72`}>
       {/* <div className={`w-12 h-12 md:w-14 md:h-14 bg-[#1a2332] rounded-full flex items-center justify-center mb-3 mx-0 ${isRight ? "ml-auto" : ""}`}>
         <img className="w-6 h-6 md:w-7 md:h-7" alt={title} src={icon} />
       </div> */}
@@ -270,3 +158,57 @@ const ProcessCard: React.FC<ProcessCardProps> = ({ title, items = [], align = "l
     </div>
   );
 };
+
+
+
+
+function MobileView(){
+    return (
+        <div className="grid md:hidden grid-cols-2  gap-8 px-6 mt-4 mb-8  mx-auto">
+          <div className="flex justify-center sm:justify-start">
+            <ProcessCard
+              title="Envision"
+              items={[
+                "Define goals",
+                "Research audience",
+                "Plan features",
+                "Set the vision",
+              ]}
+            />
+          </div>
+          <div className="flex justify-center sm:justify-start">
+            <ProcessCard
+              title="Design"
+              items={[
+                "Wireframes & flows",
+                "UI/UX layouts",
+                "Visual interfaces",
+                "Interactive prototypes",
+              ]}
+            />
+          </div>
+          <div className="flex justify-center sm:justify-start">
+            <ProcessCard
+              title="Elevate"
+              items={[
+                "Refine design",
+                "Optimize usability",
+                "Ensure responsiveness",
+                "Enhance features",
+              ]}
+            />
+          </div>
+          <div className="flex justify-center sm:justify-start">
+            <ProcessCard
+              title="Unleash"
+              items={[
+                "Finalize product",
+                "Test & QA",
+                "Launch smoothly",
+                "Provide support",
+              ]}
+            />
+          </div>
+        </div>
+    );
+}
