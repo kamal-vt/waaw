@@ -6,6 +6,7 @@ import CountUp from "../ui/CountUp";
 import { Zap, Layout, Settings, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react"; 
+import { useRouter } from "next/navigation";
 
 
 const auditFeatures = [
@@ -42,7 +43,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 8000); // Switches every 8 seconds
+    }, 10000); // Switches every 10 seconds
     return () => clearInterval(timer);
   }, []);
 
@@ -171,6 +172,7 @@ function Stat({ number, label, className }: { number: string; label: string; cla
 
 
 function MobileHero1() {
+  const router = useRouter();
   return (
     <div className="lg:hidden mt-10">
       <div className="container mx-auto px-5 py-6 flex flex-col items-center gap-4">
@@ -266,10 +268,10 @@ function MobileHero1() {
 
           {/* CTA BUTTONS (DESKTOP STYLE MATCH) */}
           <div className="flex flex-col gap-3 w-full max-w-xs">
-            <button className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition">
+            <button onClick={()=> router.push('/contact')} className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition">
               Book a Free Strategy Call
             </button>
-            <button className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition">
+            <button onClick={()=> router.push('/solutions')} className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition">
               View Our Solutions
             </button>
           </div>
@@ -280,6 +282,7 @@ function MobileHero1() {
 }
 
 function MobileHero2() {
+  const router = useRouter();
   return (
     <div className="px-5 py-10 mt-4 space-y-6 text-center">
       
@@ -295,7 +298,7 @@ function MobileHero2() {
         Share your website and get a personalized audit.
       </p>
 
-      <button className="bg-white text-black py-3 px-6 rounded-full font-bold">
+      <button onClick={() => router.push("/contact")} className="bg-white text-black py-3 px-6 rounded-full font-bold">
         Get my free audit
       </button>
 
@@ -318,6 +321,7 @@ function MobileHero2() {
 
 
 function Hero1() {
+  const router = useRouter();
   return (
     <div className="relative hidden lg:flex flex-col items-center justify-center mt-8 min-h-screen">
       <div className="container mx-auto px-4 flex flex-row items-center justify-between">
@@ -334,8 +338,8 @@ function Hero1() {
             </motion.p>
           </div>
           <motion.div className="flex items-center gap-10 text-[#FFFFFF]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
-            <button className="border font-md hover:bg-[#FFFFFF21] rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">Book a Free Strategy Call</button>
-            <button className="border font-md hover:bg-[#FFFFFF21] rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">View Our Solutions</button>
+            <button onClick={()=>router.push('/contact')} className="border font-md hover:bg-[#FFFFFF21] rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">Book a Free Strategy Call</button>
+            <button onClick={()=>router.push('/#services')} className="border font-md hover:bg-[#FFFFFF21] rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">View Our Solutions</button>
           </motion.div>
         </div>
 
@@ -388,6 +392,7 @@ function Hero1() {
 }
 
 function Hero2() {
+  const router = useRouter();
   return (
     <section className="relative w-full py-24 mt-5 bg-black text-white overflow-hidden">
       {/* --- BACKGROUND BLOBS (Matching Hero) --- */}
@@ -424,7 +429,9 @@ function Hero2() {
 
             {/* CTA & Trust Badges */}
             <div className="space-y-6">
-              <button className="group flex items-center gap-3 bg-white text-black font-bold py-4 px-8 rounded-full hover:bg-[#82b7dc] transition-all duration-300">
+              <button 
+              onClick={() => router.push("/contact")}
+              className="group flex items-center gap-3 bg-white text-black font-bold py-4 px-8 rounded-full hover:bg-[#82b7dc] transition-all duration-300">
                 Get my free audit <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
               

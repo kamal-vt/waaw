@@ -4,9 +4,11 @@ import Link from "next/link";
 import { ArrowUpRight, LocateIcon, Mail, MapPin, Phone } from "lucide-react";
 
 const socialIcons = [
-  { src: "/frame-14.svg", alt: "LinkedIn", href: "#" },
-  { src: "/frame-15.svg", alt: "x", href: "#" },
+  { src: "/frame-14.svg", alt: "LinkedIn", href: "https://www.linkedin.com/company/waaw-tech-official/posts/?feedView=all" },
+  { src: "/frame-60.svg", alt: "Facebook", href: "https://whatsapp.com/channel/0029VbCghgKLY6dErEU7lX1x" },
+  { src: "/frame-15.svg", alt: "x", href: "https://x.com/WaaWTech" },
   { src: "/frame-16.svg", alt: "Instagram", href: "https://www.instagram.com/waaw_tech/?hl=en" },
+  { src: "/frame-60.svg", alt: "Facebook", href: "https://www.facebook.com/people/WAAW-Technologies/61583492387843/" }
 ];
 
 const contactIcons = [
@@ -22,11 +24,11 @@ const companyLinks = [
   { label: "Let's Talk", href: "/contact" },
 ];
 const resourceLinks = [
-  { label: "Features", href: "#home" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Industry", href: "#industries" },
+  { label: "Features", href: "/" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Industry", href: "/industries" },
   { label: "Roadmap", href: "#roadmap" },
-  { label: "FAQ", href: "#faq" },
+  { label: "FAQ", href: "/contact" },
 ];
 const legalLinks = [
   { label: "Privacy Policy", href: "#" },
@@ -66,22 +68,22 @@ export const FooterSection = (): JSX.Element => (
         `}</style>
     </div>
     {/* glow */}
-    <Glow/>
+    <Glow />
 
     {/* Divider */}
     <div className="relative z-10 mt-8 md:mt-20 w-full max-w-[1258px] mx-auto h-px [background:radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,1)_40%,rgba(0,0,0,1)_100%)]" />
 
     {/* Footer Grid */}
     <FooterGrid />
-    
-  </footer> 
+
+  </footer>
 );
 
 export default FooterSection;
 
 
 
-function Glow(){
+function Glow() {
   const [count, setCount] = useState(10);
 
   useEffect(() => {
@@ -99,7 +101,7 @@ function Glow(){
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-        <div>
+    <div>
       {/* Top-left glow */}
       <div className="absolute top-[-145px] left-[-145px] w-[290px] h-[290px] rounded-full blur-[250px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(130,183,220,1)_0%)]" />
       {/* Bottom-right glow */}
@@ -171,6 +173,7 @@ function Glow(){
           </Link>
         </div>
       </div>
+      
     </div>
   )
 }
@@ -179,97 +182,106 @@ function Glow(){
 
 function FooterGrid() {
   return (
-    <footer className="relative  text-white overflow-hidden mt-4 ">
-      
-      {/* Background Gradient Glow (Matches the bottom-right teal/blue glow in image) */}
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] pointer-events-none" />
+    <footer className="relative text-white overflow-hidden mt-10 px-6 md:px-12 lg:px-20">
+      <div className="relative z-10  mx-auto">
 
-      <div className=" relative z-10 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-          
-          {/* Section 1: Brand & Social */}
-          <div className="md:col-span-4 flex flex-col justify-center items-center space-y-4">
-            <div className="flex items-center justify-center">
-              <img src="/logo.png" alt="WaaW Logo" className="w-20 sm:w-32 h-auto" />
-            </div>
-            
-            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              We design and implement structured digital systems that help businesses 
+        {/* Top Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+
+          {/* Section 1 */}
+          <div className="md:col-span-4 flex flex-col space-y-4">
+            <img src="/logo.png" alt="logo" className="w-24" />
+
+            <p className="text-gray-400 text-sm leading-relaxed">
+              We design and implement structured digital systems that help businesses
               scale with clarity, automation and measurable growth.
             </p>
-            
+
             <p className="text-gray-300 italic text-sm">
               "We handle How, you handle WaaW!"
             </p>
 
-            {/* Social Icons - Circular bordered style */}
-            <div className="flex gap-4 pt-4">
+            {/* Social */}
+            <div className="flex gap-4 pt-3">
               {socialIcons.map((icon, i) => (
-                <a key={i} href={icon.href} className="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:bg-white/10 transition group">
-                  <img src={icon.src} alt={icon.alt} className="w-5 h-5 opacity-80 group-hover:opacity-100" />
+                <a
+                  key={i}
+                  href={icon.href}
+                  className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white/10 transition"
+                >
+                  <img src={icon.src} alt={icon.alt} className="w-8 h-8" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Vertical Divider (Visible on Desktop) */}
-          <div className="hidden md:block md:col-span-1 border-l border-gray-800 h-full ml-auto" />
+          {/* Divider */}
+          <div className="hidden md:block md:col-span-1 border-l border-gray-800" />
 
-          {/* Section 2: Links Columns */}
+          {/* Section 2 */}
           <div className="md:col-span-4 grid grid-cols-2 gap-8">
-            <div className="flex flex-col space-y-4">
-              <h4 className="text-lg font-semibold text-gray-200">Company</h4>
-              <nav className="flex flex-col space-y-2">
-                {['Home', 'About Us', 'Solutions', 'Case Studies', 'Blogs', 'Let\'s Talk'].map((item) => (
-                  <Link key={item} href="#" className="text-gray-400 hover:text-white text-sm transition">{item}</Link>
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Company</h4>
+              <div className="flex flex-col gap-2">
+                {companyLinks.map((item) => (
+                  <Link key={item.label} href={item.href} className="text-gray-400 hover:text-white text-sm">
+                    {item.label}
+                  </Link>
                 ))}
-              </nav>
+              </div>
             </div>
-            
-            <div className="flex flex-col space-y-4">
-              <h4 className="text-lg font-semibold text-gray-200">Resources</h4>
-              <nav className="flex flex-col space-y-2">
-                {['Features', 'Pricing', 'Industry', 'Roadmap', 'FAQ'].map((item) => (
-                  <Link key={item} href="#" className="text-gray-400 hover:text-white text-sm transition">{item}</Link>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Resources</h4>
+              <div className="flex flex-col gap-2">
+                {resourceLinks.map((item) => (
+                  <Link key={item.label} href={item.href} className="text-gray-400 hover:text-white text-sm">
+                    {item.label}
+                  </Link>
                 ))}
-              </nav>
+              </div>
             </div>
           </div>
 
-          {/* Section 3: Contact */}
-          <div className="md:col-span-3 flex flex-col  space-y-6 ">
-            <h4 className="text-lg font-semibold text-gray-200">Let's Talk</h4>
-            
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <MapPin />
-                <span className="text-gray-400 text-sm">Hyderabad, Telangana</span>
-              </div>
-              
-              <div className="flex items-center gap-2">
-                <Phone />
-                <span className="text-gray-400 text-sm">+91 7702118555</span>
-              </div>
-              
-              <div className="flex items-center gap-2">
-                <Mail />
-                <span className="text-gray-400 text-sm">support@waave.com</span>
-              </div>
+          {/* Section 3 */}
+          <div className="md:col-span-3 flex flex-col space-y-4">
+            <h4 className="text-lg font-semibold">Let's Talk</h4>
+
+            <div className="flex items-center gap-2 text-gray-400 text-sm">
+              <MapPin size={16} />
+              Hyderabad, Telangana
             </div>
+
+            <div className="flex items-center gap-2 text-gray-400 text-sm">
+              <Phone size={16} />
+              +91 7702118555
+            </div>
+
+            <div className="flex items-center gap-2 text-gray-400 text-sm">
+              <Mail size={16} />
+              support@waave.com
+            </div>
+          </div>
+
+        </div>
+
+            {/* Divider */}
+    <div className="relative z-10 mt-8 md:mt-20 w-full max-w-[1258px] mx-auto h-px [background:radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,1)_40%,rgba(0,0,0,1)_100%)]" />
+
+
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-6  flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500 uppercase">
+          <p>© 2026 WaaW. All rights reserved</p>
+
+          <div className="flex gap-6">
+            <Link href="#">Privacy Policy</Link>
+            <Link href="#">Refund Policy</Link>
+            <Link href="#">Terms & Condition</Link>
           </div>
         </div>
 
-        {/* Bottom Legal Section */}
-        <div className="mt-16 pt-8 border-t border-gray-900 flex flex-col md:row items-center justify-between text-[11px] text-gray-500 tracking-wide uppercase">
-          <p>Copyright © 2025 WaaW. All rights reserved</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-white transition">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition">Refund Policy</Link>
-            <Link href="#" className="hover:text-white transition">Terms and Condition</Link>
-          </div>
-        </div>
       </div>
     </footer>
   );
-};
+}
 
