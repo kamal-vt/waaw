@@ -65,7 +65,29 @@ export default function Hero() {
       <div className="relative z-10">
         {/* Mobile View - Kept separate or you can wrap in slider too */}
         <div className="lg:hidden">
-            <MobileView />
+            <AnimatePresence mode="wait">
+            {currentSlide === 0 ? (
+              <motion.div
+                key="hero1"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5 }}
+              >
+                <MobileHero1 />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="hero2"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5 }}
+              >
+                <MobileHero2 />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* DESKTOP SLIDER */}
@@ -148,7 +170,7 @@ function Stat({ number, label, className }: { number: string; label: string; cla
 }
 
 
-function MobileView() {
+function MobileHero1() {
   return (
     <div className="lg:hidden mt-10">
       <div className="container mx-auto px-5 py-6 flex flex-col items-center gap-4">
@@ -257,6 +279,42 @@ function MobileView() {
   );
 }
 
+function MobileHero2() {
+  return (
+    <div className="px-5 py-10 mt-4 space-y-6 text-center">
+      
+      <span className="text-[#07f3ac] text-xs border px-3 py-1 rounded-full">
+        FREE AUDIT
+      </span>
+
+      <h2 className="text-2xl font-bold text-white">
+        Find Out What's Holding Your Digital Presence Back
+      </h2>
+
+      <p className="text-gray-400 text-sm">
+        Share your website and get a personalized audit.
+      </p>
+
+      <button className="bg-white text-black py-3 px-6 rounded-full font-bold">
+        Get my free audit
+      </button>
+
+      {/* FEATURES */}
+      <div className="grid grid-cols-1 gap-4 mt-6">
+        {auditFeatures.map((feature, index) => (
+          <div
+            key={index}
+            className="p-4 rounded-xl bg-white/5 border border-white/10"
+          >
+            <div className="mb-2">{feature.icon}</div>
+            <h4 className="text-white font-semibold">{feature.title}</h4>
+            <p className="text-gray-400 text-sm">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 
 function Hero1() {
