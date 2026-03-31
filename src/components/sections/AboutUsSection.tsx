@@ -164,13 +164,32 @@ export const AboutUsSection = (): JSX.Element => {
         <section className="w-full relative bg-black overflow-hidden">
           {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-[15%] left-[30%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
-              <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#1059cf] opacity-60 blur-3xl" />
-              <div className="absolute top-[190px] left-[307px] w-[281px] h-[264px] rounded-full bg-[#65a7fc] opacity-40 blur-3xl" />
-              <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#1f5cb5] rounded-full opacity-50 blur-3xl" />
-              <div className="absolute top-[235px] left-2 w-[280px] h-[260px] rounded-full bg-[#2fc9d1] opacity-40 blur-3xl" />
-              <div className="absolute top-[296px] left-[212px] w-[247px] h-[228px] rounded-full bg-[#1858c7] opacity-60 blur-3xl" />
-              <div className="absolute top-[169px] left-[154px] w-[267px] h-[253px] rounded-full bg-[#26a2df] opacity-40 blur-3xl" />
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {/* Container for the animated blobs */}
+              <div className="absolute top-[15%] left-[30%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
+
+                {/* Dark Navy - Top Left */}
+                <div className="absolute top-[30px] left-[20px] w-[300px] h-[300px] rounded-full bg-[#001D4A] blur-xl opacity-80" />
+
+                {/* Royal Blue - Top Right */}
+                <div className="absolute top-0 left-[230px] w-[280px] h-[280px] bg-[#1E56B1] rounded-full blur-xl opacity-80" />
+
+                {/* Teal/Aqua - Bottom Left */}
+                <div className="absolute top-[280px] left-[40px] w-[260px] h-[260px] rounded-full bg-[#2A9192] blur-xl opacity-80" />
+
+                {/* Deep Midnight - Bottom Center */}
+                <div className="absolute top-[350px] left-[200px] w-[240px] h-[240px] rounded-full bg-[#0E3386] blur-xl opacity-90" />
+
+                {/* Light Sky Blue - Right Side */}
+                <div className="absolute top-[220px] left-[380px] w-[250px] h-[250px] rounded-full bg-[#65A7FC] blur-xl opacity-80" />
+
+                {/* Bright Cyan - Center Focus */}
+                <div className="absolute top-[180px] left-[150px] w-[250px] h-[250px] rounded-full bg-[#3CA5D8] blur-lg z-10" />
+
+              </div>
+
+              {/* Glassmorphism Overlay */}
+              <div className="absolute inset-0 backdrop-blur-[100px] bg-black/10" />
             </div>
 
             {/* Blur Overlay */}

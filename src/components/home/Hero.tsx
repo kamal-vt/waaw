@@ -5,7 +5,7 @@ import Image from "next/image";
 import CountUp from "../ui/CountUp";
 import { Zap, Layout, Settings, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react"; 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 
@@ -14,26 +14,26 @@ const auditFeatures = [
     title: "Performance",
     desc: "Speed, load time, and mobile responsiveness issues.",
     icon: <Zap className="text-[#07f3ac] w-6 h-6" />,
-    },
-    {
-      title: "Design & UX",
-      desc: "Conversion blockers and user experience gaps.",
-      icon: <Layout className="text-[#166bf3] w-6 h-6" />,
-    },
-    {
-      title: "Tech Stack",
-      desc: "Scalability, integration, and infrastructure observations.",
-      icon: <Settings className="text-[#25b8c0] w-6 h-6" />,
-    },
-    {
-      title: "Growth Gaps",
-      desc: "Missing features — LMS, CRM, EMS, or automation.",
-      icon: <TrendingUp className="text-[#82b7dc] w-6 h-6" />,
-    },
-  ];
+  },
+  {
+    title: "Design & UX",
+    desc: "Conversion blockers and user experience gaps.",
+    icon: <Layout className="text-[#166bf3] w-6 h-6" />,
+  },
+  {
+    title: "Tech Stack",
+    desc: "Scalability, integration, and infrastructure observations.",
+    icon: <Settings className="text-[#25b8c0] w-6 h-6" />,
+  },
+  {
+    title: "Growth Gaps",
+    desc: "Missing features — LMS, CRM, EMS, or automation.",
+    icon: <TrendingUp className="text-[#82b7dc] w-6 h-6" />,
+  },
+];
 
 
-    // -------------------- MAIN HERO --------------------
+// -------------------- MAIN HERO --------------------
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -52,21 +52,40 @@ export default function Hero() {
 
   return (
     <section className="relative w-full min-h-screen bg-[#000000] text-[#bbbbbb] overflow-hidden">
-      
+
       {/* --- BACKGROUND BLOBS (Global to both slides) --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[12%] left-[55%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
-          <div className="absolute top-[33px] left-0 w-[307px] h-[263px] rounded-full bg-[#166bf3] opacity-60 blur-3xl" />
-          <div className="absolute top-0 left-[212px] w-[283px] h-[258px] bg-[#07f3ac] rounded-full opacity-50 blur-3xl" />
-          <div className="absolute top-[296px] left-[212px] w-[247px] h-[228px] rounded-full bg-[#0454de] opacity-60 blur-3xl" />
+        {/* Container for the animated blobs */}
+        <div className="absolute top-[5%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
+
+          {/* Dark Navy - Top Left */}
+          <div className="absolute top-[30px] left-[20px] w-[300px] h-[300px] rounded-full bg-[#001D4A] blur-xl opacity-80" />
+
+          {/* Royal Blue - Top Right */}
+          <div className="absolute top-0 left-[230px] w-[280px] h-[280px] bg-[#1E56B1] rounded-full blur-xl opacity-80" />
+
+          {/* Teal/Aqua - Bottom Left */}
+          <div className="absolute top-[280px] left-[40px] w-[260px] h-[260px] rounded-full bg-[#2A9192] blur-xl opacity-80" />
+
+          {/* Deep Midnight - Bottom Center */}
+          <div className="absolute top-[350px] left-[200px] w-[240px] h-[240px] rounded-full bg-[#0E3386] blur-xl opacity-90" />
+
+          {/* Light Sky Blue - Right Side */}
+          <div className="absolute top-[220px] left-[380px] w-[250px] h-[250px] rounded-full bg-[#65A7FC] blur-xl opacity-80" />
+
+          {/* Bright Cyan - Center Focus */}
+          <div className="absolute top-[180px] left-[150px] w-[250px] h-[250px] rounded-full bg-[#3CA5D8] blur-lg z-10" />
+
         </div>
+
+        {/* Glassmorphism Overlay */}
         <div className="absolute inset-0 backdrop-blur-[100px] bg-black/10" />
       </div>
 
       <div className="relative z-10">
         {/* Mobile View - Kept separate or you can wrap in slider too */}
         <div className="lg:hidden">
-            <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait">
             {currentSlide === 0 ? (
               <motion.div
                 key="hero1"
@@ -122,16 +141,15 @@ export default function Hero() {
             <button onClick={prevSlide} className="p-2 rounded-full border border-white/20 hover:bg-white/10 transition">
               <ChevronLeft className="text-white" />
             </button>
-            
+
             {/* Dots */}
             <div className="flex gap-2">
               {[...Array(totalSlides)].map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentSlide(i)}
-                  className={`h-2 transition-all duration-300 rounded-full ${
-                    currentSlide === i ? "w-8 bg-[#07f3ac]" : "w-2 bg-white/30"
-                  }`}
+                  className={`h-2 transition-all duration-300 rounded-full ${currentSlide === i ? "w-8 bg-[#07f3ac]" : "w-2 bg-white/30"
+                    }`}
                 />
               ))}
             </div>
@@ -151,7 +169,7 @@ export default function Hero() {
           100% { transform: translate(0px, 0px) scale(1); }
         }
         .animate-blob {
-          animation: blobMove 5s infinite ease-in-out;
+          animation: blobMove 4s infinite ease-in-out;
         }
       `}</style>
     </section>
@@ -268,10 +286,10 @@ function MobileHero1() {
 
           {/* CTA BUTTONS (DESKTOP STYLE MATCH) */}
           <div className="flex flex-col gap-3 w-full max-w-xs">
-            <button onClick={()=> router.push('/contact')} className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition">
+            <button onClick={() => router.push('/contact')} className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition">
               Book a Free Strategy Call
             </button>
-            <button onClick={()=> router.push('/solutions')} className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition">
+            <button onClick={() => router.push('/solutions')} className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition">
               View Our Solutions
             </button>
           </div>
@@ -285,7 +303,7 @@ function MobileHero2() {
   const router = useRouter();
   return (
     <div className="px-5 py-10 mt-4 space-y-6 text-center">
-      
+
       <span className="text-[#07f3ac] text-xs border px-3 py-1 rounded-full">
         FREE AUDIT
       </span>
@@ -338,8 +356,8 @@ function Hero1() {
             </motion.p>
           </div>
           <motion.div className="flex items-center gap-10 text-[#FFFFFF]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
-            <button onClick={()=>router.push('/contact')} className="border font-md hover:bg-[#FFFFFF21] rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">Book a Free Strategy Call</button>
-            <button onClick={()=>router.push('/#services')} className="border font-md hover:bg-[#FFFFFF21] rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">View Our Solutions</button>
+            <button onClick={() => router.push('/contact')} className="border font-md hover:bg-[#FFFFFF21] rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">Book a Free Strategy Call</button>
+            <button onClick={() => router.push('/#services')} className="border font-md hover:bg-[#FFFFFF21] rounded-[30px] w-[271px] h-[50px] py-2 px-5 text-[15px]">View Our Solutions</button>
           </motion.div>
         </div>
 
@@ -397,16 +415,38 @@ function Hero2() {
     <section className="relative w-full py-24 mt-5 bg-black text-white overflow-hidden">
       {/* --- BACKGROUND BLOBS (Matching Hero) --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[15%] left-[5%] w-[500px] h-[500px] animate-blob opacity-30">
-          <div className="absolute inset-0 rounded-full bg-[#166bf3] blur-3xl" />
+        {/* Container for the animated blobs */}
+        <div className="absolute top-[5%] left-[4%] -translate-x-1/2 w-[600px] h-[600px] animate-blob">
+
+          {/* Dark Navy - Top Left */}
+          <div className="absolute top-[30px] left-[20px] w-[300px] h-[300px] rounded-full bg-[#001D4A] blur-xl opacity-80" />
+
+          {/* Royal Blue - Top Right */}
+          <div className="absolute top-0 left-[230px] w-[280px] h-[280px] bg-[#1E56B1] rounded-full blur-xl opacity-80" />
+
+          {/* Teal/Aqua - Bottom Left */}
+          <div className="absolute top-[280px] left-[40px] w-[260px] h-[260px] rounded-full bg-[#2A9192] blur-xl opacity-80" />
+
+          {/* Deep Midnight - Bottom Center */}
+          <div className="absolute top-[350px] left-[200px] w-[240px] h-[240px] rounded-full bg-[#0E3386] blur-xl opacity-90" />
+
+          {/* Light Sky Blue - Right Side */}
+          <div className="absolute top-[220px] left-[380px] w-[250px] h-[250px] rounded-full bg-[#65A7FC] blur-xl opacity-80" />
+
+          {/* Bright Cyan - Center Focus */}
+          <div className="absolute top-[180px] left-[150px] w-[250px] h-[250px] rounded-full bg-[#3CA5D8] blur-lg z-10" />
+
         </div>
+
+        {/* Glassmorphism Overlay */}
+        <div className="absolute inset-0 backdrop-blur-[100px] bg-black/10" />
       </div>
 
       <div className="container relative z-10 mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          
+
           {/* LEFT COLUMN: Value Proposition */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -418,23 +458,23 @@ function Hero2() {
                 FREE AUDIT · NO CALL NEEDED
               </span>
               <h2 className="text-5xl lg:text-6xl font-extrabold leading-tight">
-                Find Out What's Holding <br /> 
+                Find Out What's Holding <br />
                 <span className="text-[#82b7dc]">Your Digital Presence Back</span>
               </h2>
               <p className="text-gray-400 text-lg max-w-lg leading-relaxed">
-                Share your website or describe your tech setup. We'll review it and send you a 
+                Share your website or describe your tech setup. We'll review it and send you a
                 personalised audit — specific issues, clear recommendations, zero sales pressure.
               </p>
             </div>
 
             {/* CTA & Trust Badges */}
             <div className="space-y-6">
-              <button 
-              onClick={() => router.push("/contact")}
-              className="group flex items-center gap-3 bg-white text-black font-bold py-4 px-8 rounded-full hover:bg-[#82b7dc] transition-all duration-300">
+              <button
+                onClick={() => router.push("/contact")}
+                className="group flex items-center gap-3 bg-white text-black font-bold py-4 px-8 rounded-full hover:bg-[#82b7dc] transition-all duration-300">
                 Get my free audit <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 {["Delivered within 48 hours", "No commitment required", "Specific to your business"].map((text, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm text-gray-400">
@@ -447,19 +487,19 @@ function Hero2() {
           </motion.div>
 
           {/* RIGHT COLUMN: Feature Grid */}
-          <motion.div 
-             initial={{ opacity: 0, scale: 0.95 }}
-             whileInView={{ opacity: 1, scale: 1 }}
-             viewport={{ once: true }}
-             className="grid sm:grid-cols-2 gap-4"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="grid sm:grid-cols-2 gap-4"
           >
-             <div className="col-span-full mb-2">
-                <h3 className="text-xl font-bold text-white mb-2">What your audit covers</h3>
-                <div className="h-1 w-20 bg-[#0A6DD8]" />
-             </div>
+            <div className="col-span-full mb-2">
+              <h3 className="text-xl font-bold text-white mb-2">What your audit covers</h3>
+              <div className="h-1 w-20 bg-[#0A6DD8]" />
+            </div>
 
             {auditFeatures.map((feature, index) => (
-              <div 
+              <div
                 key={index}
                 className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-[#82b7dc]/50 transition-colors"
               >
@@ -473,7 +513,7 @@ function Hero2() {
               </div>
             ))}
           </motion.div>
-
+ 
         </div>
       </div>
     </section>

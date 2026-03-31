@@ -36,15 +36,15 @@ export const ListenTowhat = () => {
 
             <DecorativeLines>
             <h2 className="font-['Montserrat'] font-bold text-[#82B7DC] text-[20px] sm:text-[28px] md:text-[34px] tracking-widest uppercase z-10  drop-shadow-md">
-              LISTEN TO WHAT ARE PARTNERS SAY
+              LISTEN TO WHAT OUR PARTNERS SAY
             </h2>
             </DecorativeLines>
           </div>
 
           <p className="font-['Montserrat'] text-[#c4c4c4] text-center max-w-3xl text-sm md:text-[15px] leading-relaxed px-4">
-            Find out why our clients trust us for their chemical needs. Their testimonials
+            Discover how we empower businesses to scale through automation and precision engineering. 
             <br className="hidden md:block" />
-            provide insight into the real-world impact of our innovative solutions
+            Our partners share their experiences with our strategic solutions and technical excellence.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ export const ListenTowhat = () => {
                         />
                       </div>
                     </div>
-
+            
                   </div>
 
                   {/* Hover background ambient shift */}
