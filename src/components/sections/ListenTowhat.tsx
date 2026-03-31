@@ -59,8 +59,19 @@ export const ListenTowhat = () => {
                   {/* Subtle top inner edge gleam */}
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[70%] h-[2px] bg-gradient-to-r from-transparent via-[#82B7DC]/80 to-transparent blur-[2px] opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
 
-                  {/* Inner dark matte card */}
-                  <div className="relative w-full h-full bg-gradient-to-br from-[#353535]/80 via-[#151515]/90 to-[#050505]/95 backdrop-blur-3xl rounded-[38px] p-8 md:p-10 flex flex-col justify-between z-10 border border-white/5">
+                  {/* Inner dark smoky mesh card */}
+                  <div 
+                    className="relative w-full h-full backdrop-blur-3xl rounded-[38px] p-8 md:p-10 flex flex-col justify-between z-10 border border-white/5"
+                    style={{
+                      background: `
+                        radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
+                        radial-gradient(circle at 80% 90%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+                        #0A0A0A
+                      `
+                    }}
+                  >
                     
                     {/* Top Section with Quote Text */}
                     <div className="relative">

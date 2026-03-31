@@ -126,8 +126,7 @@ export default function PricingSection () {
 
 const PricingCard = ({ plan }: { plan: any }) => {
   return (
-    <ParallaxCard
-      intensity={10}
+    <div
       className={`w-full max-w-[380px] mx-auto transition-all duration-500 ${
         plan.highlighted ? "lg:-mt-20 lg:mb-20 scale-105 z-20" : ""
       }`}
@@ -135,12 +134,15 @@ const PricingCard = ({ plan }: { plan: any }) => {
       <div
         className={`relative w-full h-full rounded-[30px] md:rounded-[45px] p-4 flex flex-col items-center group ${
           plan.highlighted
-            ? "border-2 border-[#82B7DC]/80 shadow-[0_0_40px_rgba(130,183,220,0.2)]"
+            ? "border-2 border-[#4ddbf0] shadow-[0_0_40px_rgba(130,183,220,0.2)]"
             : "border border-white/10"
         }`}
         style={{
           background: `
-            radial-gradient(circle at 50% 50%, rgba(107, 212, 226, 0.3) 0%, transparent 70%),
+            radial-gradient(circle at 0% 0%, rgba(27, 92, 230, 0.35) 0%, transparent 50%),
+            radial-gradient(circle at 100% 10%, rgba(20, 184, 166, 0.3) 0%, transparent 40%),
+            radial-gradient(circle at 40% 50%, rgba(79, 70, 229, 0.2) 0%, transparent 60%),
+            radial-gradient(circle at 80% 90%, rgba(6, 182, 212, 0.2) 0%, transparent 50%),
             #060D1A
           `,
         }}
@@ -151,7 +153,7 @@ const PricingCard = ({ plan }: { plan: any }) => {
         </h3>
 
         {/* Glass box */}
-        <div className="w-full bg-[#00000040] backdrop-blur-2xl rounded-[25px] md:rounded-[38px] p-4 md:p-6 flex flex-col items-center border border-white/10">
+        <div className="w-full backdrop-blur-2xl rounded-[25px] md:rounded-[38px] p-4 md:p-6 flex flex-col items-center border border-white/10">
 
           {/* Price */}
           <div className="mb-6 text-center">
@@ -197,6 +199,6 @@ const PricingCard = ({ plan }: { plan: any }) => {
           </div>
         </div>
       </div>
-    </ParallaxCard>
+    </div>
   );
 };
