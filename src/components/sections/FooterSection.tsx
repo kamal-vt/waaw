@@ -5,10 +5,10 @@ import { ArrowUpRight, LocateIcon, Mail, MapPin, Phone } from "lucide-react";
 
 const socialIcons = [
   { src: "/frame-14.svg", alt: "LinkedIn", href: "https://www.linkedin.com/company/waaw-tech-official/posts/?feedView=all" },
-  { src: "/frame-60.svg", alt: "Facebook", href: "https://whatsapp.com/channel/0029VbCghgKLY6dErEU7lX1x" },
   { src: "/frame-15.svg", alt: "x", href: "https://x.com/WaaWTech" },
   { src: "/frame-16.svg", alt: "Instagram", href: "https://www.instagram.com/waaw_tech/?hl=en" },
-  { src: "/frame-60.svg", alt: "Facebook", href: "https://www.facebook.com/people/WAAW-Technologies/61583492387843/" }
+  { src: "/frame-60.svg", alt: "Facebook", href: "https://www.facebook.com/people/WAAW-Technologies/61583492387843/" },
+  { src: "/whatsapp.png", alt: "WhatsApp", href: "https://whatsapp.com/channel/0029VbCghgKLY6dErEU7lX1x" },
 ];
 
 const contactIcons = [

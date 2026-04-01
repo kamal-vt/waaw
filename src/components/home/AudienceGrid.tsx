@@ -6,7 +6,7 @@ import DecorativeLines from "../common/DecorativeLines";
 
 const cardData = [
   {
-    title: "Innovators, Startups & Entrepreneurs",
+    title: "Innovators & Startups",
     description:
       "Waaw empowers new ventures to turn ideas into fully functional digital products helping founders build, test, and scale faster with modern web and app solutions.",
     hasGlass: true,
@@ -27,7 +27,7 @@ const cardData = [
     position: "bottom-left",
   },
   {
-    title: "Businesses Going Digital & Growing",
+    title: "Businesses Going Digital",
     description:
       "Small and medium enterprises benefit from Waaw's tools to automate operations, create online presence, and deliver seamless customer experiences across platforms.",
     hasGlass: true,

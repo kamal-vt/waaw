@@ -1,16 +1,18 @@
 import React from "react";
+import DecorativeLines from "../common/DecorativeLines";
 
 export const ContentWrapperSection = () => {
   return (
     <section className="w-full relative bg-black py-12 md:py-10 px-4 overflow-hidden">
-      <div className="relative max-w-[1400px] mx-auto">
-        {/* Main heading */}
-        <h2 className="text-center [font-family:'Montserrat',Helvetica] font-extrabold text-[#82b7dc] text-2xl md:text-4xl lg:text-5xl tracking-[0] leading-normal mb-4 md:mb-6">
-          MADE TO MOVE MINDS
-        </h2>
+      <div className="relative max-w-[1400px] mx-auto ">
+        <div className="flex justify-center w-full mb-10">
+          <DecorativeLines>
+            <h2 className="text-center [font-family:'Montserrat',Helvetica] font-extrabold text-[#82b7dc] text-2xl md:text-4xl lg:text-5xl tracking-[0] leading-normal mb-4 md:mb-6">
+              HOW WAAW BUILDS HIGH- <br /> IMPACT DIGITAL PRODUCTS
+            </h2>
+          </DecorativeLines>
+        </div>
 
-        {/* Decorative line */}
-        <div className="w-32 md:w-64 h-[1px] bg-white mx-auto mb-6 md:mb-8 opacity-50" />
 
         {/* Description text */}
         <p className="text-center [font-family:'Montserrat',Helvetica] font-medium text-[#bbbbbb] text-sm md:text-base lg:text-lg max-w-[90%] md:max-w-[800px] mx-auto leading-relaxed mb-12 md:mb-16">
@@ -103,7 +105,7 @@ export const ContentWrapperSection = () => {
         </div>
 
         {/* ===== Mobile / small screens ===== */}
-        <MobileView/>
+        <MobileView />
       </div>
 
       {/* small CSS for slow-spin (kept) */}
@@ -162,53 +164,53 @@ const ProcessCard: React.FC<ProcessCardProps> = ({ title, items = [], align = "l
 
 
 
-function MobileView(){
-    return (
-        <div className="grid md:hidden grid-cols-2  gap-8 px-6 mt-4 mb-8  mx-auto">
-          <div className="flex justify-center sm:justify-start">
-            <ProcessCard
-              title="Envision"
-              items={[
-                "Define goals",
-                "Research audience",
-                "Plan features",
-                "Set the vision",
-              ]}
-            />
-          </div>
-          <div className="flex justify-center sm:justify-start">
-            <ProcessCard
-              title="Design"
-              items={[
-                "Wireframes & flows",
-                "UI/UX layouts",
-                "Visual interfaces",
-                "Interactive prototypes",
-              ]}
-            />
-          </div>
-          <div className="flex justify-center sm:justify-start">
-            <ProcessCard
-              title="Elevate"
-              items={[
-                "Refine design",
-                "Optimize usability",
-                "Ensure responsiveness",
-                "Enhance features",
-              ]}
-            />
-          </div>
-          <div className="flex justify-center sm:justify-start">
-            <ProcessCard
-              title="Unleash"
-              items={[
-                "Finalize product",
-                "Test & QA",
-                "Launch smoothly",
-                "Provide support",
-              ]}
-            />
-          </div>
-        </div>
-    );
+function MobileView() {
+  return (
+    <div className="grid md:hidden grid-cols-2  gap-8 px-6 mt-4 mb-8  mx-auto">
+      <div className="flex justify-center sm:justify-start">
+        <ProcessCard
+          title="Envision"
+          items={[
+            "Define goals",
+            "Research audience",
+            "Plan features",
+            "Set the vision",
+          ]}
+        />
+      </div>
+      <div className="flex justify-center sm:justify-start">
+        <ProcessCard
+          title="Design"
+          items={[
+            "Wireframes & flows",
+            "UI/UX layouts",
+            "Visual interfaces",
+            "Interactive prototypes",
+          ]}
+        />
+      </div>
+      <div className="flex justify-center sm:justify-start">
+        <ProcessCard
+          title="Elevate"
+          items={[
+            "Refine design",
+            "Optimize usability",
+            "Ensure responsiveness",
+            "Enhance features",
+          ]}
+        />
+      </div>
+      <div className="flex justify-center sm:justify-start">
+        <ProcessCard
+          title="Unleash"
+          items={[
+            "Finalize product",
+            "Test & QA",
+            "Launch smoothly",
+            "Provide support",
+          ]}
+        />
+      </div>
+    </div>
+  );
 }
