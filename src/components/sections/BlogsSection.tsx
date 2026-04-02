@@ -87,7 +87,7 @@ function BlogCard({ card, index }: { card: any; index: number }) {
 
             {/* Bottom Icon Section (The simple sphere in the U-shape notch) */}
             <div className="absolute bottom-[5.2%] md:bottom-[5.3%]   animate-spin">
-              <div className="w-[42px] h-[42px] md:w-[54px] md:h-[54px] rounded-full bg-gradient-to-br from-[#77B1E4] via-[#407BBE] to-[#122b40] shadow-[inset_-3px_-3px_8px_rgba(0,0,0,0.4),_0_4px_10px_rgba(64,123,190,0.4)]" />
+              <div className="w-[48px] h-[48px] sm:w-[50px] sm:h-[50px] md:w-[54px] md:h-[54px] rounded-full bg-gradient-to-br from-[#77B1E4] via-[#407BBE] to-[#122b40] shadow-[inset_-3px_-3px_8px_rgba(0,0,0,0.4),_0_4px_10px_rgba(64,123,190,0.4)]" />
             </div>
           </div>
         </div>
