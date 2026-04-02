@@ -58,11 +58,11 @@ export const ServicesSection = (): JSX.Element => {
 
       {/*   Desktop view */}
       <div className="hidden lg:block relative">
-        <div className="absolute z-30 left-0 flex h-screen gap-[4px] items-start">
+        <div className="absolute z-30 left-0 flex h-1/2 gap-[4px] items-start">
           {[...Array(5)].map((_, i) => (
             <div
               key={i}
-              className="w-[8px] h-[100%] blur-[0.4px]"
+              className="w-[10px] h-[100%] blur-[0.5px]"
               style={{
                 // Silver-White Glow Gradient
                 background: 'linear-gradient(to right, rgba(255,255,255,0.2), #ffffff, rgba(255,255,255,0.2))',
@@ -77,11 +77,11 @@ export const ServicesSection = (): JSX.Element => {
           ))}
         </div>
 
-        <div className="absolute z-30 right-0 bottom-0 flex h-screen  gap-[4px] items-end ">
+        <div className="absolute z-30 right-0 bottom-0 flex h-1/2  gap-[4px] items-end ">
           {[...Array(5)].map((_, i) => (
             <div
               key={i}
-              className="w-[8px] h-[100%] blur-[0.5px]"
+              className="w-[10px] h-[100%] blur-[0.5px]"
               style={{
                 // Gradient ko vibrant banaya hai (White/Silver glow)
                 background: 'linear-gradient(to right, rgba(255,255,255,0.1), #ffffff, rgba(255,255,255,0.1))',
@@ -130,7 +130,7 @@ export const ServicesSection = (): JSX.Element => {
 
             <div className="relative flex flex-col items-center w-full mx-auto py-10">
               {/* Center Vertical Line */}
-              <div className="absolute h-full w-[2px] bg-gradient-to-b from-transparent via-gray-500 to-transparent left-1/2 -translate-x-1/2 z-0" />
+              <div className="absolute h-full w-[5px] bg-gradient-to-b from-transparent via-gray-500 to-transparent left-1/2 -translate-x-1/2 z-0" />
 
               {servicesData.map((service, index) => (
                 <div
@@ -139,16 +139,16 @@ export const ServicesSection = (): JSX.Element => {
                     }`}
                 >
                   {/* 1. Service Card Side */}
-                  <div className="w-full  md:w-1/2 px-4 md:px-10">
+                  <div className="w-full  md:w-[580px] px-4 md:px-4">
                     <ParallaxCard intensity={8}>
-                      <Card className="group relative w-full min-h-[300px] rounded-[40px] border border-white/10 bg-[#121212] overflow-hidden shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                      <Card className="group relative w-full min-h-[300px] rounded-[40px] border border-none   overflow-hidden shadow-2xl transition-all duration-500 hover:scale-[1.02]">
 
                         {/* 1. Top Gradient Header Section */}
-                        <div className="absolute top-0 left-0 right-0 h-[20%] bg-gradient-to-b from-[#4c51bf] via-[#3229b2] to-transparent opacity-90" />
+                        <div className="absolute top-0 left-0 right-0 h-[20%] bg-gradient-to-b from-[#2730e9] via-[#070095] to-transparent opacity-90" />
 
                         <CardContent className="relative z-10 p-8 md:p-10 h-full flex flex-col">
                           {/* Title */}
-                          <h4 className="font-bold text-white text-[32px] mb-6 tracking-tight text-left drop-shadow-md">
+                          <h4 className="font-bold text-white text-[32px] mb-4 tracking-tight text-left drop-shadow-md">
                             {service.title}
                           </h4>
 
@@ -167,7 +167,7 @@ export const ServicesSection = (): JSX.Element => {
 
                           {/* 2. Bottom "Know More" Button Area */}
                           <div className="mt-8 flex justify-end">
-                            <button className="bg-[#d1d5db] hover:bg-white text-[#000080] font-bold py-2 px-8 rounded-full text-sm md:text-base transition-all shadow-lg active:scale-95">
+                            <button className="bg-[#bfc4cc] hover:bg-white text-[#000080] font-bold py-2 px-8 rounded-full text-sm md:text-base transition-all shadow-lg active:scale-95">
                               Know More
                             </button>
                           </div>
@@ -182,12 +182,12 @@ export const ServicesSection = (): JSX.Element => {
                   {/* 2. Center Node (Timeline Point) */}
                   <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center z-20">
                     <div className="w-10 h-10 bg-[#1a1a1a] border-4 border-[#333] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-                      <div className="w-3 h-3 rounded-full bg-blue-400 shadow-[0_0_10px_#60a5fa] animate-pulse" />
+                      <div className="w-5 h-5 rounded-full bg-[#82B7DC] shadow-[0_0_10px_#60a5fa] animate-pulse" />
                     </div>
                   </div>
 
                   {/* 3. Empty Space for Zig-Zag */}
-                  <div className="hidden md:block md:w-1/2" />
+                  <div className="hidden md:block md:w-[580px]" />
                 </div>
               ))}
             </div>

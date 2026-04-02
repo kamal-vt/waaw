@@ -25,7 +25,7 @@ export const BlogsSection = ({ topOffset = false }) => {
         <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full blur-[120px] bg-[#82B7DC]/10" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto z-10">
+      <div className="relative w-[80%] mx-auto z-10">
         <div className="flex flex-col items-center">
 
           {/* Header */}
@@ -44,7 +44,8 @@ export const BlogsSection = ({ topOffset = false }) => {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 sm:gap-8 w-full ">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 w-full "> */}
+           <div className="flex flex-wrap justify-center gap-4 sm:gap-8 w-full ">
             {blogCards.map((card, index) => (
               <BlogCard key={index} card={card} index={index} />
             ))}
@@ -62,7 +63,7 @@ export default BlogsSection;
 
 function BlogCard({ card, index }: { card: any; index: number }) {
   return (
-    <div key={index} className="flex flex-col items-center w-[350px] sm:w-[440px]">
+    <div key={index} className="flex flex-col items-center w-[280px] sm:w-[310px]">
       <ParallaxCard intensity={10} className="w-full">
         <div className="relative w-full group flex items-center justify-center">
           {/* The Background Image from your design */}
@@ -73,7 +74,7 @@ function BlogCard({ card, index }: { card: any; index: number }) {
           />
 
           {/* Content Overlay */}
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-start text-center pt-[26%] px-14 group-hover:scale-[1.03] transition-transform duration-700">
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-start text-center pt-[10%] px-4 group-hover:scale-[1.03] transition-transform duration-700">
             {/* Title inside the card */}
             <h4 className="font-['Montserrat'] font-bold text-white text-[22px] md:text-[26px] leading-[1.3] mb-5 tracking-wide drop-shadow-md">
               {card.title}

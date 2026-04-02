@@ -198,19 +198,19 @@ function MobileHero1() {
         <div>
           {/* IMAGE */}
           <motion.div
-            className="relative w-full flex justify-center"
+            className="relative w-full mx-auto flex justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
           >
             <img
               src="/land2.png"
               alt="hero"
-              className="w-full max-w-[280px] sm:max-w-[360px] object-contain "
+              className="w-full mx-auto max-w-[280px]  sm:max-w-[360px] object-contain "
             />
           </motion.div>
 
           {/* STATS (DESKTOP STYLE LIKE CARD ALIGNMENT) */}
-          <div className="w-full absolute z-10 top-48 left-2 max-w-sm  p-5 px-10 space-y-2 ">
+          <div className="w-full absolute z-10 top-48 mx-auto max-w-sm  p-5 px-10 space-y-2 ">
 
             {/* TOP */}
             <div className="text-center">

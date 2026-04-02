@@ -182,7 +182,7 @@ function Glow() {
 
 function FooterGrid() {
   return (
-    <footer className="relative text-white overflow-hidden mt-10 px-6 md:px-12 lg:px-20">
+    <footer className="relative text-white overflow-hidden mt-10 ">
       <div className="relative z-10  mx-auto">
 
         {/* Top Grid */}
@@ -207,9 +207,9 @@ function FooterGrid() {
                 <a
                   key={i}
                   href={icon.href}
-                  className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white/10 transition"
+                  className="flex items-center justify-center hover:bg-white/10 transition"
                 >
-                  <img src={icon.src} alt={icon.alt} className="w-8 h-8" />
+                  <img src={icon.src} alt={icon.alt} className="w-8 h-8 rounded-full" />
                 </a>
               ))}
             </div>
@@ -259,7 +259,7 @@ function FooterGrid() {
 
             <div className="flex items-center gap-2 text-gray-400 text-sm">
               <Mail size={16} />
-              support@waave.com
+              waaw@visiontech.world
             </div>
           </div>
 

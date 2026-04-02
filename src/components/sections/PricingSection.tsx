@@ -106,13 +106,15 @@ export default function PricingSection () {
         <div className="flex flex-col gap-8 items-center">
 
           {/* Top Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full"> */}
+          <div className="flex flex-wrap justify-center gap-8  sm:gap-8 w-full">
             {pricingData.slice(0, 3).map((plan, index) => (
               <PricingCard key={index} plan={plan} />
             ))}
           </div>
 
           {/* Bottom Row */}
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl"> */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
             {pricingData.slice(3, 5).map((plan, index) => (
               <PricingCard key={index + 3} plan={plan} />

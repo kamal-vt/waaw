@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 /* NAV LINKS DATA */
@@ -15,32 +15,58 @@ const navLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeHash, setActiveHash] = useState("");
   const pathname = usePathname();
+
+  // Handle setting the active hash when a user clicks or scrolls
+  useEffect(() => {
+    // Set initial hash on load
+    setActiveHash(window.location.hash || "");
+
+    const handleHashChange = () => {
+      setActiveHash(window.location.hash);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  // Logic to determine if a link is active
+  const isLinkActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/" && activeHash === "";
+    }
+    return activeHash === href;
+  };
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 w-full bg-black px-4 py-2 sm:px-6 lg:px-20">
       <div className="mx-auto flex items-center justify-between">
-
+        
         {/* LOGO */}
         <Link href="/">
-          <img src="/logo.png" alt="Logo" className="h-auto w-16  sm:w-28" />
+          <img src="/logo.png" alt="Logo" className="h-auto w-20 sm:w-28" />
         </Link>
 
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex gap-8 lg:gap-10">
-          {navLinks.map((item, i) => (
-            <Link
-              key={i}
-              href={item.href}
-              className={`font-semibold text-[16px] lg:text-[18px] transition ${
-                pathname === item.href
-                  ? "text-[#82b7dc]"
-                  : "text-[#bbbbbb] hover:text-[#82b7dc]"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navLinks.map((item, i) => {
+            const active = isLinkActive(item.href);
+            return (
+              <Link
+                key={i}
+                href={item.href}
+                onClick={() => setActiveHash(item.href)}
+                className={`font-semibold text-[16px] lg:text-[18px] transition border-b-2 ${
+                  active
+                    ? "text-[#82b7dc] border-[#82b7dc]"
+                    : "text-[#bbbbbb] border-transparent hover:text-[#82b7dc]"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* DESKTOP BUTTON */}
@@ -77,42 +103,46 @@ export function Navbar() {
       {/* MOBILE MENU */}
       {isOpen && (
         <MobileMenu
-          pathname={pathname}
+          isLinkActive={isLinkActive}
           setIsOpen={setIsOpen}
+          setActiveHash={setActiveHash}
         />
       )}
     </header>
   );
 }
 
-
-
 /* MOBILE MENU COMPONENT */
 function MobileMenu({
-  pathname,
+  isLinkActive,
   setIsOpen,
+  setActiveHash,
 }: {
-  pathname: string;
+  isLinkActive: (href: string) => boolean;
   setIsOpen: (val: boolean) => void;
+  setActiveHash: (val: string) => void;
 }) {
   return (
     <div className="md:hidden bg-black border-t border-gray-800 animate-fadeIn">
       <div className="px-4 py-5 space-y-5 flex flex-col items-center">
-
-        {navLinks.map((item, i) => (
-          <Link
-            key={i}
-            href={item.href}
-            onClick={() => setIsOpen(false)}
-            className={`block text-lg font-semibold transition ${
-              pathname === item.href
-                ? "text-[#82b7dc]"
-                : "text-[#bbbbbb] hover:text-[#82b7dc]"
-            }`}
-          >
-            {item.label}
-          </Link>
-        ))}
+        {navLinks.map((item, i) => {
+          const active = isLinkActive(item.href);
+          return (
+            <Link
+              key={i}
+              href={item.href}
+              onClick={() => {
+                setIsOpen(false);
+                setActiveHash(item.href);
+              }}
+              className={`block text-lg font-semibold transition ${
+                active ? "text-[#82b7dc]" : "text-[#bbbbbb] hover:text-[#82b7dc]"
+              }`}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
 
         {/* MOBILE CTA */}
         <Link
