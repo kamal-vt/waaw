@@ -5,6 +5,7 @@ import BlobCursor from "@/components/ui/BlobCursor";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import PageTracker from "@/components/analytics/PageTracker";
 import ScrollTracker from "@/components/analytics/ScrollTracker";
+import ArrowUpButton from "@/components/ui/ArrowUp";
 
 export const metadata: Metadata = {
   title: "Waaw – Innovative Software Development & Digital Solutions",
@@ -53,6 +54,7 @@ export default function RootLayout({
           </noscript>
         )}
 
+
         <BlobCursor />
         <GoogleAnalytics GA_MEASUREMENT_ID="G-DGPX6QCVJJ" />
         
@@ -61,7 +63,7 @@ export default function RootLayout({
         <ScrollTracker />
 
         {children}
-
+        <ArrowUpButton/>
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-DGPX6QCVJJ"

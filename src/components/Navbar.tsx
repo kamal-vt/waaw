@@ -7,10 +7,10 @@ import { ArrowUpRight } from "lucide-react";
 /* NAV LINKS DATA */
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "#about" },
-  { label: "Solutions", href: "#services" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Case Studies", href: "#case-study" },
+  { label: "About Us", href: "/about" },
+  { label: "Solutions", href: "/services" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Case Studies", href: "/case-study" },
 ];
 
 export function Navbar() {
