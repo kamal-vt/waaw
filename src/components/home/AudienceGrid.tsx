@@ -142,7 +142,7 @@ export const AudienceGrid = (): JSX.Element => {
                   className="w-[38px] h-[38px]"
                 >
                   <img
-                    src="/audiencegridm.png"
+                    src="/audiencegridm.webp"
                     alt="Audience Grid Icon"
                     className="w-full h-full object-cover rounded-full"
                   />

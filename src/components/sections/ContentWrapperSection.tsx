@@ -71,7 +71,7 @@ export const ContentWrapperSection = () => {
             {/* Rotating center image - audiencegridm */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 lg:w-48 aspect-square">
               <img
-                src="/audiencegridm.png"
+                src="/audiencegridm.webp"
                 alt="Audience Grid"
                 className="object-contain animate-spin-slow"
               />

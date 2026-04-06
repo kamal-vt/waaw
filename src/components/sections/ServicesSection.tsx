@@ -120,12 +120,12 @@ export const ServicesSection = (): JSX.Element => {
             <img
               className="hidden lg:block absolute w-[22%] xl:w-[25%] top-[6%] left-[-20%] opacity-70 "
               alt="Decorative"
-              src="/servicesm.png"
+              src="/servicesm.webp"
             />
             <img
               className="hidden lg:block absolute w-[22%] xl:w-[25%] bottom-[6%] scale-x-[-1] right-[-20%] opacity-70"
               alt="Decorative"
-              src="/servicesm.png"
+              src="/servicesm.webp"
             />
 
             <div className="relative flex flex-col items-center w-full mx-auto py-10">

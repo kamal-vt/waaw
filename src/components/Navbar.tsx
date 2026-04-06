@@ -45,7 +45,7 @@ export function Navbar() {
         
         {/* LOGO */}
         <Link href="/">
-          <img src="/logo.png" alt="Logo" className="h-auto w-20 sm:w-28" />
+          <img src="/logo.webp" alt="Logo" className="h-auto w-20 sm:w-28" />
         </Link>
 
         {/* DESKTOP NAV */}

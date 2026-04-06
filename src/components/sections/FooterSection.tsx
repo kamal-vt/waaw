@@ -129,7 +129,7 @@ function Glow() {
         {/* Left image */}
         <img
           className="w-full md:w-[30.95%] h-[200px] sm:h-[200px] md:h-full object-contain"
-          src="/audiencegridm.png"
+          src="/audiencegridm.webp"
           alt="Decor"
         />
 

@@ -362,7 +362,7 @@ function Hero1() {
         </div>
 
         <motion.div className="relative w-6/12 min-h-screen flex flex-col items-center justify-between">
-          <Image src="/land2.png" alt="land" width={420} height={220} className="w-full max-w-[460px] object-cover rounded-lg mt-0 mx-auto" />
+          <Image src="/land2.avif" alt="land" width={420} height={220} className="w-full max-w-[460px] object-cover rounded-lg mt-0 mx-auto" />
           <div className="absolute bottom-24 left-1/2 -translate-x-1/2 w-full px-6">
             <div className="flex flex-col items-center mb-4">
               <p className="text-[#0A6DD8] text-[40px] font-extrabold">
