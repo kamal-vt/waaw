@@ -118,7 +118,7 @@ const AboutUsSectionMobile = () => (
       {/* Mesh 2 Optional: */}
 
       <div className="">
-        <img src="/MESH.png" alt="Mesh2" className="mx-auto w-[220px] animate-spin" style={{ animationDuration: "12s" }} />
+        <img src="/MESH.avif" alt="Mesh2" className="mx-auto w-[220px] animate-spin" style={{ animationDuration: "12s" }} />
       </div>
 
       <Button
@@ -225,13 +225,13 @@ export const AboutUsSection = (): JSX.Element => {
               className="absolute w-[25.49%] h-[35.84%] top-[34.86%] left-[38.19%] md:w-[30%] md:h-[40%] md:top-[28%] md:left-[35%] animate-spin"
               style={{ animationDuration: "14s" }}
               alt="Mesh"
-              src="/MESH.png"
+              src="/MESH.avif"
             />
             <img
               className="absolute w-[25.49%] h-[35.84%] top-[70.7%] left-[38.19%] md:w-[30%] md:h-[40%] md:top-[58%] md:left-[35%] opacity-10 animate-spin"
               style={{ animationDuration: "14s" }}
               alt="Mesh Shadow"
-              src="/MESH.png"
+              src="/MESH.avif"
             />
 
             {/* Glow Orbs */}

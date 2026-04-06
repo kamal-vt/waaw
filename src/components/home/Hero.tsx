@@ -203,7 +203,7 @@ function MobileHero1() {
             animate={{ opacity: 1, scale: 1 }}
           >
             <img
-              src="/land2.png"
+              src="/land2.avif"
               alt="hero"
               className="w-full mx-auto max-w-[300px] object-contain"
             />
