@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     "Waaw is a leading software development company providing custom web development, e-commerce, design, digital marketing, and business automation services.",
   keywords: [
     "waaw",
+    "waaw world",
+    "waaw technologies",
+    "waaw tech",
     "waaw software",
     "waaw digital solutions",
     "waaw website",
