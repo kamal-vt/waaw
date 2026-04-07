@@ -10,12 +10,14 @@ import ContentWrapperSection from "../src/components/sections/ContentWrapperSect
 import FooterSection from "../src/components/sections/FooterSection";
 import { CaseStudy } from "../src/components/sections/CaseStudy";
 import ListenTowhat from "../src/components/sections/ListenTowhat";
+import OurClient from "@/components/sections/OurClient";
 
 export default function Page() {
   return (
     <main id="home" className="relative">
       <Navbar />
       <Hero />
+      <OurClient/>
       <AudienceGrid />
       <section id="about">
         <AboutUsSection />

@@ -1,9 +1,15 @@
-"use client";
+import type { Metadata } from "next";
 import { Navbar } from "../../src/components/Navbar";
 import FooterSection from "../../src/components/sections/FooterSection";
 import BlogsSection from "../../src/components/sections/BlogsSection";
 
+export const metadata: Metadata = {
+  title: "Blogs & Insights",
+  description: "Explore the latest in design, development, and digital strategy. Insights that inspire innovation and help businesses stay ahead.",
+};
+
 export default function Blogs() {
+
   return (
     <main className="relative">
       <Navbar />

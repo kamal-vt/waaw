@@ -257,13 +257,13 @@ function MobileHero1() {
           {/* TEXT */}
           <div className="text-center space-y-3">
 
-            <motion.h1
+            <motion.h2
               className="text-2xl sm:text-3xl font-bold text-white"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
             >
               ELEVATE YOUR STRATEGY
-            </motion.h1>
+            </motion.h2>
 
             <motion.h2
               className="text-4xl sm:text-5xl font-extrabold text-[#82b7dc] leading-tight"
@@ -370,7 +370,7 @@ function Hero1() {
         </div>
 
         <motion.div className="relative w-6/12 min-h-screen flex flex-col items-center justify-between">
-          <Image src="/land2.avif" alt="land" width={420} height={220} priority className="w-full max-w-[460px] object-cover rounded-lg mt-0 mx-auto" />
+          <Image src="/land2.avif" alt="Waaw - Innovative Software and Digital Solutions Illustration" width={420} height={220} priority className="w-full max-w-[460px] object-cover rounded-lg mt-0 mx-auto" />
           <div className="absolute bottom-24 left-1/2 -translate-x-1/2 w-full px-6">
             <div className="flex flex-col items-center mb-4">
               <p className="text-[#0A6DD8] text-[40px] font-extrabold">

@@ -79,7 +79,7 @@ const IndustriesSectionMobile = () => (
                     key={iconIdx}
                     className="w-12 h-12 rounded-xl flex items-center justify-center"
                   >
-                    <img src={item.icon} alt={item.label} className="w-8 h-8 object-contain" />
+                    <img src={item.icon} alt={`${industry.title} Icon`} className="w-8 h-8 object-contain" />
                   </div>
                 ))}
               </div>
@@ -145,13 +145,13 @@ const IndustriesSection = () => {
                         <div className="grid grid-cols-2 gap-4">
                           {industry.icons.slice(0, 4).map((item, iconIdx) => (
                             <div key={iconIdx} className="w-16 h-16 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
-                              <img src={item.icon} alt={item.label} className="w-8 h-8 object-contain opacity-80" />
+                              <img src={item.icon} alt={`${industry.title} Icon ${iconIdx + 1}`} className="w-8 h-8 object-contain opacity-80" />
                             </div>
                           ))}
                         </div>
                       ) : (
                         <div className="w-28 h-28 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
-                          <img src={industry.icons[0]?.icon} alt={industry.icons[0]?.label || 'icon'} className="w-14 h-14 object-contain opacity-80" />
+                          <img src={industry.icons[0]?.icon} alt={`${industry.title} Featured Icon`} className="w-14 h-14 object-contain opacity-80" />
                         </div>
                       )}
                     </div>
@@ -173,7 +173,7 @@ const IndustriesSection = () => {
                     </div>
                     <div className="flex-1 flex items-center justify-center">
                       <div className="w-40 h-40 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
-                        <img src={industry.icons[0]?.icon} alt={industry.icons[0]?.label || 'icon'} className="w-24 h-24 object-contain opacity-90" />
+                        <img src={industry.icons[0]?.icon} alt={`${industry.title} Hero Icon`} className="w-24 h-24 object-contain opacity-90" />
                       </div>
                     </div>
                     <div>
