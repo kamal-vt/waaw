@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import DecorativeLines from "../common/DecorativeLines";
 import { motion } from "framer-motion";

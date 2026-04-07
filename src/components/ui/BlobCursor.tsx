@@ -30,6 +30,13 @@ export default function BlobCursor({
   const blobsRef = useRef<(HTMLDivElement | null)[]>([]);
   const hideTimeoutRef = useRef<number | null>(null);
   const [isActive, setIsActive] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  if (isTouchDevice) return null;
 
   const metallicGradients = [
     'linear-gradient(140deg, #b0b2b5 0%, #fdfdfd 35%, #c9cace 55%, #7c7e83 75%, #2f3033 100%)',

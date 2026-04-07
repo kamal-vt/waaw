@@ -58,13 +58,7 @@ export default function RootLayout({
         <BlobCursor />
         <GoogleAnalytics GA_MEASUREMENT_ID="G-DGPX6QCVJJ" />
         
-        {/* GTM Trackers */}
-        <PageTracker />
-        <ScrollTracker />
-
-        {children}
-        <ArrowUpButton/>
-        {/* Google Analytics */}
+        {/* Analytics & Trackers */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-DGPX6QCVJJ"
           strategy="afterInteractive"
@@ -74,9 +68,17 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-DGPX6QCVJJ');
+            gtag('config', 'G-DGPX6QCVJJ', {
+              page_path: window.location.pathname,
+            });
           `}
         </Script>
+        
+        <PageTracker />
+        <ScrollTracker />
+
+        {children}
+        <ArrowUpButton/>
       </body>
     </html>
   );

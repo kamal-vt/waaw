@@ -1,3 +1,4 @@
+"use client";
 import DecorativeLines from "../common/DecorativeLines";
 import ParallaxCard from "../ui/ParallaxCard";
 
