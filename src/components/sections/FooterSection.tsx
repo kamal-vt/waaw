@@ -219,7 +219,7 @@ function FooterGrid() {
                   className="flex items-center justify-center hover:bg-white/10 transition p-2 rounded-full"
                   aria-label={`Follow us on ${icon.alt}`}
                 >
-                  <img src={icon.src} alt="" aria-hidden="true" className="w-6 h-6" />
+                  <img src={icon.src} alt="" aria-hidden="true" className="w-8 h-8" />
                 </a>
               ))}
             </div>

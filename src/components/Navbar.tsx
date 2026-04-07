@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 /* NAV LINKS DATA */
@@ -17,28 +17,12 @@ const navLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeHash, setActiveHash] = useState("");
   const pathname = usePathname();
 
-  // Handle setting the active hash when a user clicks or scrolls
-  useEffect(() => {
-    // Set initial hash on load
-    setActiveHash(window.location.hash || "");
-
-    const handleHashChange = () => {
-      setActiveHash(window.location.hash);
-    };
-
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
-
-  // Logic to determine if a link is active
+  // ✅ Active link logic (fixed)
   const isLinkActive = (href: string) => {
-    if (href === "/") {
-      return pathname === "/" && activeHash === "";
-    }
-    return activeHash === href;
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
   };
 
   return (
@@ -47,13 +31,13 @@ export function Navbar() {
         
         {/* LOGO */}
         <Link href="/" aria-label="Waaw Home">
-          <Image 
-            src="/logo.webp" 
-            alt="Waaw Logo" 
-            width={112} 
-            height={54} 
+          <Image
+            src="/logo.webp"
+            alt="Waaw Logo"
+            width={112}
+            height={54}
             priority
-            className="h-auto w-20 sm:w-28" 
+            className="h-auto w-20 sm:w-28"
           />
         </Link>
 
@@ -65,7 +49,6 @@ export function Navbar() {
               <Link
                 key={i}
                 href={item.href}
-                onClick={() => setActiveHash(item.href)}
                 className={`font-semibold text-[16px] lg:text-[18px] transition border-b-2 ${
                   active
                     ? "text-[#82b7dc] border-[#82b7dc]"
@@ -116,7 +99,6 @@ export function Navbar() {
         <MobileMenu
           isLinkActive={isLinkActive}
           setIsOpen={setIsOpen}
-          setActiveHash={setActiveHash}
         />
       )}
     </header>
@@ -127,11 +109,9 @@ export function Navbar() {
 function MobileMenu({
   isLinkActive,
   setIsOpen,
-  setActiveHash,
 }: {
   isLinkActive: (href: string) => boolean;
   setIsOpen: (val: boolean) => void;
-  setActiveHash: (val: string) => void;
 }) {
   return (
     <div className="md:hidden bg-black border-t border-gray-800 animate-fadeIn">
@@ -142,10 +122,7 @@ function MobileMenu({
             <Link
               key={i}
               href={item.href}
-              onClick={() => {
-                setIsOpen(false);
-                setActiveHash(item.href);
-              }}
+              onClick={() => setIsOpen(false)}
               className={`block text-lg font-semibold transition ${
                 active ? "text-[#82b7dc]" : "text-[#bbbbbb] hover:text-[#82b7dc]"
               }`}
