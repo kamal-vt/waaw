@@ -6,6 +6,7 @@ import BlogsSection from "../../src/components/sections/BlogsSection";
 export const metadata: Metadata = {
   title: "Blogs & Insights",
   description: "Explore the latest in design, development, and digital strategy. Insights that inspire innovation and help businesses stay ahead.",
+  keywords: "technology blogs, software development insights, digital transformation articles, web development trends, business automation tips, custom software solutions blog, technology services insights, industry news and updates",
 };
 
 export default function Blogs() {

@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   keywords: [
     "waaw",
     "waaw software",
+    "waaw digital solutions",
+    "waaw website",
+    "software development",
+    "web development",
     "development",
     "web development",
     "digital transformation",
@@ -26,6 +30,7 @@ export const metadata: Metadata = {
     "bespoke software",
     "software house",
     "custom software development",
+    "technology solutions",
   ],
   authors: [{ name: "Waaw Team" }],
   creator: "Waaw",
