@@ -197,20 +197,17 @@ function MobileHero1() {
         {/* Part 1 */}
         <div className="flex flex-col items-center justify-center">
           {/* IMAGE */}
-          <motion.div
-            className="relative w-full mx-auto flex justify-center"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
+          <div className="relative w-full mx-auto flex justify-center">
             <Image
               src="/land2.avif"
-              alt="hero"
+              alt="Elevate Strategy Transform Business Illustration"
               width={300}
               height={300}
               priority
+              loading="eager"
               className="w-full mx-auto max-w-[300px] object-contain"
             />
-          </motion.div>
+          </div>
 
           {/* STATS (DESKTOP STYLE LIKE CARD ALIGNMENT) */}
           <div className="w-full absolute z-10 top-52 mx-auto max-w-sm  p-5 px-10 space-y-2">
@@ -289,10 +286,18 @@ function MobileHero1() {
 
           {/* CTA BUTTONS (DESKTOP STYLE MATCH) */}
           <div className="flex flex-col gap-3 w-full max-w-xs">
-            <button onClick={() => router.push('/contact')} className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition">
+            <button 
+              onClick={() => router.push('/contact')} 
+              className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition"
+              aria-label="Book a free strategy call"
+            >
               Book a Free Strategy Call
             </button>
-            <button onClick={() => router.push('/solutions')} className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition">
+            <button 
+              onClick={() => router.push('/solutions')} 
+              className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition"
+              aria-label="View our solutions"
+            >
               View Our Solutions
             </button>
           </div>

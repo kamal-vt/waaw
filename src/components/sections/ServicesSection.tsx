@@ -103,9 +103,9 @@ export const ServicesSection = (): JSX.Element => {
         <div className="relative max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
           {/* Header */}
           <header className="flex flex-col items-center mb-14 md:mb-20 relative text-center">
-            <h1 className="mt-10 font-extrabold text-[#82b7dc]  mb-4 tracking-widest leading-tight uppercase  [font-family:'Montserrat',Helvetica] drop-shadow-[0_2px_12px_rgba(130,183,220,0.4)]">
+            <h2 className="mt-10 font-extrabold text-[#82b7dc]  mb-4 tracking-widest leading-tight uppercase  [font-family:'Montserrat',Helvetica] drop-shadow-[0_2px_12px_rgba(130,183,220,0.4)]">
               <DecorativeLines className="text-[#82B7DC] text-[34px]">SERVICES</DecorativeLines>
-            </h1>
+            </h2>
             <h2 className="text-[24px] md:text-[28px] text-white font-bold mb-6 tracking-wide underline decoration-dotted decoration-white/40 underline-offset-[10px] [font-family:'Montserrat',Helvetica]">
               Pre-defined Systems Engineered To <br /> Solve Specific Business Challenges.
             </h2>
@@ -118,16 +118,24 @@ export const ServicesSection = (): JSX.Element => {
             </h2>
 
             {/* Decorative corners */}
-            <img
-              className="hidden lg:block absolute w-[22%] xl:w-[25%] top-[6%] left-[-20%] opacity-70 "
-              alt="Decorative"
-              src="/servicesm.webp"
-            />
-            <img
-              className="hidden lg:block absolute w-[22%] xl:w-[25%] bottom-[6%] scale-x-[-1] right-[-20%] opacity-70"
-              alt="Decorative"
-              src="/servicesm.webp"
-            />
+            <div className="hidden lg:block absolute w-[22%] xl:w-[25%] top-[6%] left-[-20%] opacity-70">
+              <Image
+                src="/servicesm.webp"
+                alt="Decorative Service Mesh"
+                width={320}
+                height={320}
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="hidden lg:block absolute w-[22%] xl:w-[25%] bottom-[6%] scale-x-[-1] right-[-20%] opacity-70">
+              <Image
+                src="/servicesm.webp"
+                alt="Decorative Service Mesh"
+                width={320}
+                height={320}
+                className="w-full h-auto"
+              />
+            </div>
 
             <div className="relative flex flex-col items-center w-full mx-auto py-10">
               {/* Center Vertical Line */}
@@ -226,9 +234,9 @@ function MobileView() {
 
         {/* Header */}
         <header className="flex flex-col items-center text-center mb-12">
-          <h1 className="text-[#82b7dc] text-xl font-extrabold tracking-widest uppercase mb-3">
+          <h2 className="text-[#82b7dc] text-xl font-extrabold tracking-widest uppercase mb-3">
             SERVICES
-          </h1>
+          </h2>
           <h2 className="text-white text-[17px] font-bold leading-snug">
             Pre-defined Systems Engineered To <br />
             Solve Business Challenges.

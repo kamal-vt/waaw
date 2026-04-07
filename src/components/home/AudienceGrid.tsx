@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import DecorativeLines from "../common/DecorativeLines";
 
@@ -52,9 +53,9 @@ export const AudienceGrid = (): JSX.Element => {
       <div className="relative w-full max-w-7xl mx-auto px-4">
         <div className="relative mb-4 lg:mb-16 flex justify-center">
           <DecorativeLines>
-            <h1 className="text-center text-[#82B7DC] [font-family:'Montserrat',Helvetica] font-extrabold text-[26px] md:text-[32px] lg:text-[38px] leading-[36px] md:leading-[50px] lg:leading-[60px] tracking-[0] px-4">
+            <h2 className="text-center text-[#82B7DC] [font-family:'Montserrat',Helvetica] font-extrabold text-[26px] md:text-[32px] lg:text-[38px] leading-[36px] md:leading-[50px] lg:leading-[60px] tracking-[0] px-4">
               Who We Built For?
-            </h1>
+            </h2>
           </DecorativeLines>
         </div>
 
@@ -141,9 +142,11 @@ export const AudienceGrid = (): JSX.Element => {
                   transition={{ duration: 10, ease: "linear", repeat: Infinity }}
                   className="w-[38px] h-[38px]"
                 >
-                  <img
+                  <Image
                     src="/audiencegridm.webp"
                     alt="Audience Grid Icon"
+                    width={40}
+                    height={40}
                     className="w-full h-full object-cover rounded-full"
                   />
                 </motion.div>

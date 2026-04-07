@@ -11,10 +11,19 @@ interface ParallaxCardProps {
 export default function ParallaxCard({ children, intensity = 12, className = '', ...props }: ParallaxCardProps) {
   const innerRef = useRef<HTMLDivElement>(null);
 
+  const rectRef = useRef<DOMRect | null>(null);
+
+  const handleMouseEnter = () => {
+    if (innerRef.current) {
+      rectRef.current = innerRef.current.getBoundingClientRect();
+    }
+  };
+
   const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const el = innerRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
+    if (!el || !rectRef.current) return;
+    
+    const rect = rectRef.current;
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
 
@@ -28,12 +37,13 @@ export default function ParallaxCard({ children, intensity = 12, className = '',
   const handleLeave = () => {
     const el = innerRef.current;
     if (!el) return;
+    rectRef.current = null;
     el.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
     el.style.transition = 'transform 300ms ease';
   };
 
   return (
-    <div className={className} onMouseMove={handleMove} onMouseLeave={handleLeave} {...props}>
+    <div className={className} onMouseEnter={handleMouseEnter} onMouseMove={handleMove} onMouseLeave={handleLeave} {...props}>
       <div ref={innerRef} className="will-change-transform h-full">
         {children}
       </div>

@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, LocateIcon, Mail, MapPin, Phone } from "lucide-react";
 
 const socialIcons = [
@@ -127,11 +128,15 @@ function Glow() {
           ))}
         </div>
         {/* Left image */}
-        <img
-          className="w-full md:w-[30.95%] h-[200px] sm:h-[200px] md:h-full object-contain"
-          src="/audiencegridm.webp"
-          alt="Decor"
-        />
+        <div className="w-full md:w-[30.95%] h-[200px] sm:h-[200px] md:h-full relative">
+          <Image
+            className="object-contain"
+            src="/audiencegridm.webp"
+            alt="WAAW Audience Illustration"
+            fill
+            sizes="(max-width: 768px) 100vw, 31vw"
+          />
+        </div>
 
         {/* Text content */}
         <div className="flex-1 flex flex-col justify-center items-center md:items-start p-4 md:p-8 relative">
@@ -190,7 +195,9 @@ function FooterGrid() {
 
           {/* Section 1 */}
           <div className="md:col-span-4 flex flex-col space-y-4">
-            <img src="/logo.png" alt="logo" className="w-24" />
+            <Link href="/" aria-label="Go to Home">
+              <Image src="/logo.png" alt="Waaw Logo" width={96} height={32} className="w-24" />
+            </Link>
 
             <p className="text-gray-400 text-sm leading-relaxed">
               We design and implement structured digital systems that help businesses
@@ -207,9 +214,12 @@ function FooterGrid() {
                 <a
                   key={i}
                   href={icon.href}
-                  className="flex items-center justify-center hover:bg-white/10 transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center hover:bg-white/10 transition p-2 rounded-full"
+                  aria-label={`Follow us on ${icon.alt}`}
                 >
-                  <img src={icon.src} alt={icon.alt} className="w-8 h-8 rounded-full" />
+                  <img src={icon.src} alt="" aria-hidden="true" className="w-6 h-6" />
                 </a>
               ))}
             </div>

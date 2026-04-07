@@ -198,7 +198,7 @@ const ProcessCard: React.FC<ProcessCardProps> = ({ title, items = [], align = "l
 function MobileView() {
   return (
     <div className="block md:hidden w-full px-4 sm:px-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
+      <div className="grid grid-cols-2 gap-8 md:gap-10">
         <div className="space-y-10">
           <div className="flex justify-center sm:justify-start">
             <ProcessCard

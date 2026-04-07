@@ -36,8 +36,6 @@ export default function BlobCursor({
     setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
   }, []);
 
-  if (isTouchDevice) return null;
-
   const metallicGradients = [
     'linear-gradient(140deg, #b0b2b5 0%, #fdfdfd 35%, #c9cace 55%, #7c7e83 75%, #2f3033 100%)',
     'linear-gradient(140deg, #d4d6d8 0%, #ffffff 45%, #b5b7ba 65%, #5b5d61 85%, #1c1d20 100%)',
@@ -46,6 +44,7 @@ export default function BlobCursor({
 
   const handleMove = useCallback(
     (e: MouseEvent) => {
+      if (isTouchDevice) return;
       const x = e.clientX;
       const y = e.clientY;
 
@@ -68,10 +67,11 @@ export default function BlobCursor({
         });
       });
     },
-    [fastDuration, slowDuration, fastEase, slowEase]
+    [fastDuration, slowDuration, fastEase, slowEase, isTouchDevice]
   );
 
   useEffect(() => {
+    if (isTouchDevice) return;
     window.addEventListener('mousemove', handleMove);
     return () => {
       window.removeEventListener('mousemove', handleMove);
@@ -79,20 +79,23 @@ export default function BlobCursor({
         window.clearTimeout(hideTimeoutRef.current);
       }
     };
-  }, [handleMove]);
+  }, [handleMove, isTouchDevice]);
 
   useEffect(() => {
+    if (isTouchDevice) return;
     const previousCursor = document.body.style.cursor;
     document.body.style.cursor = 'none';
     return () => {
       document.body.style.cursor = previousCursor;
     };
-  }, []);
+  }, [isTouchDevice]);
 
   const effectiveTrailCount = Math.max(
     1,
     Math.min(trailCount, sizes.length, innerSizes.length, opacities.length)
   );
+
+  if (isTouchDevice) return null;
 
   return (
     <div

@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import DecorativeLines from "../common/DecorativeLines";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const statsMobile = [
   { value: "1.5x", description: "Launch Smarter Faster" },
@@ -102,9 +103,9 @@ const AboutUsSectionMobile = () => (
     </div>
     <div className="relative w-full max-w-screen flex flex-col justify-center items-center ">
       {/* Title */}
-      <h1 className="text-center">
+      <h2 className="text-center">
         <DecorativeLines className="text-[40px] text-[#82B7DC] font-bold">ABOUT US</DecorativeLines>
-      </h1>
+      </h2>
       {/* Main Heading */}
       <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-white text-[20px] text-center tracking-[0] leading-[normal] underline px-4">
         We build more than apps and websites
@@ -119,7 +120,14 @@ const AboutUsSectionMobile = () => (
       {/* Mesh 2 Optional: */}
 
       <div className="">
-        <img src="/MESH.avif" alt="Mesh2" className="mx-auto w-[220px] animate-spin" style={{ animationDuration: "12s" }} />
+        <Image 
+          src="/MESH.avif" 
+          alt="Decorative Mesh Animation" 
+          width={220} 
+          height={220} 
+          className="mx-auto w-[220px] animate-spin" 
+          style={{ animationDuration: "12s" }} 
+        />
       </div>
 
       <Button
@@ -222,17 +230,21 @@ export const AboutUsSection = (): JSX.Element => {
 
 
             {/* Background Mesh Image 2 */}
-            <img
+            <Image
               className="absolute w-[25.49%] h-[35.84%] top-[34.86%] left-[38.19%] md:w-[30%] md:h-[40%] md:top-[28%] md:left-[35%] animate-spin"
               style={{ animationDuration: "14s" }}
-              alt="Mesh"
+              alt="Mesh Background"
               src="/MESH.avif"
+              width={384}
+              height={410}
             />
-            <img
+            <Image
               className="absolute w-[25.49%] h-[35.84%] top-[70.7%] left-[38.19%] md:w-[30%] md:h-[40%] md:top-[58%] md:left-[35%] opacity-10 animate-spin"
               style={{ animationDuration: "14s" }}
               alt="Mesh Shadow"
               src="/MESH.avif"
+              width={384}
+              height={410}
             />
 
             {/* Glow Orbs */}
@@ -297,7 +309,7 @@ export const AboutUsSection = (): JSX.Element => {
 
             {/* Pill Buttons */}
             <div className="absolute top-[600px] left-[30%] -translate-x-1/2 z-50 p-10 flex flex-col items-center">
-              <h1 className="text-white text-xl font-semibold mb-12">What We do !</h1>
+              <h2 className="text-white text-xl font-semibold mb-12">What We do !</h2>
 
               <div className="grid grid-cols-2 gap-x-6 gap-y-8 w-full max-w-4xl">
                 {services.slice(0, 4).map((service) => (

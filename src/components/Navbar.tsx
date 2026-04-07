@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
@@ -44,8 +45,15 @@ export function Navbar() {
       <div className="mx-auto flex items-center justify-between">
         
         {/* LOGO */}
-        <Link href="/">
-          <img src="/logo.webp" alt="Logo" className="h-auto w-20 sm:w-28" />
+        <Link href="/" aria-label="Waaw Home">
+          <Image 
+            src="/logo.webp" 
+            alt="Waaw Logo" 
+            width={112} 
+            height={54} 
+            priority
+            className="h-auto w-20 sm:w-28" 
+          />
         </Link>
 
         {/* DESKTOP NAV */}
@@ -89,6 +97,8 @@ export function Navbar() {
         <button
           className="md:hidden text-[#bbbbbb]"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
         >
           <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isOpen ? (
