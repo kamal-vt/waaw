@@ -1,16 +1,19 @@
+import dynamic from "next/dynamic";
 import { Navbar } from "../src/components/Navbar";
 import Hero from "../src/components/home/Hero";
-import { AudienceGrid } from "../src/components/home/AudienceGrid";
-import AboutUsSection from "../src/components/sections/AboutUsSection";
-import { ServicesSection } from "../src/components/sections/ServicesSection";
-import PricingSection from "../src/components/sections/PricingSection";
-import BlogsSection from "../src/components/sections/BlogsSection";
-import MainContentSection from "../src/components/sections/MainContentSection";
-import ContentWrapperSection from "../src/components/sections/ContentWrapperSection";
-import FooterSection from "../src/components/sections/FooterSection";
-import { CaseStudy } from "../src/components/sections/CaseStudy";
-import ListenTowhat from "../src/components/sections/ListenTowhat";
-import OurClient from "@/components/sections/OurClient";
+
+// Dynamic imports for below-the-fold components
+const OurClient = dynamic(() => import("@/components/sections/OurClient"), { ssr: true });
+const AudienceGrid = dynamic(() => import("../src/components/home/AudienceGrid").then(mod => mod.AudienceGrid), { ssr: true });
+const AboutUsSection = dynamic(() => import("../src/components/sections/AboutUsSection"), { ssr: true });
+const ServicesSection = dynamic(() => import("../src/components/sections/ServicesSection").then(mod => mod.ServicesSection), { ssr: true });
+const PricingSection = dynamic(() => import("../src/components/sections/PricingSection"), { ssr: true });
+const CaseStudy = dynamic(() => import("../src/components/sections/CaseStudy").then(mod => mod.CaseStudy), { ssr: true });
+const BlogsSection = dynamic(() => import("../src/components/sections/BlogsSection"), { ssr: true });
+const ContentWrapperSection = dynamic(() => import("../src/components/sections/ContentWrapperSection"), { ssr: true });
+const ListenTowhat = dynamic(() => import("../src/components/sections/ListenTowhat"), { ssr: true });
+const MainContentSection = dynamic(() => import("../src/components/sections/MainContentSection"), { ssr: true });
+const FooterSection = dynamic(() => import("../src/components/sections/FooterSection"), { ssr: true });
 
 export default function Page() {
   return (

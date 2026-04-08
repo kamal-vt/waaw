@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Script from "next/script";
 import "../globals.css";
-import BlobCursor from "@/components/ui/BlobCursor";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-import PageTracker from "@/components/analytics/PageTracker";
-import ScrollTracker from "@/components/analytics/ScrollTracker";
 import ArrowUpButton from "@/components/ui/ArrowUp";
+
+// Dynamic imports for client-side components to reduce initial JS payload
+const BlobCursor = dynamic(() => import("@/components/ui/BlobCursor"), { ssr: false });
+const GoogleAnalytics = dynamic(() => import("@/components/GoogleAnalytics"), { ssr: false });
+const PageTracker = dynamic(() => import("@/components/analytics/PageTracker"), { ssr: false });
+const ScrollTracker = dynamic(() => import("@/components/analytics/ScrollTracker"), { ssr: false });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://waaw.world"),
@@ -116,6 +119,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* DNS-Prefetch and Preconnect for third-party scripts */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
         {/* JSON-LD for Organization */}
         <script
           type="application/ld+json"
@@ -134,7 +143,15 @@ export default function RootLayout({
           </Script>
         )}
       </head>
-      <body>
+      <body className="antialiased overflow-x-hidden">
+        <BlobCursor />
+        
+        <PageTracker />
+        <ScrollTracker />
+
+        {children}
+        <ArrowUpButton />
+
         {/* Google Tag Manager (noscript) */}
         {gtmId && (
           <noscript>
@@ -147,31 +164,24 @@ export default function RootLayout({
           </noscript>
         )}
 
-
-        <BlobCursor />
+        {/* Analytics Infrastructure - Loaded lazily */}
         <GoogleAnalytics GA_MEASUREMENT_ID="G-DGPX6QCVJJ" />
         
-        {/* Analytics & Trackers */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-DGPX6QCVJJ"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-DGPX6QCVJJ', {
               page_path: window.location.pathname,
+              send_page_view: false
             });
           `}
         </Script>
-        
-        <PageTracker />
-        <ScrollTracker />
-
-        {children}
-        <ArrowUpButton/>
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import DecorativeLines from "../common/DecorativeLines";
 
 interface TrustedCompany {
@@ -84,14 +85,14 @@ const OurClient = () => {
                   hover:-translate-y-2 hover:border-[#82B7DC]/40
                 "
               >
-                <img
-                  src={company.Logo}
-                  alt={company.name}
-                  className="
-                    w-[120px] sm:w-[160px] md:w-[200px]
-                    h-auto object-contain
-                  "
-                />
+                <div className="relative w-[120px] sm:w-[160px] md:w-[200px] h-full">
+                  <Image
+                    src={company.Logo}
+                    alt={company.name}
+                    fill
+                    className="object-contain p-2"
+                  />
+                </div>
               </button>
             ))}
           </div>
