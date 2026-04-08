@@ -151,3 +151,5 @@ const CaseStudyCard = ({ study }: { study: any }) => {
     </div>
   );
 };
+
+export default CaseStudy;

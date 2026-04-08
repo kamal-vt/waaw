@@ -308,3 +308,5 @@ function MobileView() {
     </div>
   );
 }
+
+export default ServicesSection;

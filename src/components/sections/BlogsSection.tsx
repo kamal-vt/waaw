@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import Image from "next/image";
 import ParallaxCard from "../ui/ParallaxCard";
 import DecorativeLines from "../common/DecorativeLines";
 
@@ -18,7 +18,7 @@ const blogCards = [
   },
 ];
 
-export const BlogsSection = ({ topOffset = false }) => {
+export const BlogsSection = ({ topOffset = false }: { topOffset?: boolean }) => {
   return (
     <section className={`relative w-full bg-black py-20 px-4 overflow-hidden ${topOffset ? "pt-32" : ""}`}>
       {/* Background Glows */}
@@ -45,8 +45,7 @@ export const BlogsSection = ({ topOffset = false }) => {
           </div>
 
           {/* Cards Grid */}
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 w-full "> */}
-           <div className="flex flex-wrap justify-center gap-4 sm:gap-8 w-full ">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 w-full ">
             {blogCards.map((card, index) => (
               <BlogCard key={index} card={card} index={index} />
             ))}
@@ -59,19 +58,18 @@ export const BlogsSection = ({ topOffset = false }) => {
 
 export default BlogsSection;
 
-
-
-
 function BlogCard({ card, index }: { card: any; index: number }) {
   return (
     <div key={index} className="flex flex-col items-center w-[280px] sm:w-[310px]">
       <ParallaxCard intensity={10} className="w-full">
         <div className="relative w-full group flex items-center justify-center">
           {/* The Background Image from your design */}
-          <img
+          <Image
             src="/blogcard.png"
             alt="Card Background"
-            className="w-full  h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+            width={310}
+            height={400}
+            className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
           />
 
           {/* Content Overlay */}

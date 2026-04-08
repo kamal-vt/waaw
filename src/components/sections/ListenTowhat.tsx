@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import Image from "next/image";
 import ParallaxCard from "../ui/ParallaxCard";
 import DecorativeLines from "../common/DecorativeLines";
 
@@ -99,12 +99,12 @@ export const ListenTowhat = () => {
                       </div>
                       
                       {/* Avatar Wrapper with glow */}
-                      <div className="relative w-[60px] h-[60px] rounded-full mt-1 shrink-0 overflow-visible">
-                        <div className="absolute inset-[-3px] rounded-full bg-gradient-to-tr from-transparent via-[#ffffff40] to-white/80 opacity-60 pointer-events-none" />
-                        <img 
+                      <div className="relative w-[60px] h-[60px] rounded-full mt-1 shrink-0 overflow-hidden border border-white/20 shadow-lg z-10">
+                        <Image 
                           src={testimonial.image} 
                           alt={testimonial.name} 
-                          className="relative w-full h-full object-cover rounded-full z-10 border border-transparent shadow-lg"
+                          fill
+                          className="object-cover"
                         />
                       </div>
                     </div>

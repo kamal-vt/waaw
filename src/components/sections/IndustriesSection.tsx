@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardContent } from "../ui/card";
+import Image from "next/image";
 
 const industries = [
   {
@@ -77,9 +78,14 @@ const IndustriesSectionMobile = () => (
                 {industry.icons.map((item, iconIdx) => (
                   <div
                     key={iconIdx}
-                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center relative"
                   >
-                    <img src={item.icon} alt={`${industry.title} Icon`} className="w-8 h-8 object-contain" />
+                    <Image
+                      src={item.icon}
+                      alt={`${industry.title} Icon`}
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                 ))}
               </div>
@@ -144,14 +150,26 @@ const IndustriesSection = () => {
                       {idx === 0 ? (
                         <div className="grid grid-cols-2 gap-4">
                           {industry.icons.slice(0, 4).map((item, iconIdx) => (
-                            <div key={iconIdx} className="w-16 h-16 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
-                              <img src={item.icon} alt={`${industry.title} Icon ${iconIdx + 1}`} className="w-8 h-8 object-contain opacity-80" />
+                            <div key={iconIdx} className="w-16 h-16 rounded-full border border-white/10 bg-white/5 flex items-center justify-center relative">
+                              <Image
+                                src={item.icon}
+                                alt={`${industry.title} Icon ${iconIdx + 1}`}
+                                width={32}
+                                height={32}
+                                className="object-contain opacity-80"
+                              />
                             </div>
                           ))}
                         </div>
                       ) : (
-                        <div className="w-28 h-28 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
-                          <img src={industry.icons[0]?.icon} alt={`${industry.title} Featured Icon`} className="w-14 h-14 object-contain opacity-80" />
+                        <div className="w-28 h-28 rounded-full border border-white/10 bg-white/5 flex items-center justify-center relative">
+                          <Image
+                            src={industry.icons[0]?.icon}
+                            alt={`${industry.title} Featured Icon`}
+                            width={56}
+                            height={56}
+                            className="object-contain opacity-80"
+                          />
                         </div>
                       )}
                     </div>
@@ -172,8 +190,14 @@ const IndustriesSection = () => {
                       <span className="text-[#bbbbbb] text-sm font-semibold">Drive Growth</span>
                     </div>
                     <div className="flex-1 flex items-center justify-center">
-                      <div className="w-40 h-40 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
-                        <img src={industry.icons[0]?.icon} alt={`${industry.title} Hero Icon`} className="w-24 h-24 object-contain opacity-90" />
+                      <div className="w-40 h-40 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center relative">
+                        <Image
+                          src={industry.icons[0]?.icon}
+                          alt={`${industry.title} Hero Icon`}
+                          width={96}
+                          height={96}
+                          className="object-contain opacity-90"
+                        />
                       </div>
                     </div>
                     <div>

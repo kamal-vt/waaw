@@ -192,6 +192,16 @@ export const AboutUsSection = (): JSX.Element => {
                 {/* Light Sky Blue - Right Side */}
                 <div className="absolute top-[220px] left-[380px] w-[250px] h-[250px] rounded-full bg-[#65A7FC] blur-xl opacity-80" />
 
+                {/* Decorative ellipse - hidden on mobile, shown on md+ */}
+                <div className="hidden md:block absolute top-[180px] left-[-350px] w-[1400px] h-[190px]">
+                  <Image
+                    fill
+                    src="/ellipse-3-1.svg"
+                    alt="Ellipse"
+                    className="object-contain opacity-50"
+                  />
+                </div>
+
                 {/* Bright Cyan - Center Focus */}
                 <div className="absolute top-[180px] left-[150px] w-[250px] h-[250px] rounded-full bg-[#3CA5D8] blur-lg z-10" />
 
@@ -265,16 +275,19 @@ export const AboutUsSection = (): JSX.Element => {
             </p>
 
             {/* Vector Line */}
-            <img
-              className="absolute top-[512px] left-[192px] w-[366px] h-[74px] md:top-[420px] md:left-[5%] md:w-[300px] lg:top-[512px] lg:left-[132px] lg:w-[366px]"
-              alt="Vector"
-              src="/vector-1.svg"
-            />
+            <div className="absolute top-[512px] left-[192px] w-[366px] h-[74px] md:top-[420px] md:left-[5%] md:w-[300px] lg:top-[512px] lg:left-[132px] lg:w-[366px]">
+              <Image
+                fill
+                alt="Vector"
+                src="/vector-1.svg"
+                className="object-contain"
+              />
+            </div>
 
             {/* Explore Now Button */}
             <Button
               variant="ghost"
-              className="absolute top-[486px] left-[138px] w-[194px] h-[52px] md:top-[395px] md:left-[5%] lg:top-[530px] lg:left-[100px]  h-auto
+              className="absolute top-[486px] left-[138px] w-[194px] md:top-[395px] md:left-[5%] lg:top-[530px] lg:left-[100px] h-auto
                text-white border-2 border-white rounded-[30px] hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2"
             >
               See How it Works <ArrowUpRight className="w-5 h-5 text-2xl" />

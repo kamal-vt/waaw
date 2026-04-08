@@ -11,7 +11,7 @@ const PricingSection = dynamic(() => import("../src/components/sections/PricingS
 const CaseStudy = dynamic(() => import("../src/components/sections/CaseStudy").then(mod => mod.CaseStudy), { ssr: true });
 const BlogsSection = dynamic(() => import("../src/components/sections/BlogsSection"), { ssr: true });
 const ContentWrapperSection = dynamic(() => import("../src/components/sections/ContentWrapperSection"), { ssr: true });
-const ListenTowhat = dynamic(() => import("../src/components/sections/ListenTowhat"), { ssr: true });
+const ListenTowhat = dynamic(() => import("../src/components/sections/ListenTowhat").then(mod => mod.ListenTowhat), { ssr: true });
 const MainContentSection = dynamic(() => import("../src/components/sections/MainContentSection"), { ssr: true });
 const FooterSection = dynamic(() => import("../src/components/sections/FooterSection"), { ssr: true });
 

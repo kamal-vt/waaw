@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import Image from "next/image";
 import DecorativeLines from "../common/DecorativeLines";
 import { motion } from "framer-motion";
 
@@ -24,7 +24,7 @@ const floatingLoop = {
       duration: 6,
       repeat: Infinity,
       ease: "easeInOut",
-    },
+     },
   },
 };
 
@@ -63,17 +63,22 @@ export const ContentWrapperSection = () => {
           {/* Visual container: gives a fixed-ish area on md+ so cards can be positioned around it */}
           <div className="relative  md:w-full  mx-auto flex items-center justify-center">
             {/* Frame-50 background image */}
-            <img
-              src="/Frame 50.png"
-              alt="Process Framework"
-              className="md:w-[350px] lg:w-[500px] object-contain animate-pulse" style={{ animationDuration: '4s' }}
-            /> 
+            <div className="relative md:w-[350px] lg:w-[500px] h-[350px] lg:h-[500px]">
+              <Image
+                src="/Frame 50.png"
+                alt="Process Framework"
+                fill
+                className="object-contain animate-pulse" 
+                style={{ animationDuration: '4s' }}
+              /> 
+            </div>
 
             {/* Rotating center image - audiencegridm */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 lg:w-48 aspect-square">
-              <img
+              <Image
                 src="/audiencegridm.webp"
                 alt="Audience Grid"
+                fill
                 className="object-contain animate-spin-slow"
               />
             </div>

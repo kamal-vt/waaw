@@ -142,11 +142,14 @@ function Glow() {
         <div className="flex-1 flex flex-col justify-center items-center md:items-start p-4 md:p-8 relative">
 
           {/* Decorative ellipse - hidden on mobile, shown on md+ */}
-          <img
-            className="hidden md:block absolute top-[180px] left-[-50px] w-[920px] h-[190px]"
-            src="/ellipse-3-1.svg"
-            alt="Ellipse"
-          />
+          <div className="hidden md:block absolute top-[180px] left-[-350px] w-[1400px] h-[190px]">
+             <Image
+              fill
+              src="/ellipse-3-1.svg"
+              alt="Ellipse"
+              className="object-contain opacity-50"
+            />
+          </div>
 
           {/* Small glow circle - adjusted for mobile */}
           <div className="absolute top-[-15px] right-[50px] md:left-[200px] w-[30px] md:w-[53px] h-[30px] md:h-[53px] rounded-full blur-[6px] md:blur-[8.5px] [background:radial-gradient(50%_50%_at_95%_-3%,rgba(0,0,0,1)_0%,rgba(255,255,255,1)_100%)] animate-orb-5" />
@@ -219,7 +222,9 @@ function FooterGrid() {
                   className="flex items-center justify-center hover:bg-white/10 transition p-2 rounded-full"
                   aria-label={`Follow us on ${icon.alt}`}
                 >
-                  <img src={icon.src} alt="" aria-hidden="true" className="w-8 h-8" />
+                  <div className="relative w-8 h-8">
+                    <Image fill src={icon.src} alt="" aria-hidden="true" className="object-contain" />
+                  </div>
                 </a>
               ))}
             </div>
