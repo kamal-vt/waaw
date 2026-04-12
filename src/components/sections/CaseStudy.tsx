@@ -112,7 +112,7 @@ const CaseStudyCard = ({ study }: { study: any }) => {
         </div>
 
         {/* Content Panel Overlaid on Bottom */}
-        <div className="absolute bottom-4 left-4 right-4 bg-[#202022] rounded-[24px] p-6 flex flex-col border border-white/5 z-20 shadow-xl">
+        <div className="absolute bottom-4 left-4 right-4 bg-[#2020229b] rounded-[24px] p-6 flex flex-col border border-white/5 z-20 shadow-xl">
           {study.badges && study.badges.length > 0 && (
             <div className="flex gap-2 mb-3">
               {study.badges.map((badge: string, i: number) => (

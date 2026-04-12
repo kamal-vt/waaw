@@ -285,7 +285,7 @@ function MobileHero1() {
           </div>
 
           {/* CTA BUTTONS (DESKTOP STYLE MATCH) */}
-          <div className="flex flex-col gap-3 w-full max-w-xs">
+          <div className="flex flex-col gap-3 mx-auto">
             <button 
               onClick={() => router.push('/contact')} 
               className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition"
@@ -369,8 +369,8 @@ function Hero1() {
           </motion.div>
         </div>
 
-        <motion.div className="relative w-6/12 min-h-screen flex flex-col items-center justify-between">
-          <Image src="/land2.avif" alt="Waaw - Innovative Software and Digital Solutions Illustration" width={420} height={220} priority className="w-full max-w-[460px] object-cover rounded-lg mt-0 mx-auto" />
+        <motion.div className="relative w-6/12 min-h-screen flex flex-col items-center justify-center">
+          <Image src="/land2.avif" alt="Waaw - Innovative Software and Digital Solutions Illustration" width={420} height={220} priority className="w-full max-w-[460px] object-cover rounded-lg  mx-auto" />
           <div className="absolute bottom-24 left-1/2 -translate-x-1/2 w-full px-6">
             <div className="flex flex-col items-center mb-4">
               <p className="text-[#0A6DD8] text-[40px] font-extrabold">

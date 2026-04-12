@@ -59,11 +59,11 @@ export const ContentWrapperSection = () => {
         </p>
 
         {/* ===== Main visual + desktop positioned process cards ===== */}
-        <div className="relative w-3/5  mx-auto mb-12 md:mb-16 ">
+        <div className="relative sm:w-3/5  mx-auto sm:mb-12 md:mb-16 ">
           {/* Visual container: gives a fixed-ish area on md+ so cards can be positioned around it */}
           <div className="relative  md:w-full  mx-auto flex items-center justify-center">
             {/* Frame-50 background image */}
-            <div className="relative md:w-[350px] lg:w-[500px] h-[350px] lg:h-[500px]">
+            <div className="relative w-[380px] h-[380px] md:w-[380px] md:h-[380px] lg:w-[500px]  lg:h-[500px]">
               <Image
                 src="/Frame 50.png"
                 alt="Process Framework"
@@ -74,12 +74,13 @@ export const ContentWrapperSection = () => {
             </div>
 
             {/* Rotating center image - audiencegridm */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 lg:w-48 aspect-square">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 md:w-24 lg:w-44 aspect-square">
               <Image
                 src="/audiencegridm.webp"
                 alt="Audience Grid"
                 fill
-                className="object-contain animate-spin-slow"
+                className="object-contain animate-spin"
+                style={{ animationDuration: "12s" }} 
               />
             </div>
 

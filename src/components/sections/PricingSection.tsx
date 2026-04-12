@@ -116,7 +116,7 @@ export default function PricingSection () {
 
           {/* Bottom Row */}
           {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl"> */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl">
             {pricingData.slice(3, 5).map((plan, index) => (
               <PricingCard key={index + 3} plan={plan} />
             ))}
@@ -131,7 +131,7 @@ const PricingCard = ({ plan }: { plan: any }) => {
   return (
     <div
       className={`w-full max-w-[380px] mx-auto transition-all duration-500 ${
-        plan.highlighted ? "lg:-mt-20 lg:mb-20 scale-105 z-20" : ""
+        plan.highlighted ? "xl:-mt-20 xl:mb-20 scale-105 z-20" : ""
       }`}
     >
       <div
