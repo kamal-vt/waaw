@@ -51,7 +51,7 @@ export const TRUSTEDBYCOMPANY: TrustedCompany[] = [
 const OurClient = () => {
   return (
     <section className="w-full bg-black py-16 sm:py-20 px-4 overflow-hidden">
-      <div className="max-w-[1100px] mx-auto">
+      <div className="mx-auto">
 
         {/* Heading */}
         <div className="text-center mb-12 sm:mb-16">
