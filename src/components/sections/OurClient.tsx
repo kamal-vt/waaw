@@ -65,6 +65,7 @@ const OurClient = () => {
             Businesses that trust us to scale, automate, and grow faster.
           </p>
         </div>
+        
 
         {/* Slider */}
         <div className="relative w-full overflow-hidden">
