@@ -143,9 +143,9 @@ const jsonLd = {
   ],
   "priceRange": "₹₹₹",
   "sameAs": [
-    "https://twitter.com/waaw",
-    "https://linkedin.com/company/waaw",
-    "https://www.instagram.com/waaw"
+    "https://x.com/WaaWTech",
+    "https://www.linkedin.com/company/waaw-tech-official/",
+    "https://www.instagram.com/waaw_tech/"
   ],
 };
 

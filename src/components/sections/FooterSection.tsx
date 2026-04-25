@@ -26,9 +26,10 @@ const companyLinks = [
 ];
 const resourceLinks = [
   { label: "Features", href: "/#services" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Industry", href: "/industries" },
   { label: "Roadmap", href: "/#case-study" },
+  { label: "Testimonials", href: "/testimonial" },
   { label: "FAQ", href: "/contact" },
 ];
 const legalLinks = [
@@ -217,7 +218,7 @@ function FooterGrid() {
                   aria-label={`Follow us on ${icon.alt}`}
                 >
                   <div className="relative w-8 h-8">
-                    <Image fill src={icon.src} alt="" aria-hidden="true" className="object-contain" />
+                    <Image fill src={icon.src} alt={icon.alt || "Social Icon"} aria-hidden="false" className="object-contain" />
                   </div>
                 </a>
               ))}
