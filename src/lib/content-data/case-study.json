@@ -12,7 +12,7 @@
       "90% faster page load times (Core Web Vitals passed)",
       "Ranked #1 for targeted local real estate keywords"
     ],
-    "image": "/caseStudy/01.png",
+    "image": "/caseStudy/real_estate.png",
     "technologies": ["Next.js", "Tailwind CSS", "AWS", "WhatsApp API", "SEO"],
     "tags": ["Growth", "Real Estate", "2026"]
   },
@@ -29,7 +29,7 @@
       "Automated 100% of certification processes",
       "40% reduction in administrative overhead"
     ],
-    "image": "/caseStudy/02.png",
+    "image": "/caseStudy/edtech.png",
     "technologies": ["React", "Node.js", "PostgreSQL", "Cloudinary", "Stripe"],
     "tags": ["LMS", "Education", "Automation"]
   },
@@ -46,7 +46,7 @@
       "Zero payroll errors in the first 12 months",
       "Centralized data for 500+ employees"
     ],
-    "image": "/caseStudy/03.png",
+    "image": "/caseStudy/hrms.png",
     "technologies": ["TypeScript", "Next.js", "Prisma", "Azure", "Email Automation"],
     "tags": ["HRMS", "Logistics", "Productivity"]
   },
@@ -63,7 +63,7 @@
       "35% increase in online sales conversion",
       "Unified dashboard for retail and online channels"
     ],
-    "image": "/caseStudy/01.png",
+    "image": "/caseStudy/ecommerce.png",
     "technologies": ["Headless CMS", "Next.js", "Redis", "Elasticsearch"],
     "tags": ["E-commerce", "Retail", "SKU Mastery"]
   }
