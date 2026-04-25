@@ -1,4 +1,26 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+
+export const metadata: Metadata = {
+  title: "Web Development Agency in Hyderabad | Waaw Technologies",
+  description: "Leading web development company in Hyderabad. We build high-performing websites, mobile apps, and custom software solutions for startups and enterprises.",
+  keywords: "web development agency hyderabad, website development company hyderabad, digital marketing agency hyderabad, software development hyderabad",
+  openGraph: {
+    title: "Web Development Agency in Hyderabad | Waaw Technologies",
+    description: "Leading web development company in Hyderabad. We build high-performing websites, mobile apps, and custom software solutions for startups and enterprises.",
+    url: "https://waaw.world",
+    siteName: "Waaw Technologies",
+    images: [{ url: "/logo.png", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Development Agency in Hyderabad | Waaw Technologies",
+    description: "Leading web development company in Hyderabad. We build high-performing websites, mobile apps, and custom software solutions for startups and enterprises.",
+    images: ["/logo.png"],
+  },
+};
+
 import { Navbar } from "../src/components/Navbar";
 import Hero from "../src/components/home/Hero";
 

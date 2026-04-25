@@ -25,10 +25,10 @@ const companyLinks = [
   { label: "Let's Talk", href: "/contact" },
 ];
 const resourceLinks = [
-  { label: "Features", href: "/" },
+  { label: "Features", href: "/#services" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Industry", href: "/industries" },
-  { label: "Roadmap", href: "#roadmap" },
+  { label: "Roadmap", href: "/#case-study" },
   { label: "FAQ", href: "/contact" },
 ];
 const legalLinks = [
@@ -168,16 +168,10 @@ function Glow() {
           {/* Button */}
           <Link
             href="/contact"
-            onClick={() => {
-              import("@/lib/tracking").then(({ trackEvent }) => {
-                trackEvent("cta_click", { label: "Let's Talk", location: "Navbar" });
-              });
-            }}
-            className="hidden mt-10 md:relative text-center md:inline-flex md:items-center md:justify-center
-                    text-white border bg-[#FFFFFF21] border-white rounded-[30px] px-5 py-2 font-bold gap-2 items-center"
+            className="mt-10 md:relative text-center inline-flex items-center justify-center
+                    text-white border bg-[#FFFFFF21] border-white rounded-[30px] px-5 py-2 font-bold gap-2 items-center hover:bg-white hover:text-black transition-all"
           >
             Schedule a Strategy Call <ArrowUpRight className="w-5 h-5 text-2xl" />
-
           </Link>
         </div>
       </div>

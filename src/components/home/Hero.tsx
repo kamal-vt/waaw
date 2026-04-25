@@ -294,7 +294,7 @@ function MobileHero1() {
               Book a Free Strategy Call
             </button>
             <button 
-              onClick={() => router.push('/solutions')} 
+              onClick={() => router.push('/services')} 
               className="border border-white/30 rounded-full py-3 text-white text-sm hover:bg-white/10 transition"
               aria-label="View our solutions"
             >

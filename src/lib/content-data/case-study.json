@@ -1,0 +1,70 @@
+[
+  {
+    "id": "derive-growth-engine",
+    "title": "From Static Website to Growth Engine",
+    "category": "Real Estate / Business",
+    "description": "How we transformed a legacy static website into a lead-generating powerhouse for a luxury real estate brand in Hyderabad.",
+    "client": "Derive Projects",
+    "challenge": "The client had a slow, non-responsive website that failed to capture leads or represent their premium brand image effectively.",
+    "solution": "We developed a high-performance Next.js platform with custom property search, WhatsApp automation, and SEO optimization.",
+    "results": [
+      "250% increase in monthly lead generation",
+      "90% faster page load times (Core Web Vitals passed)",
+      "Ranked #1 for targeted local real estate keywords"
+    ],
+    "image": "/caseStudy/01.png",
+    "technologies": ["Next.js", "Tailwind CSS", "AWS", "WhatsApp API", "SEO"],
+    "tags": ["Growth", "Real Estate", "2026"]
+  },
+  {
+    "id": "learning-platform-edtech",
+    "title": "Building a Scalable Learning Experience",
+    "category": "Education / EdTech",
+    "description": "Designing and developing a custom LMS that handles thousands of students with automated certification and progress tracking.",
+    "client": "Global Academy",
+    "challenge": "Existing platforms were either too generic or too expensive to scale with their custom course structures.",
+    "solution": "Built a bespoke LMS using React and Node.js, focusing on mobile-first learning and automated student workflows.",
+    "results": [
+      "Successfully onboarded 5,000+ active students",
+      "Automated 100% of certification processes",
+      "40% reduction in administrative overhead"
+    ],
+    "image": "/caseStudy/02.png",
+    "technologies": ["React", "Node.js", "PostgreSQL", "Cloudinary", "Stripe"],
+    "tags": ["LMS", "Education", "Automation"]
+  },
+  {
+    "id": "hrms-automation",
+    "title": "Streamlining Hiring & HR Operations",
+    "category": "HR Tech / Automation",
+    "description": "Automating the entire recruitment lifecycle and employee management for a fast-growing logistics company.",
+    "client": "LogiNext India",
+    "challenge": "Manual processes for hiring and payroll were causing significant delays and data inaccuracies.",
+    "solution": "Implemented a custom HRMS with integrated ATS (Applicant Tracking System), payroll automation, and employee self-service portal.",
+    "results": [
+      "Reduced hiring turnaround time by 60%",
+      "Zero payroll errors in the first 12 months",
+      "Centralized data for 500+ employees"
+    ],
+    "image": "/caseStudy/03.png",
+    "technologies": ["TypeScript", "Next.js", "Prisma", "Azure", "Email Automation"],
+    "tags": ["HRMS", "Logistics", "Productivity"]
+  },
+  {
+    "id": "ecommerce-sku-mastery",
+    "title": "Modernizing SKU Management & Sales",
+    "category": "E-commerce",
+    "description": "Developing a custom SKU-based e-commerce platform for a retail brand with complex inventory needs.",
+    "client": "Urban Retail",
+    "challenge": "Managing 10,000+ SKUs across multiple locations was impossible with their off-the-shelf Shopify setup.",
+    "solution": "Developed a custom headless e-commerce solution with advanced inventory synchronization and SKU management.",
+    "results": [
+      "Real-time inventory sync across 5 warehouses",
+      "35% increase in online sales conversion",
+      "Unified dashboard for retail and online channels"
+    ],
+    "image": "/caseStudy/01.png",
+    "technologies": ["Headless CMS", "Next.js", "Redis", "Elasticsearch"],
+    "tags": ["E-commerce", "Retail", "SKU Mastery"]
+  }
+]

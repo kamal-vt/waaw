@@ -1,80 +1,8 @@
 "use client";
 import DecorativeLines from "../common/DecorativeLines";
 import ParallaxCard from "../ui/ParallaxCard";
-
-const pricingData = [
-  {
-    title: "Business Website Solution",
-    price: "₹ 1.8 L/-",
-    features: [
-      "Strategic information architecture",
-      "Custom conversion-focused UI/UX",
-      "Responsive front-end development",
-      "Lead capture & WhatsApp integration",
-      "SEO-optimized structural setup",
-      "Deployment with performance tuning",
-    ],
-    highlighted: false,
-    smallPriceText: false,
-  },
-  {
-    title: "Website + Automation Solution",
-    price: "₹3.5 L - 4.5 L",
-    features: [
-      "Complete website system development",
-      "CRM integration & lead automation",
-      "Email & WhatsApp workflow sequences",
-      "Conversion tracking & analytics dashboard",
-      "Funnel structure & process optimization",
-      "Lead segmentation & structured data management",
-    ],
-    highlighted: true,
-    smallPriceText: false,
-  },
-  {
-    title: "Education Platform Solution",
-    price: "Starting at ₹ 6.0 L",
-    features: [
-      "Custom LMS architecture & system design",
-      "Admin & instructor dashboards",
-      "Automated certification workflows",
-      "Student tracking & performance reporting",
-      "Basic SEO setup",
-      "Delivery within standard timeline",
-    ],
-    highlighted: false,
-    smallPriceText: true,
-  },
-  {
-    title: "HR Automation Solution",
-    price: "Starting at ₹ 4.0 L",
-    features: [
-      "HRMS system development",
-      "Interview scheduling workflows",
-      "Offer letter & payslip automation",
-      "Attendance & leave management",
-      "Internal workflow communication setup",
-      "Employee onboarding & lifecycle management",
-    ],
-    highlighted: false,
-    smallPriceText: true,
-  },
-  {
-    title: "Growth & Digital Presence Platform",
-    price: "Starting at ₹ 1.2 L / Month",
-    features: [
-      "Digital visibility optimization",
-      "Campaign planning & execution",
-      "Monthly analytics & reporting",
-      "Strategic growth consultation",
-      "Conversion optimization & funnel refinement",
-      "Audience targeting & performance scaling strategy",
-    ],
-    highlighted: false,
-    smallPriceText: true,
-    whiteButton: true,
-  },
-]
+import Link from "next/link";
+import pricingData from "@/lib/content-data/pricing.json";
 
 export default function PricingSection () {
   return (
@@ -172,15 +100,17 @@ const PricingCard = ({ plan }: { plan: any }) => {
           </div>
 
           {/* Button */}
-          <button
-            className={`w-full max-w-[200px] py-3 rounded-full font-semibold text-sm transition ${
-              plan.whiteButton
-                ? "bg-white text-black"
-                : "border border-white/30 hover:bg-white/10"
-            }`}
-          >
-            Find Your Plan
-          </button>
+          <Link href="/contact" className="w-full max-w-[200px]">
+            <button
+              className={`w-full py-3 rounded-full font-semibold text-sm transition ${
+                plan.whiteButton
+                  ? "bg-white text-black"
+                  : "border border-white/30 hover:bg-white/10"
+              }`}
+            >
+              Find Your Plan
+            </button>
+          </Link>
 
           {/* Features */}
           <div className="w-full mt-6 pt-4 border-t border-white/10">

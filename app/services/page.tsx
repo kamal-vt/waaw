@@ -4,9 +4,23 @@ import { FooterSection } from "../../src/components/sections/FooterSection";
 import { ServicesSection } from "../../src/components/sections/ServicesSection";
 
 export const metadata: Metadata = {
-  title: "Services",
-  description: "Comprehensive software development services including web apps, e-commerce, and business automation solutions tailored for growth.",
-  keywords: "software development, web applications, e-commerce solutions, business automation, custom software, technology services,HRMS, ERP, CRM, inventory management, point of sale, POS, software solutions, digital transformation ", 
+  title: "Software Development & Automation Services | Waaw Technologies",
+  description: "Explore our range of digital services: Web & App Development, UI/UX Design, SEO, Digital Marketing, and custom business automation (LMS, HRMS, CRM).",
+  keywords: "lms development company hyderabad, hrms development india, custom software development, web development hyderabad, crm integration, business automation solutions", 
+  openGraph: {
+    title: "Software Development & Automation Services | Waaw Technologies",
+    description: "Explore our range of digital services: Web & App Development, UI/UX Design, SEO, Digital Marketing, and custom business automation (LMS, HRMS, CRM).",
+    url: "https://waaw.world/services",
+    siteName: "Waaw Technologies",
+    images: [{ url: "/logo.png", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Software Development & Automation Services | Waaw Technologies",
+    description: "Explore our range of digital services: Web & App Development, UI/UX Design, SEO, Digital Marketing, and custom business automation.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function Services() {

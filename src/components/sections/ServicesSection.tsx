@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent } from "../ui/card";
 import MatchstickBoxHeading from "./MatchstickHeading";
 import DecorativeLines from "../common/DecorativeLines";
@@ -9,6 +10,7 @@ import Image from "next/image";
 const servicesData = [
   {
     title: "Business Solution Pack",
+    href: "/services/web-development",
     points: [
       "Understand business objectives and digital positioning.",
       "Design user-focused interfaces aligned with brand identity.",
@@ -19,6 +21,7 @@ const servicesData = [
   },
   {
     title: "Education Solution Pack",
+    href: "/services/lms-development",
     points: [
       "Understand course structure, audience flow, and learning objectives.",
       "Design intuitive LMS interfaces for students and administrators.",
@@ -29,6 +32,7 @@ const servicesData = [
   },
   {
     title: "HR Automation Pack",
+    href: "/services/hrms-development",
     points: [
       "Understand hiring workflows and operational structure.",
       "Design streamlined HRMS interfaces for internal teams.",
@@ -39,6 +43,7 @@ const servicesData = [
   },
   {
     title: "Growth & Presence",
+    href: "/services/digital-marketing",
     points: [
       "Understand brand positioning and market visibility goals.",
       "Optimize social profiles for structured digital presence.",
@@ -50,11 +55,12 @@ const servicesData = [
 ];
 
 export const ServicesSection = (): JSX.Element => {
+  const router = useRouter();
   return (
     <section className="relative w-full bg-black overflow-hidden py-14 md:py-24 min-h-screen">
       {/* Mobile View */}
 
-      <MobileView />
+      <MobileView router={router} />
 
 
       {/*   Desktop view */}
@@ -176,7 +182,10 @@ export const ServicesSection = (): JSX.Element => {
 
                           {/* 2. Bottom "Know More" Button Area */}
                           <div className="mt-8 flex justify-end">
-                            <button className="bg-[#bfc4cc] hover:bg-white text-[#000080] font-bold py-2 px-8 rounded-full text-sm md:text-base transition-all shadow-lg active:scale-95">
+                            <button 
+                              onClick={() => router.push(service.href)}
+                              className="bg-[#bfc4cc] hover:bg-white text-[#000080] font-bold py-2 px-8 rounded-full text-sm md:text-base transition-all shadow-lg active:scale-95"
+                            >
                               Know More
                             </button>
                           </div>
@@ -211,7 +220,7 @@ export const ServicesSection = (): JSX.Element => {
 
 
 
-function MobileView() {
+function MobileView({ router }: { router: any }) {
   return (
     <div className="lg:hidden relative min-h-screen px-5 py-10 bg-black overflow-hidden">
 
@@ -283,7 +292,10 @@ function MobileView() {
                   </ul>
 
                   <div className="mt-6 flex justify-end">
-                    <button className="bg-white text-blue-900 font-bold py-2 px-6 rounded-full text-[10px] uppercase tracking-wider active:scale-95 transition-transform">
+                    <button 
+                      onClick={() => router.push(service.href)}
+                      className="bg-white text-blue-900 font-bold py-2 px-6 rounded-full text-[10px] uppercase tracking-wider active:scale-95 transition-transform"
+                    >
                       Know More
                     </button>
                   </div>

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import DecorativeLines from "../common/DecorativeLines";
@@ -72,7 +73,7 @@ const services = [
   'LMS & HRMS',
 ];
 
-const AboutUsSectionMobile = () => (
+const AboutUsSectionMobile = ({ router }: { router: any }) => (
   <section className="bg-black relative px-3 py-8 md:px-6 lg:px-8 xl:px-12 flex flex-col items-center gap-7 min-h-screen  w-full max-w-screen">
 
     {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
@@ -132,6 +133,7 @@ const AboutUsSectionMobile = () => (
 
       <Button
         variant="ghost"
+        onClick={() => router.push('/services')}
         className="absolute text-white border-2 border-white rounded-[30px] hover:bg-white"
       >
         See How it Works <ArrowUpRight className="w-5 h-5 text-2xl" />
@@ -167,6 +169,7 @@ const AboutUsSectionMobile = () => (
 
 
 export const AboutUsSection = (): JSX.Element => {
+  const router = useRouter();
   return (
     <>
       <div className="hidden xl:block">
@@ -287,6 +290,7 @@ export const AboutUsSection = (): JSX.Element => {
             {/* Explore Now Button */}
             <Button
               variant="ghost"
+              onClick={() => router.push('/services')}
               className="absolute top-[486px] left-[138px] w-[194px] md:top-[395px] md:left-[5%] lg:top-[530px] lg:left-[100px] h-auto
                text-white border-2 border-white rounded-[30px] hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2"
             >
@@ -352,7 +356,7 @@ export const AboutUsSection = (): JSX.Element => {
         </section>
       </div>
       <div className="block xl:hidden">
-        <AboutUsSectionMobile />
+        <AboutUsSectionMobile router={router} />
       </div>
     </>
   );

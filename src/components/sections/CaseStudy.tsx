@@ -1,30 +1,14 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import DecorativeLines from "../common/DecorativeLines";
 import Image from "next/image";
 
-const caseStudies = [
-  {
-    image: "/caseStudy/01.png",
-    badges: ["Growth", "2024"],
-    title: "From static website to Growth Engine",
-    showViewText: true,
-  },
-  {
-    image: "/caseStudy/02.png",
-    badges: [],
-    title: "Building scalable Learning Platform",
-    showViewText: false,
-  },
-  {
-    image: "/caseStudy/03.png",
-    badges: [],
-    title: "Streamlining Hiring & HR Operations",
-    showViewText: false,
-  },
-];
+import caseStudiesData from "@/lib/content-data/case-study.json";
 
 export const CaseStudy = (): JSX.Element => {
+  // Use first 3 for home page or all for case-study page
+  const studies = caseStudiesData.slice(0, 3);
   return (
     <section className="relative w-full bg-[#050B14] overflow-hidden py-24 min-h-screen text-white font-sans flex flex-col items-center">
                 {/* --- BACKGROUND BLOBS (FIXED EFFECT) --- */}
@@ -71,9 +55,11 @@ export const CaseStudy = (): JSX.Element => {
             to provide reliable, scalable, and high-quality digital solutions.
           </p>
 
-          <button className="px-8 py-3 rounded-[30px] border border-white/30 text-[14px] text-white/90 font-medium hover:bg-white/10 hover:text-white transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-            View Our Work
-          </button>
+          <Link href="/case-study">
+            <button className="px-8 py-3 rounded-[30px] border border-white/30 text-[14px] text-white/90 font-medium hover:bg-white/10 hover:text-white transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+              View Our Work
+            </button>
+          </Link>
         </header>
 
         {/* Selected Artifacts section */}
@@ -85,7 +71,7 @@ export const CaseStudy = (): JSX.Element => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full max-w-6xl mx-auto">
-            {caseStudies.map((study, idx) => (
+            {studies.map((study, idx) => (
               <CaseStudyCard key={idx} study={study} />
             ))}
           </div>
@@ -97,58 +83,46 @@ export const CaseStudy = (): JSX.Element => {
 
 const CaseStudyCard = ({ study }: { study: any }) => {
   return (
-    <div className="group relative rounded-[32px] overflow-hidden transition-all duration-300 hover:-translate-y-2 flex flex-col h-[500px] border border-white/10">
+    <Link href={`/case-study/${study.id}`} className="group relative rounded-[32px] overflow-hidden transition-all duration-300 hover:-translate-y-2 flex flex-col h-[500px] border border-white/10">
       <div className="relative h-full bg-[#050B14] overflow-hidden flex flex-col transition-all duration-300">
         
-        {/* Top Image Section (Using complex gradient to mimic the abstract image) */}
+        {/* Top Image Section */}
         <div className="relative h-[100%] w-full bg-[#0A101C] overflow-hidden">
           <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-br from-indigo-900/40 via-blue-900/30 to-cyan-900/20" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(60,180,255,0.2)_0%,transparent_70%)] opacity-80 mix-blend-screen" />
-          {/* Glowing orbs */}
-          <Image src={study.image || '/default-case-study-image.jpg'} alt="Case Study Image" fill className="object-cover object-center" />
-          <div className="absolute top-[30%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[120px] h-[120px] bg-blue-500/40 rounded-full blur-[40px]" />
-          <div className="absolute top-[40%] left-[60%] -translate-x-1/2 -translate-y-1/2 w-[80px] h-[80px] bg-purple-500/30 rounded-full blur-[30px]" />
-          <div className="absolute top-[25%] left-[30%] -translate-x-1/2 -translate-y-1/2 w-[60px] h-[60px] bg-cyan-400/30 rounded-full blur-[25px]" />
+          <Image src={study.image || '/default-case-study-image.jpg'} alt={study.title} fill className="object-cover object-center" />
         </div>
 
         {/* Content Panel Overlaid on Bottom */}
         <div className="absolute bottom-4 left-4 right-4 bg-[#2020229b] rounded-[24px] p-6 flex flex-col border border-white/5 z-20 shadow-xl">
-          {study.badges && study.badges.length > 0 && (
+          {study.tags && study.tags.length > 0 && (
             <div className="flex gap-2 mb-3">
-              {study.badges.map((badge: string, i: number) => (
+              {study.tags.map((tag: string, i: number) => (
                 <span key={i} className="px-5 py-1 rounded-full border border-white/20 text-[12px] text-white/90 font-medium">
-                  {badge}
+                  {tag}
                 </span>
               ))}
             </div>
           )}
-          <h4 className={`text-[17px] md:text-[18px] leading-[1.4] font-semibold text-white/95 pr-2 ${study.badges?.length > 0 ? "h-[50px] mb-2" : "h-[70px] mt-2 mb-2"}`}>
+          <h4 className={`text-[17px] md:text-[18px] leading-[1.4] font-semibold text-white/95 pr-2 ${study.tags?.length > 0 ? "h-[50px] mb-2" : "h-[70px] mt-2 mb-2"}`}>
             {study.title}
           </h4>
           
           <div className="flex items-center mt-2 h-8">
-            {study.showViewText ? (
-              <div className="flex items-center w-full justify-between">
-                <span className="text-[14px] text-white/90 font-medium cursor-pointer">
-                  View Case Study
-                </span>
-                <button className="w-7 h-7 rounded-full bg-white flex items-center justify-center">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#202022" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            ) : (
-              <button className="w-7 h-7 rounded-full bg-white flex items-center justify-center ml-auto">
+            <div className="flex items-center w-full justify-between">
+              <span className="text-[14px] text-white/90 font-medium cursor-pointer">
+                View Case Study
+              </span>
+              <button className="w-7 h-7 rounded-full bg-white flex items-center justify-center">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#202022" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </button>
-            )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
