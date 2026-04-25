@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     description: "Leading web development company in Hyderabad. We build high-performing websites, mobile apps, and custom software solutions for startups and enterprises.",
     images: ["/logo.png"],
   },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 import { Navbar } from "../src/components/Navbar";

@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     description: "Explore the latest in design, development, and digital strategy. Insights that inspire innovation and help businesses stay ahead in the digital world.",
     images: ["/logo.png"],
   },
+  alternates: {
+    canonical: "/blogs",
+  },
 };
 
 export default function BlogsPage() {
