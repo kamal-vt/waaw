@@ -4,6 +4,7 @@ import { FooterSection } from "../../src/components/sections/FooterSection";
 import { ServicesSection } from "../../src/components/sections/ServicesSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services" },
   title: "Software Development & Automation Services | Waaw Technologies",
   description: "Explore our range of digital services: Web & App Development, UI/UX Design, SEO, Digital Marketing, and custom business automation (LMS, HRMS, CRM).",
   keywords: "lms development company hyderabad, hrms development india, custom software development, web development hyderabad, crm integration, business automation solutions", 

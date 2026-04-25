@@ -6,6 +6,7 @@ import AboutUsSection from "../../src/components/sections/AboutUsSection";
 import IndustriesSection from "../../src/components/sections/IndustriesSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About Us",
   description: "Learn more about Waaw, our mission, and our expertise in delivering high-growth software solutions and digital platforms.",
 };

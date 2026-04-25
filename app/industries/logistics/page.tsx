@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/industries/logistics" },
   title: "Logistics & Supply Chain Management Software | Waaw Technologies",
   description: "Optimized logistics solutions in Hyderabad. We build fleet management software, delivery apps, and supply chain portals.",
   keywords: "logistics website development, supply chain management system, fleet management software, delivery tracking apps",

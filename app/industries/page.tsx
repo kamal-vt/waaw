@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/industries" },
   title: "Industries We Serve | Waaw Technologies",
   description: "Discover how Waaw Technologies provides specialized digital solutions for Healthcare, Education, E-commerce, Finance, Logistics, and Startups.",
   keywords: "industries, healthcare solutions, edtech solutions, ecommerce development, fintech, logistics software",

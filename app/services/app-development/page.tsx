@@ -4,6 +4,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services/app-development" },
   title: "Mobile App Development Company | Waaw Technologies",
   description: "Top-tier mobile app development company. We build native and cross-platform apps for iOS and Android using React Native and Flutter.",
   keywords: "mobile app development hyderabad, app development company india, react native app development, flutter development company",

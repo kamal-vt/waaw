@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/industries/healthcare" },
   title: "Healthcare Website & App Development | Waaw Technologies",
   description: "Specialized healthcare digital solutions in Hyderabad. We build hospital websites, clinic management systems, and medical apps.",
   keywords: "healthcare website development, hospital website design, clinic management system, medical app development, healthtech solutions",

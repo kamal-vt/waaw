@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/industries/ecommerce" },
   title: "E-commerce Website Development Hyderabad | Waaw Technologies",
   description: "Boost your sales with our custom e-commerce solutions. We specialize in Shopify, WooCommerce, and custom SKU-based platforms.",
   keywords: "ecommerce website development hyderabad, shopify development, woocommerce development, custom ecommerce solutions, d2c brand websites",

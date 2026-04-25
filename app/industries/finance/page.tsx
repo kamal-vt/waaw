@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/industries/finance" },
   title: "Fintech & Financial Services Website Design | Waaw Technologies",
   description: "Secure and scalable fintech solutions in Hyderabad. We build investment platforms, banking apps, and financial portals.",
   keywords: "fintech website development, financial services web design, banking app development, investment platforms, finance portals",

@@ -4,6 +4,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services/digital-marketing" },
   title: "Digital Marketing Agency in Hyderabad | Waaw Technologies",
   description: "Results-driven digital marketing agency in Hyderabad. We offer SEO, social media marketing, and performance marketing services.",
   keywords: "digital marketing agency hyderabad, online marketing company, social media marketing, performance marketing, content marketing",

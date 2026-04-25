@@ -4,6 +4,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services/seo" },
   title: "SEO Agency in Hyderabad | Waaw Technologies",
   description: "Improve your search rankings with the best SEO agency in Hyderabad. We offer technical SEO, local SEO, and content strategy.",
   keywords: "seo agency hyderabad, search engine optimization hyderabad, local seo services, technical seo, seo company india",

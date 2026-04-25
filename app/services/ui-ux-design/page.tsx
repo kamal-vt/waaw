@@ -4,6 +4,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services/ui-ux-design" },
   title: "UI/UX Design Agency in Hyderabad | Waaw Technologies",
   description: "Award-winning UI/UX design agency in Hyderabad. We create conversion-focused interfaces and seamless user experiences.",
   keywords: "ui ux design agency hyderabad, user experience design, user interface design, website ui design, app ui design",

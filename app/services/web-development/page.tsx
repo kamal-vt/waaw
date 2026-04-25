@@ -4,6 +4,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services/web-development" },
   title: "Web Development Agency in Hyderabad | Waaw Technologies",
   description: "Expert web development services in Hyderabad. We specialize in custom websites, Next.js, React.js, and full-stack solutions for businesses.",
   keywords: "web development agency hyderabad, website development company hyderabad, custom website development, responsive web design, next js development india",

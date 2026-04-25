@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/industries/startups" },
   title: "MVP Development Agency for Startups | Waaw Technologies",
   description: "Accelerate your startup with our MVP development services in Hyderabad. We build scalable products for early-stage ventures.",
   keywords: "startup website development, mvp development agency, startup digital solutions, tech partner for startups",

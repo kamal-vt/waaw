@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/case-study" },
   title: "Case Studies | Success Stories | Waaw Technologies",
   description: "Success stories and real-world examples of how Waaw Technologies has transformed businesses through innovative digital solutions and automation.",
   keywords: "case studies, success stories, digital transformation examples, software development case studies, web solutions case studies, business automation case studies, technology services success stories",

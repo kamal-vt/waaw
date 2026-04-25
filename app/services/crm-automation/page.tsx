@@ -4,6 +4,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services/crm-automation" },
   title: "CRM & Marketing Automation Agency in Hyderabad | Waaw Technologies",
   description: "Automate your business workflows with our CRM integration and marketing automation services in Hyderabad.",
   keywords: "crm integration services hyderabad, marketing automation agency, whatsapp automation, lead automation, sales funnel automation",

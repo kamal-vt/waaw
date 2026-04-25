@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/industries/education" },
   title: "Education & EdTech Software Development | Waaw Technologies",
   description: "Innovative EdTech solutions in Hyderabad. We build school websites, college platforms, and custom e-learning portals.",
   keywords: "edtech startup development, school website development, college website design, education platform development, elearning portals",

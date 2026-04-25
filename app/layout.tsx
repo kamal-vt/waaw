@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   description:
     "Waaw Technologies is a leading digital agency in Hyderabad specializing in web development, mobile apps, UI/UX design, SEO, and business automation (LMS, HRMS, CRM).",
   keywords: [
+    "waaw world",
+    "waaw",
     "waaw digital agency",
     "waaw world",
     "waaw tech",

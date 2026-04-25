@@ -4,6 +4,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services/hrms-development" },
   title: "HRMS Development Company in India | Waaw Technologies",
   description: "Custom HRMS development services in Hyderabad. Automate your payroll, attendance, and employee management with our software.",
   keywords: "hrms development company india, hr software development hyderabad, custom hrms development, payroll automation software",

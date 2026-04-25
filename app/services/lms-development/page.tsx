@@ -4,6 +4,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services/lms-development" },
   title: "LMS Development Company in Hyderabad | Waaw Technologies",
   description: "Custom LMS development services in Hyderabad. We build online learning platforms, EdTech solutions, and student management systems.",
   keywords: "lms development company hyderabad, custom lms development, elearning platform development, edtech platform development",
