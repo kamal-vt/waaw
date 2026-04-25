@@ -15,6 +15,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const blog = blogsData.find((b) => b.slug === params.slug);
   if (!blog) return { title: "Blog Not Found" };
 
+  const heroImage = blog.coverImage || blog.image;
+
   return {
     title: `${blog.title} | Blog | Waaw Technologies`,
     description: blog.description,
@@ -23,14 +25,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: blog.description,
       url: `https://waaw.world/blogs/${blog.slug}`,
       siteName: "Waaw Technologies",
-      images: [{ url: blog.image, width: 1200, height: 630 }],
+      images: [{ url: heroImage, width: 1200, height: 630 }],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
       title: `${blog.title} | Blog | Waaw Technologies`,
       description: blog.description,
-      images: [blog.image],
+      images: [heroImage],
     },
   };
 }
@@ -42,6 +44,8 @@ export default function BlogDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const heroImage = blog.coverImage || blog.image;
+
   return (
     <main className="relative bg-black text-white min-h-screen">
       <Navbar />
@@ -49,7 +53,7 @@ export default function BlogDetailPage({ params }: PageProps) {
       {/* Blog Hero */}
       <section className="relative pt-40 pb-20 px-6">
         <div className="absolute inset-0 z-0">
-          <Image src={blog.image} alt={blog.title} fill className="object-cover opacity-20 blur-sm" />
+          <Image src={heroImage} alt={blog.title} fill className="object-cover opacity-20 blur-sm" />
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
         </div>
         
@@ -85,7 +89,7 @@ export default function BlogDetailPage({ params }: PageProps) {
         <div className="max-w-3xl mx-auto">
           {/* Main Image */}
           <div className="relative aspect-video rounded-[40px] overflow-hidden mb-16 border border-white/10 shadow-2xl">
-            <Image src={blog.image} alt={blog.title} fill className="object-cover" />
+            <Image src={heroImage} alt={blog.title} fill className="object-cover" />
           </div>
 
           {/* Article Text */}
